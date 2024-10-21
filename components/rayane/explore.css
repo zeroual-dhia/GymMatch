@@ -9,6 +9,9 @@ body {
     margin: 0;
     padding: 0;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Keyframes for fade-in animation */
@@ -33,9 +36,8 @@ body {
     display: flex; /* Use flexbox layout */
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
-    height: 100vh; /* Full viewport height */
+    height: 100vh ; /* Full viewport height */
 }
-
 .InputContainer {
     height: 40px;
     display: flex;
@@ -46,11 +48,12 @@ body {
     cursor: pointer;
     padding-left: 15px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+    
 }
 
 .input {
     width: 100%; /* Responsive width */
-    max-width: 250px; /* Max width for larger screens */
+    max-width: 500px; /* Max width for larger screens */
     height: 100%;
     border: none;
     outline: none;
@@ -61,16 +64,17 @@ body {
 .labelforsearch {
     cursor: text;
     padding: 0 10px;
+
 }
 
 .searchIcon {
-    width: 13px;
+    width: 15px ;
 }
 
 .border {
     height: 40%;
-    width: 1.3px;
-    background-color: #f9f5f5;
+    width: 1.8px;
+    background-color: #fefcfc;
 }
 
 .micIcon {
@@ -85,7 +89,6 @@ body {
     cursor: pointer;
     transition-duration: 0.3s;
 }
-
 .searchIcon path {
     fill: rgb(114, 114, 114);
 }
@@ -105,29 +108,29 @@ body {
 
 .gym-list {
     margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping of gym cards */
-    justify-content: space-between;
-    gap : 10px ; /* Space between gym cards */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    width: 90%;
+    gap : 40px ; /* Space between gym cards */
 }
 
 .gym-card {
-    position: relative; /* Positioning context for absolute children */
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
     border-radius: 8px;
     padding: 6px;
     margin-bottom: 15px;
-    flex: 1 1 calc(30% - 10px); /* Responsive width */
-    max-width: 300px; /* Max width for larger screens */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s; /* Transition for transform and shadow */
     overflow: hidden; /* Hide overflow for smooth effect */
 }
 
-.gym-card:hover {
+.gym-card:hover{
     transform: scale(1.05); /* Scale up on hover */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    
+    /* Shadow effect on hover */
 }
+
 
 .gym-card img {
     width: 100%; /* Full width */
@@ -209,11 +212,21 @@ h1 {
 }
 
 @media (max-width: 480px) {
-    .gym-card {
-        flex: 1 1 100%; /* One card per row */
-    }
+    
 
     h1 {
         font-size: large; /* Further adjust font size for mobile */
+    }
+}
+
+@media only screen and (max-width:950px ){
+    .gym-list{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width:500px ){
+    .gym-list{
+        grid-template-columns: 1fr ;
     }
 }
