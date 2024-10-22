@@ -4,17 +4,22 @@
 
 *{
     box-sizing: border-box;
+    
 }
 
 body{
     background-color: #000;
-    height: 40000px;
+    
 }
 
+
+
+/*containers*/
 .program-descreption{
     height: 100vh;
    
 }
+
 .program-name{
     font-family: 'Oswald',sans-serif;
     font-size: 2.5rem;
@@ -31,13 +36,9 @@ body{
     background-color: #cdc8c8;
     border-radius: 5px;
 }
-.caption{
-    font-size: 1.5rem;
-    color: #000;
-    font-family: 'Oswald',sans-serif;
-}
 
-.table td{
+
+.table td {
     background-color: #cdc8c8;
     color: #000;
     font-size: 1.2rem;
@@ -47,19 +48,49 @@ body{
    
 
 }
-
-#col1{
-font-weight: 700;
-
+.table{
+    font-family: 'Rubik',sans-serif ;
 }
 
-.text h3{
-    color: #ff1313;
-    font-size: 2.5rem;
+.table thead tr th{
+  background-color: #ff1313;
+  font-weight: bold;
+  font-size: 1.2rem;
+  
+}
+
+.table tbody tr td {
+    background-color: #cdc8c8;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.image{
+    width: 100%;
+    height: auto;
+}
+/*typographay*/
+.caption{
+    font-size: 1.5rem;
+    color: #000;
     font-family: 'Oswald',sans-serif;
 }
-
+#col1{
+    font-weight: 700;
+    
+    }
+    
+    .text h3{
+        color: #ff1313;
+        font-size: 2.5rem;
+        font-family: 'Oswald',sans-serif;
+    }
 .text p{
     font-family: "Rubik",sans-serif;
     word-spacing: 2px;
+}
+
+td[scope="row"]{
+    color:rgb(169, 24, 46);
+
 }
