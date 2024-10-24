@@ -83,7 +83,7 @@ body{
     left :50%;
     transform: translate(-50%,-50%);
     transition: opacity 0.3s ease;
-    font-size: 18px;
+    font-size: 17px;
     font-family: 'Rubik',sans-serif;
     width: 181px;
     height: 45px;
@@ -92,7 +92,7 @@ body{
     transition: all 0.5s;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
 .btn-program:hover{
@@ -125,7 +125,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     transition: opacity 0.3s ease, box-shadow 0.7s linear;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-family: 'Oswald', sans-serif;
     opacity: 1;
     padding: 17px 34px;
@@ -186,6 +186,9 @@ body{
    }
    html{
     font-size: 7px;
+   }
+   .btn-trainer{
+    font-size: 1.8rem;
    }
 }
 @media only screen and (max-width:375px){
