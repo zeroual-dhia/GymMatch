@@ -1,0 +1,87 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'Rubik',sans-serif;
+}
+body{
+    background-color: #000;
+    height: 2000px;
+}
+
+.workouts{
+    background-color:  #cdc8c8;
+    border-top: 5px solid #ff1313;
+    border-radius: 2px;
+}
+
+.mycard{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+   justify-content: space-between;
+    margin-top: 15px;
+}
+.mycard p{
+   height:15% ;
+}
+.mycard h3{
+ height: 12%;
+ font-family: 'Oswald',sans-serif;
+}
+
+.workouts img{
+    height:285px;
+
+}
+
+.workouts button{
+    border: none;
+    background-color: #ff1313;
+    color: white;
+    width: 200px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: all 0.5s;
+    min-height: 40px;
+    font-weight: 500;
+    
+    
+} 
+
+.workouts button:hover{
+  background-color: rgb(169, 24, 46);
+}
+
+
+@media only screen and (max-width:950px){
+   html{
+    font-size: 15px;
+   }
+
+   .mycard{
+    gap: 15px;
+   }
+}
+@media only screen and (max-width:750px){
+    html{
+     font-size: 14px;
+    }
+ 
+    .mycard{
+     gap: 10px;
+    }
+ }
+
+ @media only screen and (max-width:550px){
+    html{
+     font-size: 13px;
+    }
+ 
+    .mycard{
+     gap: 8px;
+    }
+ }

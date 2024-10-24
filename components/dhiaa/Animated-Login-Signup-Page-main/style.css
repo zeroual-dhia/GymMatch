@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Rubik', sans-seRrif;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 }
 
 .container {
-    background-color: #fff;
+    background-color: #FAF9F6;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
@@ -29,7 +30,7 @@ body {
 }
 
 .container p {
-    font-size: 14px;
+    font-size: 0.9rem;
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
@@ -41,7 +42,7 @@ body {
 
 .container a {
     color: #333;
-    font-size: 13px;
+    font-size: 0.7rem;
     text-decoration: none;
     margin: 15px 0 10px;
 }
@@ -49,7 +50,7 @@ body {
 .container button {
     background-color: #ff1313;
     color: #fff;
-    font-size: 12px;
+    font-size: 0.65rem;
     padding: 10px 45px;
     border: 1px solid transparent;
     border-radius: 8px;
@@ -65,25 +66,45 @@ body {
     border-color: #fff;
 }
 
-.container form {
-    background-color: #fff;
+.form-up {
+    background-color: #FAF9F6;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 0 100px;
     height: 100%;
+    width: 100%;
+    max-width: 750px;
+    justify-self: center;
+
+}
+.form-in {
+    background-color: #FAF9F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 100px;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    justify-self: center;
+    min-width: 400px;
 }
 
-.container input {
+.container input ,select {
+    
     background-color: #eee;
-    border: none;
+    border: 2px solid transparent ;
     margin: 8px 0;
     padding: 10px 15px;
-    font-size: 13px;
+    font-size: 0.7rem;
     border-radius: 8px;
     width: 100%;
+    font-weight: 500;
     outline: none;
+
 }
 .container input:focus{
     border: 2px solid #ff1313;
@@ -93,6 +114,7 @@ body {
     position: absolute;
     top: 0;
     height: 100%;
+    
     transition: all 0.6s ease-in-out;
 }
 
@@ -131,20 +153,6 @@ body {
     }
 }
 
-.social-icons {
-    margin: 20px 0;
-}
-
-.social-icons a {
-    border: 1px solid #ff1313;
-    border-radius: 20%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 3px;
-    width: 40px;
-    height: 40px;
-}
 
 .toggle-container {
     position: absolute;
@@ -193,9 +201,8 @@ body {
     top: 0;
     transform: translateX(0);
     transition: all 0.6s ease-in-out;
-    background-image: url('../images/gallery/login2.jpg'); /* Ensure the path is correct */
     background-size: cover;
-    background-position: center;
+    background-position: center ; 
     background-repeat: no-repeat;
 }
 .toggle-panel h1 {
@@ -214,6 +221,8 @@ body {
 }
 .toggle-left {
     transform: translateX(-200%);
+    background-image: url('../images/gallery/h1_hero2.png'); 
+
 }
 
 .container.active .toggle-left {
@@ -222,9 +231,155 @@ body {
 
 .toggle-right {
     right: 0;
+    background-image: url('../images/gallery/h1_hero.png'); 
     transform: translateX(0);
 }
 
 .container.active .toggle-right {
     transform: translateX(200%);
 }
+
+
+@media only screen and (max-width:900px){
+  
+    .container {
+     
+        display: flex;
+        flex-direction: column;
+    }
+    
+   
+    
+    .form-in {
+        background-color: #FAF9F6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 100px;
+        height: 100%;
+    }
+    
+    .form-up{
+      
+        background-color: #FAF9F6;
+        display: grid;
+       grid-template-columns: 1fr 1fr;
+        padding: 0 20px;
+        height: 70%;
+        gap: 10px;
+        
+    }
+    .form-up h1 {
+     grid-column: span 2;  
+     margin:0; 
+     text-align: center;
+    }
+    
+    .form-up button{
+        grid-column: 1 / span 2;
+        width: 50%;
+        justify-self: center;
+     }
+    
+    
+    .form-container {
+        top: 50%;
+        position: absolute;
+        height: 50%;
+        
+        transition: all 0.6s ease-in-out;
+    }
+    
+    .sign-in {
+        bottom: 0;
+        width: 100%;
+        z-index: 2;
+    }
+    
+    .container.active .sign-in {
+        transform: translateY(-90%);
+        opacity: 0;
+    }
+    
+    .sign-up {
+        bottom: 0;
+        width: 100%;
+        
+        opacity: 0;
+        z-index: 1;
+    }
+    
+    .container.active .sign-up {
+        transform: translateY(-90%);
+        opacity: 1;
+        z-index: 5;
+        animation: move 0.6s;
+    }
+    
+  
+    
+    .toggle-container {
+        
+        left: 0;
+        width: 100%;
+        height: 50%;
+        border-radius: 0 0 60px 60px;
+     
+    }
+    
+    .container.active .toggle-container {
+        transform: translateY(100%);
+        border-radius: 60px 60px 0 0;
+    }
+    
+    .toggle {
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: translateY(0);
+    }
+    
+    .container.active .toggle {
+        transform: translateY(0);
+    }
+    
+    .toggle-panel {
+        width: 100%;
+        height: 100%;
+    }
+ 
+    .toggle-left {
+        transform: translateY(-200%);
+    
+    }
+    
+    .container.active .toggle-left {
+        transform: translateY(0);
+    }
+    
+    .toggle-right {
+        height: 100%;    
+        transform: translateY(0);
+    }
+    
+    .container.active .toggle-right {
+        transform: translateY(-200%);
+    }
+     
+}
+
+
+ @media only screen and (max-height:700px){
+    .container.active .sign-in {
+        transform: translateY(-93%);
+    }
+    
+   
+    
+    .container.active .sign-up {
+        transform: translateY(-93%);
+       
+    }
+    
+ }
