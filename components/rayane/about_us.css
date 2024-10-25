@@ -1,6 +1,12 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 
 /* Preloder */
+*{
+    font-family: 'Rubik', sans-serif;
+}
 
 #preloder {
 	position: fixed;
@@ -87,6 +93,7 @@
     font-weight: 500;
     color: #ffffff;
     text-transform: uppercase;
+    font-family: 'Oswald',sans-serif;
     margin-bottom: 14px;
   }
   
@@ -102,7 +109,6 @@
     right: -13px;
     top: -2px;
     content: "";
-    font-family: "FontAwesome";
     font-size: 16px;
     color: #ffffff;
   }
@@ -128,13 +134,34 @@
 .aboutus-page-text {
     text-align: center; /* Center text */
     color: #ffffff; /* White text color */
-    font-family: 'Rubik', sans-serif; /* Rubik font */
     animation: slideIn 1s ease-out; /* Animation for the entire section */
 }
 
 .aboutus-page-text .section-title {
     margin-bottom: 45px; /* Margin below title */
-    animation: fadeIn 1s ease-in; /* Fade-in animation for title */
+    animation: fadeIn 1s ease-in /* Fade-in animation for title */
+    
+}
+.aboutus-page-text .section-title h2{
+    font-size: 3rem;
+     letter-spacing: 4px;
+    -webkit-text-stroke: 1px #f6f7f8;
+    font-weight: bold;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+}
+.aboutus-page-text .section-title p{
+    font-size: 1.2rem;
+
+}
+@media only screen and (max-width:600px){
+    .aboutus-page-text .section-title h2{
+        font-size:2rem;
+    }
+    .aboutus-page-text .section-title p{
+        font-size: 1rem;
+    
+    }
 }
 
 .aboutus-page-text img {
@@ -311,6 +338,10 @@
 .contact-form {
     text-align: center; /* Center text in the form */
 }
+.contact-form h4{
+    font-family: 'Oswald',sans-serif;
+    letter-spacing: 1px;
+}
 
 
 .contact-form h4 {
@@ -325,7 +356,6 @@
 	height: 48px;
 	border-radius: 2px;
 	background: #2d2d2d;
-	border: none;
 	padding-left: 20px;
 	margin-bottom: 30px;
 	font-size: 16px;
@@ -334,7 +364,8 @@
 	-webkit-transition: 0.3s;
 	-o-transition: 0.3s;
 	transition: 0.3s;
-	border: 1px solid #131313;
+	border: 1px solid transparent;
+    outline: none;
 }
 
 .contact-form form input::-webkit-input-placeholder {
@@ -358,17 +389,17 @@
 }
 
 .contact-form form input:focus {
-	background: #ffffff;
-	color: #151515;
+    border: 3px solid #f13f13; 
 	font-weight: 600;
 }
 
 .contact-form form textarea {
+    outline: none;
 	width: 100%;
 	height: 198px;
 	border-radius: 2px;
 	background: #2d2d2d;
-	border: none;
+	
 	padding-left: 20px;
 	padding-top: 15px;
 	font-size: 16px;
@@ -379,7 +410,7 @@
 	transition: 0.3s;
 	resize: none;
 	margin-bottom: 25px;
-	border: 1px solid #000000;
+    border: 3px solid transparent; 
 }
 
 .contact-form form textarea::-webkit-input-placeholder {
@@ -403,9 +434,9 @@
 }
 
 .contact-form form textarea:focus {
-	background: #ffffff;
-	color: #151515;
-	font-weight: 600;
+	
+	 font-weight: 600;
+     border: 3px solid #f13f13;   
 }
 
 .contact-form form .c-btn {
@@ -417,7 +448,6 @@
 	background: linear-gradient(45deg, #e16521, #e4381C);
 	padding: 12px 40px;
 	border: none;
-	font-family: "Oswald", sans-serif;
 	border: 1px solid #000000;
 	border-radius: 2px;
 }
