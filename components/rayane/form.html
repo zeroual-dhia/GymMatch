@@ -7,85 +7,36 @@
         /* Additional styles for hidden elements */
         .hidden { display: none; }
     </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
-<div class="container">
     <div class="form">
-        <h1>Gym Owner Registration</h1>
 
-        <!-- Other input fields -->
+        <h1 class="title ">Gym Owner Registration</h1>
+
+        <!-- Other input fields --> 
         <div class="input-block">
-            <input class="input" type="text" id="gymName" required="">
-            <label for="gymName">Gym Name</label>
+            <input class="input" type="text" id="gymName" required="" placeholder="Gym Name">
         </div>
         <div class="input-block">
-            <input class="input" type="text" id="location" required="">
-            <label for="location">Location</label>
+            <input class="input" type="text" id="location" required="" placeholder="Location">
         </div>
         <div class="input-block">
-            <input class="input" type="text" id="openingHours" required="">
-            <label for="openingHours">Opening Hours</label>
+            <input class="input" type="text" id="openingHours" required="" placeholder="Opening Hours">
         </div>
         <div class="input-block">
-            <input class="input" type="text" id="facilities" required="">
-            <label for="facilities">Facilities</label>
+            <input class="input" type="text" id="facilities" required="" placeholder="Facilities">
         </div>
         <div class="input-block">
-            <input class="input" type="text" id="membershipPlans" required="">
-            <label for="membershipPlans">Membership Plans</label>
+            <input class="input" type="text" id="membershipPlans" required="" placeholder="Membership Plans">
         </div>
         
-        <div class="input-block">
-            <label for="timetable"></label>
-            <table class="timetable">
-                <thead>
-                    <tr>
-                        <th>Day</th>
-                        <th>Time</th>
-                        <th>Activity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="text" placeholder="Monday"></td>
-                        <td><input type="text" placeholder="10 AM - 11 AM"></td>
-                        <td><input type="text" placeholder="Yoga"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Tuesday"></td>
-                        <td><input type="text" placeholder="10 AM - 11 AM"></td>
-                        <td><input type="text" placeholder="Pilates"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Monday"></td>
-                        <td><input type="text" placeholder="10 AM - 11 AM"></td>
-                        <td><input type="text" placeholder="Yoga"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Tuesday"></td>
-                        <td><input type="text" placeholder="10 AM - 11 AM"></td>
-                        <td><input type="text" placeholder="Pilates"></td>
-                    </tr><tr>
-                        <td><input type="text" placeholder="Monday"></td>
-                        <td><input type="text" placeholder="10 AM - 11 AM"></td>
-                        <td><input type="text" placeholder="Yoga"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Tuesday"></td>
-                        <td><input type="text" placeholder="10 AM - 11 AM"></td>
-                        <td><input type="text" placeholder="Pilates"></td>
-                    </tr><tr>
-                        <td><input type="text" placeholder="Tuesday"></td>
-                        <td><input type="text" placeholder="10 AM - 11 AM"></td>
-                        <td><input type="text" placeholder="Pilates"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+      
 
-        <div class="input-block">
+        <div class="input-block ">
             <label for="targetGender"></label>
-            <select class="input" id="targetGender" required="">
+            <select class="input" id="targetGender" required="" >
                 <option value="" disabled selected>Target Gender</option>
                 <option value="women">Women</option>
                 <option value="men">Men</option>
@@ -93,10 +44,9 @@
             </select>
         </div>
 
-        <div class="input-block">
+        <div class="input-block extra ">
             <button type="button" id="toggleExtraActivities"> Extra Activities : </button>
             <div id="extraActivitiesContainer" class="hidden">
-                <label for="extraActivities">Extra Activities:</label>
                 <select class="input" id="extraActivities" multiple required="">
                     <option value="yoga">Yoga</option>
                     <option value="sauna">sauna</option>
@@ -109,12 +59,15 @@
             </div>
         </div>
 
-        <div class="input-block">
-            <textarea class="input" id="description" required=""></textarea>
-            <label for="description">Description</label>
+      <div class=" input-block titmetable">
+
+      </div>        
+
+        <div class="input-block text-area">
+            <textarea class="input" id="description" required="" placeholder="Descreption"></textarea>
         </div>
 
-        <div class="input-block">
+        <div class="input-block fileupload">
             <label for="file" class="custum-file-upload">
                 <div class="icon">
                     <svg viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
@@ -132,11 +85,10 @@
             </label>
         </div>
 
-        <div class="input-block">
+        <div class="input-block submit">
             <button type="submit">Submit</button>
         </div>
     </div>
-</div>
 
 <script>
     document.getElementById('toggleExtraActivities').addEventListener('click', function() {

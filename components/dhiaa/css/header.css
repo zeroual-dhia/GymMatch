@@ -1,0 +1,84 @@
+
+.GYMMATCH{
+    font-family: 'Oswald',sans-serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin: 0;
+}
+#header{
+   position: absolute;
+   top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+    padding: 10px 40px ;
+    background-color:transparent;
+    z-index: 1;
+}
+
+#logo{
+    width: 70px;
+    margin: 0;
+}
+.logo-name{
+    display: flex;
+    align-items: center;
+}
+.links{
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 51px;
+    margin-right: 10px;
+}
+.links a{
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Rubik',sans-serif;
+    transition: 0.15s;
+    
+}
+
+.links a:hover {
+   transform: scale(1.2);
+}
+.links .active{
+  text-decoration: underline;
+}
+
+
+#Contact{
+  
+    background-color: #ec5b53;
+    height: 40px;
+    width: 150px;
+    max-width: 150px;
+    border-radius: 10px;
+    border-width: 0;
+    transition:0.15s ;
+    cursor: pointer;
+}
+
+#Contact:hover  {
+    
+    background-color:#dc3545 ;
+}
+
+#Contact a {
+    color: white;
+    font-family:  'Rubik',sans-serif;
+    text-decoration: none;
+}
+
+#menu-btn{
+    display: none;
+}
+
+#menu-btn img{
+    width: 100%;
+}
