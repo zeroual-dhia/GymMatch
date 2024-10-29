@@ -6,18 +6,23 @@
 }
 body{
     background:  #000;
+    position: relative;
    
 }
 
 
 .programs{
     height: 100vh;
+ 
+
+    
 }
 
 .programs-back{
    
     height: 100%;
     min-width: 320px;
+ 
   
 }
 

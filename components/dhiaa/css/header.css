@@ -2,7 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
+*{
+    box-sizing: border-box;
+}
 .GYMMATCH{
     font-family: 'Oswald',sans-serif;
     font-weight: 500;
@@ -10,23 +12,21 @@
     margin: 0;
 }
 #header{
-    position: absolute;
+    position:absolute;
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     gap: 30px;
-    padding: 10px 40px ;
+    padding: 3px 40px ;
     background-color: transparent;
-    z-index: 1;
-    transition: all 0.5s;
+    z-index: 10;
+    transition: background 0.5s, top 0.5s;
 }
 
  .active1{
     background: linear-gradient(to bottom, #950101 0%, #630102 50%, #3d0302);
-    position: fixed;
-    top: 0;
     z-index: 10;
 
 }
@@ -53,6 +53,7 @@
     font-weight: 500;
     font-family: 'Oswald',sans-serif;
     transition: 0.15s;
+    padding-bottom: 3px;
     
 }
 
@@ -60,32 +61,44 @@
    transform: scale(1.2);
 }
 .links .active{
-  text-decoration: underline;
+  border-bottom: 3px solid white;
 }
-
-
-#Contact{
-  
-    background-color: #ec5b53;
-    height: 40px;
-    width: 150px;
-    max-width: 150px;
-    border-radius: 10px;
-    border-width: 0;
-    transition:0.15s ;
+.profile-btn {
+    background: none;
+    border: none;
     cursor: pointer;
 }
+.dropdown{
+    position: relative;
+    display: inline-block;
+    height: 66px;
+    top: 16px;
+}
 
-#Contact:hover  {
+.dropdown-content{
+    display: none;
+    position: absolute;
+    min-width: 100px;
+    top: 56px;
+    right:  -35px;
+    background: linear-gradient(to bottom, #950101 0%, #630102 50%, #3d0302);
+    padding: 15px 30px 15px 10px;
+    z-index: 1;
     
-    background-color:#dc3545 ;
+}
+.dropdown-content a {
+    font-size: 1rem;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    transform: scale(1.1);
 }
 
-#Contact a {
-    color: white;
-    font-family:  'Rubik',sans-serif;
-    text-decoration: none;
-}
+.dropdown:hover .dropdown-content  {display: block;}
+
+
+
 
 #menu-btn{
     display: none;

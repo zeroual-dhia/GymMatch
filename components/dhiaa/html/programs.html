@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header id="header" class="">
+    <header id="header" >
         <div class="logo-name">
             <img id='logo' src="../images/logo.png" alt="">
             <p class="text-light GYMMATCH">GYM MATCH</p>
@@ -27,9 +27,18 @@
             <a href="#skills">Programs</a>
             <a href="#skills">Store</a>
 
-            <button id="Contact">
-                <a href="#contact">Contact me</a>
-            </button>
+            <div class="dropdown">
+                <button id="profile-btn" class="profile-btn">
+                    <img src="../images/profile.png" alt="Profile" />
+                </button>
+                <div class="dropdown-content">
+                    <a href="#signin">Sign In</a>
+                    <a href="#signout">Sign Out</a>
+                </div>
+                
+            </div>
+
+            
         </nav>
 
         <button id="menu-btn"><img src="/icons/burger-menu-svgrepo-com.svg" alt=""></button>
@@ -142,4 +151,5 @@
     <script>
         new WOW().init();
     </script>
+    <script src="../js/header.js"></script>
 </body>

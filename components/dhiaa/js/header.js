@@ -1,17 +1,21 @@
-
-document.addEventListener('DOMContentLoaded',()=>{
+window.onload = () => {
     let header = document.querySelector('#header');
-    const scrollpoint=100 ;
+    let profile_btn=document.querySelector('.dropdown');
+    let dropdown=document.querySelector('.dropdown-content');
     
-    
-    window.addEventListener('scroll', ()=>{
-       if(window.scrollY>scrollpoint){
-        header.classList.add('active1') ;
-    
-       }
-    
-       else{
-        header.classList.remove('active1')
-       }
+    const scrollPoint = 400;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > scrollPoint) {
+            header.classList.add('active1');
+            header.style.position="fixed";
+            
+        } else {
+            header.classList.remove('active1');
+            header.style.position="absolute";
+        }
+
     });
-});
+    
+
+};
