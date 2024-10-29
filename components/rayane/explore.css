@@ -29,7 +29,7 @@ body {
 .search-container {
     display: flex; /* Use flexbox to arrange inputs side by side */
     justify-content: center; /* Center the items */
-    gap: 10px; /* Space between the input containers */
+     width:100%;
 }
 
 .parent-container {
@@ -46,14 +46,14 @@ body {
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    padding-left: 15px;
+    padding-left:  15px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
     
 }
 
 .input {
     width: 100%; /* Responsive width */
-    max-width: 500px; /* Max width for larger screens */
+    max-width: 600px; /* Max width for larger screens */
     height: 100%;
     border: none;
     outline: none;
@@ -63,8 +63,7 @@ body {
 
 .labelforsearch {
     cursor: text;
-    padding: 0 10px;
-
+    padding: 0  1.875rem ;
 }
 
 .searchIcon {
@@ -74,7 +73,7 @@ body {
 .border {
     height: 40%;
     width: 1.8px;
-    background-color: #fefcfc;
+    background-color: #f4f0f0;
 }
 
 .micIcon {
@@ -90,7 +89,7 @@ body {
     transition-duration: 0.3s;
 }
 .searchIcon path {
-    fill: rgb(114, 114, 114);
+    fill: rgb(142, 130, 130);
 }
 
 .micIcon path {
@@ -99,11 +98,6 @@ body {
 
 .micButton:hover {
     background-color: rgb(207, 47, 47);
-}
-
-.search-form {
-    display: flex;
-    flex-direction: column;
 }
 
 .gym-list {
