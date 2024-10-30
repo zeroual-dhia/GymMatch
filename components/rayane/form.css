@@ -24,21 +24,27 @@ body{
    display: grid;
    gap: 10px;
    grid-template-columns: 1fr 1fr;
-    background: rgba(20, 20, 20, 0.9); /* Darker background for the form */
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 30px rgba(255, 0, 0, 0.5); /* Soft shadow for depth */
-    animation: fadeIn 1s ease-in-out; /* Form entrance animation */
-    width: 90%; /* Responsive width */
-     /* Max width for larger screens */
+   background: rgba(20, 20, 20, 0.9); /* Darker background for the form */
+   padding: 30px;
+   border-radius: 15px;
+   box-shadow: 0 4px 30px rgba(255, 0, 0, 0.5); /* Soft shadow for depth */
+   animation: fadeIn 1s ease-in-out; /* Form entrance animation */
+   width: 90%; /* Responsive width */
+    /* Max width for larger screens */
+ 
 }
-
+.input-block option{
+  background-color: #0d0d0d;
+}
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
     font-size: 2em; /* Larger font size for the title */
     color: #ff1313; /* Title coor */
     animation: slideIn 1s ease-in-out; /* Title entrance animation */
+    grid-column: span 2;
 }
 
 .input-block {
@@ -84,40 +90,20 @@ textarea:valid + label {
     color: #ff1313; /* Change label color on focus */
 }
 
-.timetable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px; /* Space below the table */
-}
-
-.timetable th, .timetable td {
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 10px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.05); /* Light background for table */
-}
-
-.timetable input {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: white;
-    width: 90%;
-}
-
 button {
-    background-color: #ff1313; /* Button color */
-    color: white;
-    font-size: 1.1em; /* Slightly larger font */
-    padding: 12px;
-    border: none;
-    border-radius: 8px; /* Rounded corners */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for button */
-    animation: bounceIn 1s; /* Button entrance animation */
-    width: 100%; /* Full width button */
+  background-color: #ff1313; /* Button color */
+  color: white;
+  font-size: 1.1em; /* Slightly larger font */
+  padding: 12px;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for button */
+  animation: bounceIn 1s; /* Button entrance animation */
+  width: 100%; /* Full width button */
 }
 
-button:hover {
+.submit :hover {
     background-color: #e60000; /* Darker shade on hover */
     transform: scale(1.05); /* Scale effect on hover */
 }
@@ -143,6 +129,7 @@ button:hover {
   
   .custum-file-upload .icon {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
   }
@@ -167,24 +154,60 @@ button:hover {
     display: none;
   }
  
-  .submit{
-    grid-column: span 2;
-    max-width: 300px;
-    width: 70%;
-    justify-self: center;
-  }
+.container-btn-file {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: #307750;
+  color: #fff;
+  border-style: none;
+  border-radius: 0.5em;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 4px 8px 10px -3px rgba(0, 0, 0, 0.356);
+ 
+}
+.container-btn-file input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.container-btn-file > svg {
+  margin-right: 1em;
+}
+.container-btn-file::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  border-radius: 0.5em;
+  background-color: #469b61;
+  z-index: -1;
+  
+}
+.container-btn-file:hover::before {
+  width: 100%;
+}
 
+.submit{
+    grid-column: span 2 ;
+    max-width: 300px ;
+    width: 90% ;
+    justify-content: center;
+    align-items: center;
+    
+  }
   .extra{
     max-width: 350px;
     width: 70%;
     justify-self: center;
   }
-  
   .text-area textarea{
     height: 200px;
   }
-
-
   @media only screen and (max-width:800px){
    
     .form{
@@ -195,7 +218,6 @@ button:hover {
     .input-block{
         width: 100%;
     }
-    
     html{
         font-size: 14px;
     }
