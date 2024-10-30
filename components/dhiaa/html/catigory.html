@@ -11,12 +11,44 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/animate.min.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../css/catigory.css">
+    <link rel="stylesheet" href="../css/header.css">
 
 </head>
 
-<body class="p-0">
+<body class="p-0"> 
+    <header  class="header2" >
+        <div class="logo-name">
+            <img id='logo' src="../images/logo.png" alt="">
+            <p class="text-light GYMMATCH">GYM MATCH</p>
+        </div>
+       
 
-    <div class="row justify-content-center">
+        <nav class="links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About us</a>
+            <a href="#Projects">Explore</a>
+            <a href="#skills">Programs</a>
+            <a href="#skills">Store</a>
+
+            <div class="dropdown">
+                <button id="profile-btn" class="profile-btn">
+                    <img src="../images/profile.png" alt="Profile" />
+                </button>
+                <div class="dropdown-content">
+                    <a href="#signin">Sign In</a>
+                    <a href="#signout">Sign Out</a>
+                </div>
+                
+            </div>
+
+            
+        </nav>
+
+        <button id="menu-btn"><img src="/icons/burger-menu-svgrepo-com.svg" alt=""></button>
+
+    </header>
+
+    <div class=" catigory row justify-content-center">
         <div class="col-8">
             <h1 class="text-center fw-bold text-light"> Strength Building Workouts</h1>
         </div>
