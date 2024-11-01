@@ -1,6 +1,7 @@
 /* styles.css */
 * {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 html, body {
   margin: 0;
@@ -194,7 +195,7 @@ button {
   height: 200px;
 }
 .input-block.fileupload {
-  grid-row: 7;
+  grid-row: 6;
   grid-column: auto;
 }
 @media only screen and (max-width: 800px) {
