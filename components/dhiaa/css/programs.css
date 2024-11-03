@@ -189,22 +189,22 @@ body{
 @media only screen and (max-width:600px){
    .hero{
     height: 230px;
-
    }
+
    html{
     font-size: 7px;
    }
+
    .btn-trainer{
     font-size: 1.8rem;
    }
 }
 @media only screen and (max-width:375px){
-    .hero{
-        height: 180px;
-    
-       }
-       html{
-        font-size: 5px;
-       }
-       
+  .hero{
+    height: 180px;
+  }
+  html{
+    font-size: 5px;
+  }
+
 }
