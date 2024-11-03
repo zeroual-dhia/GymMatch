@@ -1,0 +1,369 @@
+html,
+body {
+	height: 100%;
+	font-family: "Muli", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-smooth: antialiased;
+    background-color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	color: #111111;
+	font-weight: 400;
+	font-family: "Oswald", sans-serif;
+}
+
+h1 {
+	font-size: 70px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+p {
+	font-size: 14px;
+	font-family: "Muli", sans-serif;
+	color: #a9a9a9;
+	font-weight: 400;
+	line-height: 24px;
+	margin: 0 0 15px 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+}
+a, a:webkit-any-link {
+    text-decoration:none;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+
+.breadcrumb-section {
+    height: 650px;
+    padding-top: 230px;
+    background-image: url("/img/store.jpg");
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+/* For smaller screens, adjust the height as needed */
+@media (max-width: 768px) {
+    .breadcrumb-section {
+        height: 300px; /* Reduces height on smaller screens */
+        padding-top: 150px;
+    }
+}
+
+.breadcrumb-text h2 {
+	font-size: 60px;
+	color: #ffffff;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+}
+
+.breadcrumb-text .bt-option a {
+	font-size: 18px;
+	color: #ffffff;
+	font-weight: 700;
+	display: inline-block;
+	position: relative;
+	margin-right: 20px;
+}
+
+.breadcrumb-text .bt-option a:after {
+	position: absolute;
+	right: -14px;
+	top: 6px;
+	font-family: "FontAwesome";
+	content: "";
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.breadcrumb-text .bt-option span {
+	font-size: 18px;
+	color: #ff1313;
+	font-weight: 700;
+}
+
+
+
+/* Search Section */
+.search-section {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    background-color: #000;
+    padding: 20px;
+}
+
+.search-container {
+    position: relative; /* Positioning for the icon */
+    max-width: 500px; /* Increase max width for the search container */
+    margin-right: 10px; /* Space between the search bar and the cart button */
+}
+
+.search-icon {
+    position: absolute; /* Position the icon inside the input */
+    left: 20px; /* Space from the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for exact centering */
+    color: #fff; /* Icon color */
+}
+
+.search-bar {
+    padding: 15px 10px 15px 50px; /* Increased padding for a larger input */
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    font-size: 1.2em; /* Increased font size */
+}
+
+/* Category Button Styling */
+.cart-button {
+    background-color: #f60808;
+    color: #fff;
+    border: none;
+    padding: 15px 25px; /* Increased padding for larger button */
+    margin-left: 10px; /* Space between search bar and cart button */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em; /* Increased font size */
+}
+
+.categories-button {
+    background-color: #f60808;
+    color: #fff;
+    border: none;
+    padding: 15px 25px; /* Increased padding for larger button */
+    margin-right: 10px; /* Space between buttons */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em; /* Increased font size */
+}
+
+/* Category List Styling */
+.category-list {
+    display: none; /* Hidden by default */
+    position: absolute; /* Absolute positioning */
+    top: 100%; /* Position directly below the button */
+    left: 5%; /* Adjust as needed */
+    background-color: #333; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1; /* Ensure it appears above other elements */
+    width: 200px; /* Set width */
+}
+
+/* List Styling */
+.category-list ul {
+    list-style: none; /* Remove default list styling */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+}
+
+.category-list li {
+    padding: 8px 0; /* Padding for each list item */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: relative; /* For the hover effect */
+}
+
+.category-list li:hover {
+    color: #ff1313; /* Change text color on hover */
+}
+
+.category-list li:hover::after {
+    content: ""; /* Create a pseudo-element for the underline */
+    position: absolute; /* Position it relative to the list item */
+    left: 0; /* Align to the left */
+    bottom: 0; /* Position at the bottom */
+    width: 100%; /* Full width */
+    height: 2px; /* Height of the underline */
+    background-color: #ff1313; /* Color of the underline */
+}
+
+/* Additional styling for the search section */
+.search-section {
+    position: relative; /* Position relative for absolute children */
+    margin-bottom: 0; /* Remove space below the search section */
+}
+
+.categories-button {
+    margin-right: 10px; /* Space between buttons */
+}
+
+.section-parag {
+    background-color: black; /* Set background color to black */
+    padding: 20px 100px 20px 100px; /* Add padding for spacing on all sides */
+}
+
+.section-title h2 {
+    color: white; /* Set title color to white */
+    font-family: 'Oswald', sans-serif; /* Use Oswald font for the title */
+    margin: 0;
+    /* Remove default margin */
+}
+
+.section-title p {
+    color: gray; /* Set paragraph color to gray */
+    margin: 10px 0 0 0; /* Add margin to the top of the paragraph */
+}
+
+/* Product Grid Section */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+    gap: 20px; /* Space between cards */
+    padding: 40px; /* Padding around the grid */
+    background-color: black;
+}
+
+/* Product Card Styling */
+.product-card {
+    background-color: #444;
+    border-radius: 10px;
+    padding: 20px; /* Increased padding for better appearance */
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+/* Optional: Add hover effect for cards */
+.product-card:hover {
+    transform: scale(1.05); /* Slightly enlarge card on hover */
+}
+
+/* Product Image */
+.product-card img {
+    width: 100%; /* Full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Set a max height for the image */
+    border-radius: 10px;
+}
+
+/* Product Info Styling */
+.product-info {
+    margin: 10px 0;
+}
+
+.product-info h4 {
+    margin: 5px 0;
+    font-size: 1.5em; /* Increased font size */
+}
+
+.price {
+    font-size: 1.3em; /* Increased font size */
+    color: #f45e13;
+}
+
+.category, .availability {
+    font-size: 1em; /* Increased font size */
+    color: #bbb;
+}
+
+/* Button Styling */
+.size-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons */
+    margin: 10px 0;
+}
+.quantity-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons */
+    margin: 10px 0;
+}
+/* Button Container Styling */
+.size-buttons, .quantity-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons */
+    margin: 10px 0;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* Button Styling */
+.size-buttons button, .quantity-buttons button, .buy-button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 15px; /* Increased padding for better touch area */
+    margin: 0 5px; /* Space between buttons */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em; /* Slightly larger font size */
+    transition: background-color 0.3s, transform 0.2s; /* Add transform transition */
+}
+
+/* Hover Effect for Buttons */
+.size-buttons button:hover, .quantity-buttons button:hover {
+    background-color: #777; /* Change background on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Specific Styling for Quantity Buttons */
+.quantity-buttons button {
+    width: 40px; /* Fixed width for quantity buttons */
+}
+
+/* Buy Button Styling */
+.buy-button {
+    background-color: #ff1313;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s; /* Add transform transition */
+}
+
+.buy-button:hover {
+    background-color: #e50e0e; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
