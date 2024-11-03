@@ -8,7 +8,7 @@
 .GYMMATCH{
     font-family: 'Oswald',sans-serif;
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: 20px;
     margin: 0;
 }
 #header{
@@ -151,8 +151,11 @@
     border: none;
     cursor: pointer;
  }
- html{
-     font-size: 13px;
+ #header{
+    padding: 3px 20px;
+ }
+ .header2{
+    padding: 3px 20px;
  }
  
 }
