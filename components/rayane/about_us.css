@@ -74,7 +74,6 @@
 -----------------------*/
 
 .breadcrumb-section {
-    padding-bottom: 105px;
     height: 300px; /* Set a height for the section */
     background-image: url('img/about-bread.jpg'); /* Use background-image for better control */
     background-size: cover; /* Cover the entire section */

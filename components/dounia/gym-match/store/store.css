@@ -83,7 +83,7 @@ ol {
 .breadcrumb-section {
     height: 650px;
     padding-top: 230px;
-    background-image: url("/img/store.jpg");
+    background-image: url(img/breadcrumb-bg.jpg);
     background-size: cover; /* Ensures the image covers the entire section */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -277,6 +277,7 @@ ol {
     transition: transform 0.3s; /* Smooth scaling effect */
 }
 
+
 /* Optional: Add hover effect for cards */
 .product-card:hover {
     transform: scale(1.05); /* Slightly enlarge card on hover */
@@ -313,8 +314,10 @@ ol {
 /* Button Styling */
 .size-buttons {
     display: flex;
+    
+    align-items: center ;
     justify-content: center; /* Center buttons */
-    margin: 10px 0;
+    margin: 10px 0 ;
 }
 .quantity-buttons {
     display: flex;
@@ -366,4 +369,23 @@ ol {
 .buy-button:hover {
     background-color: #e50e0e; /* Darker shade on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
+}
+@media only screen and (max-width:950px ){
+    .product-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+    .product-card{
+        width:75%;
+        
+    }
+}
+
+@media only screen and (max-width:500px ){
+    .product-grid{
+        grid-template-columns: 1fr ;
+    }
+    .product-card{
+        width:75%;
+        
+    }
 }

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="header.css">
 </head>
 
 <body>
@@ -29,24 +30,35 @@
         <div class="loader"></div>
     </div>
     
-    <header>
-        <div class="logo">
-            <img src="/img/logo.png" alt="Logo">
-            <span>GymMatch</span>
+    <header  class="header2" >
+        <div class="logo-name">
+            <img id='logo' src="img copy/logo copy.png" alt="">
+            <p class="text-light GYMMATCH">GYM MATCH</p>
         </div>
-        <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Explore</a>
-            <a href="#">Trainers</a>
-            <a href="#">Programs</a>
-            <a href="#">Store</a>
+       
+
+        <nav class="links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About us</a>
+            <a href="#Projects">Explore</a>
+            <a href="#skills">Programs</a>
+            <a href="#skills">Store</a>
+
+            <div class="dropdown">
+                <button id="profile-btn" class="profile-btn">
+                    <img src="img copy/profile.png" alt="Profile" />
+                </button>
+                <div class="dropdown-content">
+                    <a href="#signin">Sign In</a>
+                    <a href="#signout">Sign Out</a>
+                </div>
+                
+            </div>
+
+            
         </nav>
-        <div class="auth-buttons">
-            <button class="signin-btn">Sign In</button>
-            <button class="signup-btn">Sign Up</button>
-        </div>
-        <button class="menu-btn">☰</button>
+
+        <button id="menu-btn"><img src="fonts/icons8-menu.svg" alt=""></button>
     </header>
 
     <!-- Mobile Menu -->
