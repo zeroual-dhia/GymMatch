@@ -29,7 +29,7 @@ body{
     border-radius: 70px;
     margin-bottom: 8px;
     margin-left: 60px;
-   
+   cursor: pointer;
    
 
 }
@@ -40,6 +40,7 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 13px;
+    cursor: pointer;
 }
 .button-container{
     margin-left: 60px;
@@ -53,6 +54,10 @@ body{
     margin-right: 5px;
     cursor: pointer;
 }
+.twodivas{
+    display: inline-block;
+}
+
 .button-a,.button-b,.button-c{
     cursor: pointer;
    
@@ -61,6 +66,20 @@ body{
     padding: 8px;
     border-radius: 6px;
     font-weight: bold;
+}
+input::placeholder,
+textarea::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+/* Ensure the text color in the input fields is black */
+input,
+textarea {
+  color: black;
+}
+.button-b,.button-c{
+    visibility: hidden;
 }
 .button-a:hover{
     
@@ -98,6 +117,7 @@ input{
 .texting{
     margin-bottom: 4px;
     font-size: 12px;
+    
 }
 .info{
     display: inline-block;
@@ -118,7 +138,8 @@ input:focus, input:active{
     
 }
 .input-mail{
-    width: 300px;
+    width: 160px;
+    
 }
 .cancel{
     position: relative;
@@ -156,6 +177,15 @@ input::placeholder{
     color: black;
 }
 .biography::placeholder{
+    position: absolute;
+   top: 0;
+   
+
+
+
+}
+
+.biography::placeholder:focus{
     position: absolute;
    top: 0;
    
@@ -226,3 +256,31 @@ input::placeholder{
     cursor: pointer;
     margin-bottom: 10px;
 }
+.lastcon{
+    display: flex;
+    
+}
+.hover-text {
+    position: absolute;
+    top: 50%;
+    right: 80%; 
+    transform: translateY(-50%);
+    color: rgb(167, 158, 158);
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    display: none; 
+    font-size: 12px;
+    margin-left: 0px; 
+}
+.image-container{
+    position: relative;
+    display: inline-block;
+}
+.image-container:hover .hover-text {
+    display: block; }
+
+
+
+
+
+
