@@ -96,21 +96,10 @@
         </div>
         
         <div class="input-block submit">
-            <button type="submit">Submit</button>
+            <button type="submit" id="submit">Submit</button>
         </div>
     </div>
 
-<script>
-    document.getElementById('toggleExtraActivities').addEventListener('click', function() {
-        const extraActivitiesContainer = document.getElementById('extraActivitiesContainer');
-        extraActivitiesContainer.classList.toggle('hidden');
-        // Change button text based on visibility
-        if (extraActivitiesContainer.classList.contains('hidden')) {
-            this.textContent = ' Extra Activities : ';
-        } else {
-            this.textContent = 'Hide Extra Activities';
-        }
-    });
-</script>
+<script src="form.js"></script>
 </body>
 </html>

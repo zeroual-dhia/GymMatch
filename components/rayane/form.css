@@ -211,3 +211,25 @@ button {
       font-size: 14px;
   }
 }
+/* Error message style */
+.error-message {
+  display: none; /* Hide the error message by default */
+  margin-top: 5px;
+  font-size: 14px;
+  color: #ff4d4d; /* Soft red for the error message */
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Add class 'visible' to make the error message fade in */
+.error-message.visible {
+  display: inline-block; /* Ensure the error message is displayed */
+  opacity: 1; /* Fade in effect */
+}
+
+/* Optional - Add a subtle animation to shake the input field when invalid */
+input:invalid, select:invalid, textarea:invalid {
+  animation: shake 0.5s ease-out;
+}
+
