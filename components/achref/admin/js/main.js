@@ -41,11 +41,7 @@
     }, {offset: '80%'});
 
 
-    // Calender
-    $('#calender').datetimepicker({
-        inline: true,
-        format: 'L'
-    });
+   
 
 
     // Testimonials carousel
@@ -164,4 +160,88 @@
 
 
 })(jQuery);
+
+
+
+function submitForm() {//addproduct form validation
+    let productImage = document.getElementById('productImage');
+    let productName = document.getElementById('productName');
+    let productQuantity = document.getElementById('productQuantity');
+    let productType = document.getElementById('productType');
+    let productSize = document.querySelector(".productSize");
+    let productPrice = document.getElementById('productPrice');
+
+    
+    const file = productImage.files[0];
+    if (!file) {
+        alert('Please select an image file.');
+        return;
+    }
+    if (file && !file.type.startsWith('image/')) {
+        alert('Please select a valid image file.');
+        return;
+    }
+
+    
+    
+    if (!productName.value.trim() || !productQuantity.value.trim() || 
+    !productType.value.trim() || !productPrice.value.trim()) {
+    alert('Please fill in all required fields.');
+    return;
+}
+
+
+const quantity = parseInt(productQuantity.value);
+const price = parseFloat(productPrice.value);
+if (isNaN(quantity) || quantity <= 0) {
+    alert('Quantity must be a positive number.');
+    return;
+}
+if (isNaN(price) || price <= 0) {
+    alert('Price must be a positive number.');
+    return;
+}
+
+if (productType.value.trim().toLowerCase() === 'Activewear & Footwear' && productSize.value === "") {
+    alert('Please select a size for Activewear & Footwear.');
+    return;
+}
+
+
+
+
+
+
+const reader = new FileReader();
+    reader.onload = function(e) {
+        const productData = {
+            image: e.target.result,  // Base64 encoded image
+            name: productName.value,
+            quantity: productQuantity.value,
+            type: productType.value,
+            size: productSize.value,
+            price: productPrice.value,
+        };
+
+        // Get existing products from Local Storage or create a new array
+        const products = JSON.parse(localStorage.getItem('products')) || [];
+        products.push(productData);
+
+        // Save updated product list to Local Storage
+        localStorage.setItem('products', JSON.stringify(products));
+
+
+
+
+    
+    productImage.value = '';
+    productName.value = '';
+    productQuantity.value = '';
+    productType.value = '';
+    productSize.value = '';
+    productPrice.value = '';
+
+    alert('Product added successfully!')};
+    reader.readAsDataURL(productImage.files[0]);
+}
 
