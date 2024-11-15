@@ -366,29 +366,34 @@
                             <h6 class="mb-4">Add product</h6>
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Select a picture of the product</label>
-                                <input class="form-control bg-dark" type="file" id="formFile" required>
+                                <input id="productImage" class="form-control bg-dark" type="file" id="formFile" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Product name</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" required>
+                                <input id="productName" type="text" class="form-control" id="exampleInputPassword1" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">product quantity</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" required>
+                                <input id="productQuantity" type="text" class="form-control" id="exampleInputPassword1" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Product type </label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" required>
+                                <input id="productType" type="text" class="form-control" id="exampleInputPassword1" required>
                             </div>
                             <div class="form-floating mb-3">
-                                <select class="form-select" id="floatingSelect"
+                                <select class="form-select productSize" id="floatingSelect"
                                     aria-label="Floating label select example">
                                     <option selected>Open the menu</option>
-                                    <option value="1">32</option>
-                                    <option value="2">34</option>
-                                    <option value="3">36</option>
-                                    <option value="1">38</option>
-                                    <option value="2">40</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                    <option value="XXL">XXL</option>
+                                    <option value="36">36</option>
+                                    <option value="38">38</option>
+                                    <option value="34">34</option>
+                                    <option value="42">42</option>
+                                    <option value="44">44</option>
                                     
 
                                     
@@ -398,9 +403,9 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Product price </label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" required>
+                                <input id="productPrice" type="text" class="form-control" id="exampleInputPassword1" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Add</button>
+                            <button onclick="submitForm()" type="submit" class="btn btn-primary">Add</button>
                         </div>
                     </div>
                 </div>
@@ -441,7 +446,7 @@
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- Template Javascript -->
+    >
     <script src="js/main.js"></script>
 </body>
 
