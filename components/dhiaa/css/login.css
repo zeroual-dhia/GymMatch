@@ -67,6 +67,7 @@ body {
 }
 
 .form-up {
+    position: relative;
     background-color: #FAF9F6;
     display: flex;
     align-items: center;
@@ -77,9 +78,11 @@ body {
     width: 100%;
     max-width: 750px;
     justify-self: center;
+    
 
 }
 .form-in {
+    position: relative;
     background-color: #FAF9F6;
     display: flex;
     align-items: center;
@@ -237,6 +240,20 @@ body {
 
 .container.active .toggle-right {
     transform: translateX(200%);
+}
+
+.form-element{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+}
+
+.error-message{
+padding-left:10px;
+color: #f13f13;
+font-size: 13px;
+
 }
 
 

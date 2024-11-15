@@ -10,34 +10,62 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form class="form-up" >
+            <form class="form-up" name="sign-up" >
                 <h1 style="margin-bottom: 20px;">Create Account</h1>
-               
-                <input type="text" placeholder="Name"  required/>
-                <input type="email" placeholder="Email" required/>
-                <input type="tel" id="phone" name="phone" placeholder="Phone number " pattern="^0[675][0-9]{8}$" required>
                 
-                <select id="item" name="item"  required>
-                    <option value="" disabled selected hidden>--Select your role--</option>
-                    <option value="item1">Member</option>
-                    <option value="item2">Owner</option>
-                    <option value="item3">Trainer</option>
-                    
-                </select>
-                <input type="number"placeholder="Your age " />
-
-                <input type="password" placeholder="Password" required/>
-              <button>Sign Up</button>
+                <div class="form-element">
+                    <input type="text"  id="Name" placeholder="Name"  />
+                    <span id="name-error" class="error-message"></span>
+                </div>
+               <div class="form-element">
+                <input type="text" id="Email" placeholder="Email" />
+                <span id="email-error" class="error-message"></span>
+               </div>
+              
+               <div class="form-element">
+                <input type="tel" id="phone" name="phone" placeholder="Phone number "  >
+                <span id="phone-error" class="error-message"></span>
+               </div>
+              
+                <div class="form-element">
+                    <select id="item" name="item"  required>
+                        <option value="" disabled selected hidden>--Select your role--</option>
+                        <option value="item1">Member</option>
+                        <option value="item2">Owner</option>
+                        <option value="item3">Trainer</option>
+                        
+                    </select>
+                </div>
+                
+               <div class="form-element">
+                <input type="number" id="age" placeholder="Your age " />
+                <span id="age-error" class="error-message"></span>
+               </div>
+              
+               <div class="form-element">
+                <input type="password" id="password" placeholder="Password" />
+                <span id="password-error" class="error-message"></span>
+               </div>
+               
+               
+                <button type="submit" >Sign up </button>
             </form>
         </div>
         <div class="form-container sign-in">
             <form class="form-in">
                 <h1 style="margin-bottom: 20px;">Sign In</h1>
-             
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                <div class="form-element">
+                    <input type="text" id="signin-email" name="Email" placeholder="Email" />
+                    <span id="signin-email-error" class="error-message"></span>
+                </div>
+              
+ <div class="form-element">
+    <input type="password" id="signin-password" name="Email" placeholder="Password"/>
+    <span id="signin-password-error" class="error-message"></span>
+                </div>
+              
+               <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
             </form>
         </div>
         <div class="toggle-container">
@@ -58,5 +86,6 @@
     </div>
 
     <script src="../js/login.js"></script>
+    
 </body>
 </html>

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../css/descreption.css">  
     <link rel="stylesheet" href="../css/header.css">
 
-
+    
 
 
 </head>
@@ -24,7 +24,8 @@
 
 
 <body class="p-0">
-    <header class="header2" >
+        
+    <header class="header2">
         <div class="logo-name">
             <img id='logo' src="../images/logo.png" alt="">
             <p class="text-light GYMMATCH">GYM MATCH</p>
@@ -32,18 +33,18 @@
        
 
         <nav class="links">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About us</a>
-            <a href="#Projects">Explore</a>
-            <a href="#skills">Programs</a>
-            <a href="#skills">Store</a>
+            <a href="/components/dounia/gym-match/home/index.html" class="active">Home</a>
+            <a href="/components/rayane/about_us.html">About us</a>
+            <a href="/components/rayane/explore.html">Explore</a>
+            <a href="/components/dhiaa/html/programs.html">Programs</a>
+            <a href="/components/dounia/gym-match/store/store.html">Store</a>
 
             <div class="dropdown">
                 <button id="profile-btn" class="profile-btn">
-                    <img src="../images/profile.png" alt="Profile" />
+                    <img src="/assets/images/profile.png" alt="Profile" />
                 </button>
                 <div class="dropdown-content">
-                    <a href="#signin">Sign In</a>
+                    <a href="login.html">Sign In</a>
                     <a href="#signout">Sign Out</a>
                 </div>
                 
@@ -52,9 +53,49 @@
             
         </nav>
 
-        <button id="menu-btn"><img src="../icons/icons8-menu.svg" alt=""></button>
-
+        <button id="menu-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+        aria-controls="offcanvasWithBothOptions"><img src="../icons/icons8-menu.svg" alt=""></button>
     </header>
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+
+    <nav class="menu">
+        <div class="logo-name">
+            <img id='logo' src="/assets/logo/logo.png" alt="">
+            <p class="text-light GYMMATCH">GYM MATCH</p>
+        </div>
+
+        <div class="pages">
+
+                <a href="/components/dounia/gym-match/home/index.html" class="active">Home</a>
+
+            
+                <a href="/components/rayane/about_us.html">About us</a>
+
+           
+                <a href="/components/rayane/explore.html">Explore</a>
+
+            
+                <a href="/components/dhiaa/html/programs.html">Programs</a>
+
+            
+                <a href="/components/dounia/gym-match/store/store.html">Store</a>
+
+            
+          
+        </div>
+
+
+
+        <div class="profile">
+            <a href="/components/dounia/gym-match/store/store.html" class="button"><img src="/assets/images/profile.png" alt=""> <p> Profile</p></a>
+            <a href="/components/dounia/gym-match/store/store.html" class="button"><img src="../icons/icons8-logout-32.png" alt=""> <p>Login</p></a>
+            <a href="/components/dounia/gym-match/store/store.html" class="button"><img src="../icons/icons8-logout-32.png" alt=""> <p> Logout</p></a>
+        </div>
+
+
+    </nav>
+</div>
       
     <div class="program-descreption container-fluid ">
         <div class="row justify-content-center">
@@ -431,6 +472,7 @@
     <script>
         new WOW().init();
     </script>
+    
 </body>
 
 
