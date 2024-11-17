@@ -137,15 +137,23 @@ function deleteAccount(password) {
     document.querySelector(".button-c").style.visibility="visible";
     
   })
-  document.querySelector(".button-b").addEventListener('click',()=>{
+  document.querySelector(".button-b").addEventListener('click',function(event){
     
-    inputs.forEach(input => input.disabled = true);
+    event.preventDefault();
+
     
-    document.querySelector(".button-b").style.visibility="hidden";
-    document.querySelector(".button-c").style.visibility="hidden";
-   validateform();
-   updateInitialValues();
+    if (!validateform()) {
+        alert("The form is not valid. Please correct the errors and try again.");
+        return; 
+    }
+
    
+    inputs.forEach(input => input.disabled = true);
+    document.querySelector(".button-b").style.visibility = "hidden";
+    document.querySelector(".button-c").style.visibility = "hidden";
+
+    
+    updateInitialValues();
 
 
   })
