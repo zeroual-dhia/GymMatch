@@ -14,8 +14,10 @@ document.querySelector('.form-up').addEventListener('submit',(event)=>{
     formvalidation(event);
 })
 
+document.querySelector('.form-in').addEventListener('submit',(event)=>{
+    forminvalidation(event);
 
-
+})
 function formvalidation (event){
 
     event.preventDefault();
@@ -81,10 +83,12 @@ function formvalidation (event){
        isvalid=false;
      }
 
-   // real time validity checking 
-
+   if (isvalid){
+    window.location.href="/components/dounia/gym-match/home/index.html"
+   }
 
     return isvalid ;
+
 }
 
 
@@ -129,3 +133,37 @@ document.getElementById('password').addEventListener('input', () => {
 
 
 
+
+// form-in 
+
+function forminvalidation(event){
+    event.preventDefault();
+    let isvalid=true;
+    const email = document.getElementById('signin-email').value;
+    const password= document.getElementById('signin-password').value ;
+
+
+    const eamil_error =document.getElementById('signin-email-error');
+    const password_error=document.getElementById('signin-password-error') ;
+
+
+    eamil_error.textContent="";
+    password_error.textContent="";
+
+
+    if(email!="dhiaazeroual@gmail.com"){
+        eamil_error.textContent="email not correct " ;
+        isvalid=false;
+    }
+
+    if(password!="123456"){
+        password_error.textContent="password not correct ";
+        isvalid=false;
+    }
+
+    
+    if (isvalid){
+        window.location.href="/components/dounia/gym-match/home/index.html"
+       }
+    
+}

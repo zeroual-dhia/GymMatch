@@ -38,6 +38,13 @@ p {
     text-align: center;
     color: #f13f13;
 }
+.error-message{
+    padding-left:10px;
+    color: #f13f13;
+    font-size: 13px;
+    
+    }
+    
 
 .btn.btn-primary {
     width: 100%;
