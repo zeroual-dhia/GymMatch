@@ -27,38 +27,47 @@
         <div class="col-12">
             <div class="d-flex flex-column">
                 <p class="text mb-1">Person Name</p>
-                <input class="form-control mb-3" type="text" placeholder="Name" value="Barry Allen">
+                <input class="form-control mb-1" type="text" placeholder="Name" value="Barry Allen">
+                <span  id="name-error" class="error-message mb-2"></span>
+
             </div>
         </div>
         <div class="col-12">
             <div class="d-flex flex-column">
                 <p class="text mb-1">Card Number</p>
-                <input class="form-control mb-3" type="text" placeholder="1234 5678 435678">
+                <input class="form-control mb-1" type="text" placeholder="1234 5678 435678">
+                <span id="card-error" class="error-message mb-2"></span>
+
+
             </div>
         </div>
         <div class="col-6">
             <div class="d-flex flex-column">
                 <p class="text mb-1">Expiry</p>
-                <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
+                <input class="form-control mb-1" type="text" placeholder="MM/YYYY">
+                <span id="expiry-error" class="error-message mb-2"></span>
+
             </div>
         </div>
         <div class="col-6">
             <div class="d-flex flex-column">
                 <p class="text mb-1">CVV/CVC</p>
-                <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
+                <input class="form-control mb-1 pt-2 " type="password" placeholder="***">
+                <span id="cvv-error" class="error-message mb-2"></span>
+
             </div>
         </div>
         <div class="col-12">
-            <div class="btn btn-primary mb-3">
+            <button type="submit" class="btn btn-submit btn-primary mb-3">
                 <span class="ps-3">Pay $243</span>
                 <span class="fas fa-arrow-right"></span>
-            </div>
+            </button>
         </div>
     </div>
 </form>
     
 </div>
 </div>
-<script src="../js/header.js"></script>
+<script src="../js/payment.js"></script>
 
 </body>
