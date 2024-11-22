@@ -193,8 +193,8 @@ function deleteAccount(password) {
     let email = document.querySelector(".input-mail").value;
     let date = document.querySelector(".datee").value;
 
-    const phoneRegex = /^\+?\d{8,15}$/;  
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^([0]{1}[5-7]{1}[0-9]{8})$/;  
+    const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 
     if (username.length < 5) {
         alert("Username must be at least 5 characters long.");
