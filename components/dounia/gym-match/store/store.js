@@ -1,4 +1,4 @@
-
+document.addEventListener("DOMContentLoaded", loadProducts);
 //here we just use local storage but when we create the backend it will be changed
 function loadProducts() {
     const productList = document.querySelector(".product-grid");
@@ -68,5 +68,4 @@ function loadProducts() {
         productList.appendChild(productDiv);
     });
 }
-
 
