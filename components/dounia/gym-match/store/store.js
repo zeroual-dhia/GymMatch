@@ -70,4 +70,3 @@ function loadProducts() {
 }
 
 
-window.onload = loadProducts;
