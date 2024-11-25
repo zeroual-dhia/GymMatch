@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+}
+
+.program-description {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Aligns content to the bottom */
+}
+
+.program-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+}
+
+.motivation {
+    font-size: 1.2rem;
+    border-left: 5px solid #ff1313;
+    font-family: 'Rubik', sans-serif;
+}
+
+.workout-summary {
+    border-top: 7px outset #ff1313;
+    background-color: #cdc8c8;
+    border-radius: 5px;
+}
+
+.caption {
+    font-size: 1.5rem;
+    color: #000;
+    font-family: 'Oswald', sans-serif;
+}
+
+.table td {
+    background-color: #cdc8c8;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 15px 10px;
+    font-family: 'Rubik', sans-serif;
+}
+
+#col1 {
+    font-weight: 700;
+}
+
+.text h3 {
+    color: #ff1313;
+    font-size: 2.5rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+.text p {
+    font-family: "Rubik", sans-serif;
+    word-spacing: 2px;
+}
+:root {
+    --primary-color: #ff1313;
+    --secondary-color: #f8fafc;
+    --accent-color: #020617;
+}
+
+.card {
+    margin: 0.5rem; /* Space between cards */
+    flex: 1 1 calc(33.33% - 1rem); /* Responsive width for three cards per row */
+    border-radius: 1rem;
+    background-color: #000000;
+    padding: 1.5rem;
+    min-width: 280px; /* Ensure a minimum size */
+    height: 600px; /* Set a fixed height for uniformity */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+    display: flex; /* Use flexbox for internal layout */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Space out children evenly */
+    overflow: hidden; /* Prevent overflow of content */
+}
+
+/* Ensure the parent container of cards uses flexbox */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap */
+    justify-content: space-between; /* Space between cards */
+}
+
+
+
+h1{
+    font-size: smaller;
+}
+/* Other styles remain unchanged */
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #f8fafc90;
+}
+
+.price {
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.desc {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.625;
+    text-wrap: pretty;
+    color: #f8fafc90;
+}
+
+.lists {
+    margin-bottom: 1.5rem;
+    flex: 1 1 0%;
+    color: #f8fafc90;
+}
+
+.lists .list {
+    margin-bottom: 0.5rem;
+    display: flex;
+    margin-left: 0.5rem;
+}
+
+.lists .list svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+    color: #ff1313;
+}
+
+.action {
+    border: none;
+    outline: none;
+    display: inline-block;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.action:hover {
+    background-color: #ff1313;
+}
+
+/* Class Time Table Section */
+.classtime-section {
+    background: #000000;
+    padding-top: 90px;
+}
+
+.classtime-section .section-title {
+    margin-bottom: 40px;
+    color: white;
+
+}
+
+.timetable-controls {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.timetable-controls ul li {
+    list-style: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    display: inline-block;
+    margin-right: 80px;
+    cursor: pointer;
+    position: relative;
+}
+
+.timetable-controls ul li.active {
+    color: #e4381C;
+}
+
+.timetable-controls ul li:after {
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 100%;
+    height: 2px;
+    background: #e4381C;
+    content: "";
+    opacity: 0;
+}
+
+.timetable-controls ul li:last-child {
+    margin-right: 0;
+}
+
+.classtime-table .ts-item {
+    transition: all 0.4s;
+}
+
+.classtime-table.filtering .ts-item {
+    opacity: 0;
+}
+
+.classtime-table.filtering .ts-item.show {
+    opacity: 1;
+}
+
+.classtime-table table {
+    width: 100%;
+    border: 1px solid #1f1f1f;
+    background: #212121;
+    text-align: center;
+}
+
+.classtime-table table thead tr th {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+    padding: 25px 5px;
+}
+
+.classtime-table table tbody {
+    border-top: 1px solid #171717;
+}
+
+.classtime-table table tbody tr td {
+    text-align: center;
+    border-right: 1px solid #171717;
+    border-bottom: 1px solid #171717;
+    width: 146px;
+    padding: 26px 10px 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.classtime-table table tbody tr td:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #e16521, #e4381C);
+    content: "";
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+.classtime-table table tbody tr td.hover-bg:hover:after {
+    opacity: 1;
+}
+
+.classtime-table table tbody tr td.hover-bg:hover h6 {
+    color: #ffffff;
+}
+
+.classtime-table table tbody tr td.workout-time {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "Oswald", sans-serif;
+}
+
+.classtime-table table tbody tr td span {
+    font-size: 16px;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 7px;
+}
+
+.classtime-table table tbody tr td h6 {
+    color: #e4381C;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 calc(100% - 1rem); /* One card per row */
+        height: 600px; /* Adjust height for smaller screens */
+    }
+}
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 1rem); /* Two cards per row */
+        height: 600px; /* Adjust height for smaller screens */
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Gyms</title>
+    <link rel="stylesheet" href="../css/explore.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/preloader.css">
+</head>
+<body>
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <header class="header2">
+        <div class="logo-name">
+            <img id='logo' src="/assets/logo/logo.png" alt="">
+            <p class="text-light GYMMATCH">GYM MATCH</p>
+        </div>
+       
+
+        <nav class="links">
+            <a href="/components/dounia/gym-match/home/index.html" class="active">Home</a>
+            <a href="/components/rayane/about_us.html">About us</a>
+            <a href="/components/rayane/explore.html">Explore</a>
+            <a href="/components/dhiaa/html/programs.html">Programs</a>
+            <a href="/components/dounia/gym-match/store/store.html">Store</a>
+
+            <div class="dropdown">
+                <button id="profile-btn" class="profile-btn">
+                    <img src="/assets/images/profile.png" alt="Profile" />
+                </button>
+                <div class="dropdown-content">
+                    <a href="login.html">Sign In</a>
+                    <a href="#signout">Sign Out</a>
+                </div>
+                
+            </div>
+
+            
+        </nav>
+
+        <button id="menu-btn"><img src="../icons/icons8-menu.svg" alt=""></button>
+
+    </header>
+    <h1 class="title-text"><span class="animated-title">Explore Gyms</span></h1>
+    <center>
+    <div class="search-container">
+        <div class="InputContainer">
+            <div class="searchFields">
+                <input
+                    placeholder="Search by Name / location"
+                    id="nameInput"
+                    class="input"
+                    name="name"
+                    type="text"
+                />
+            </div>
+            <label class="labelforsearch" for="nameInput">
+                <svg class="searchIcon" viewBox="0 0 512 512">
+                    <path
+                        d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+                    ></path>
+                </svg>
+            </label>
+        </div>
+    </center>
+    <center> <h2>Popular Gyms</h2> </center>
+    <div class="gym-list">
+        <div class="gym-card">
+            <a href="info.html" class="gym-link">
+                <img src="../assets/images/img/class-1.jpg" alt="Powerhouse Gym">
+                <h3>Powerhouse Gym</h3>
+                <p>Location: Downtown<br>Facilities: Weightlifting, Cardio, Classes</p>
+            </a>
+        </div>
+        <div class="gym-card">
+            <a href="info.html" class="gym-link">
+                <img src="../assets/images/img/gym2pic.jpg" alt="Fitness Zone">
+                <h3>Fitness Zone</h3>
+                <p>Location: Uptown<br>Facilities: Swimming, Yoga, Personal Training</p>
+            </a>
+        </div>
+        <div class="gym-card">
+            <a href="info.html" class="gym-link">
+                <img src="../assets/images/img/gym3.webp" alt="Bodybuilding Factory">
+                <h3>Bodybuilding Factory</h3>
+                <p>Location: East Side<br>Facilities: Bodybuilding, Nutrition Counseling</p>
+            </a>
+        </div>
+    </div>
+ 
+    <script src="/components/dhiaa/js/header.js"></script>
+
+ <script src="../js/explore.js"></script>
+</body>
+</html>
