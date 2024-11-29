@@ -68,16 +68,10 @@
     <!-- Breadcrumb Section End -->
 
     <section class="search-section">
+        <!-- Categories Button -->
         <button class="categories-button" id="categories-toggle">Categories</button>
-        <div class="search-container">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" class="search-bar" placeholder="Search for items...">
-        </div>
-        <button class="cart-button">
-            <i class="fas fa-shopping-cart"></i> Cart
-        </button>
         
-         <!-- Category List (Dropdown) -->
+        <!-- Category List (Dropdown) -->
         <div class="category-list" id="category-list">
             <ul>
                 <li>Supplements & Nutrition</li>
@@ -85,11 +79,40 @@
                 <li>Gym Equipment & Accessories</li>
             </ul>
         </div>
+        
+        <!-- Search Container -->
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-bar" id="search-input" placeholder="Search for items...">
+        </div>
+        
+        <!-- Cart Button -->
+        <button class="cart-button">
+            <i class="fas fa-shopping-cart"></i> Cart
+        </button>
+    </section>
+    
+  <!-- Shopping List Container (hidden by default) -->
+       <div id="shopping-list-container" class="shopping-list-container" style="display:none;">
+            <div class="shopping-list-header">
+              <button id="close-button" class="close-button">X</button>
+              <h2>Your Shopping List</h2>
+            </div>
+
+            <ul id="shopping-list"></ul>
+
+             <div class="shopping-list-footer">
+                <button id="cancel-button" class="cancel-button">Cancel</button>
+                <button id="pay-button" class="pay-button">Pay</button>
+            </div>
+        </div>
+        
+       
     </section>
     <section class="section-parag">
         <div class="section-title">
             <h2>Welcome to GymMatch Store!</h2>
-            <p>At GymMatch, we’re dedicated to providing top-quality fitness essentials to support your goals. Our store is organized into three categories: Supplements & Nutrition for premium protein powders and energy boosters, Activewear & Footwear for stylish and durable workout clothing, and Gym Equipment for all your training needs, including dumbbells and yoga mats. For your convenience, we offer flexible payment options—choose to pay securely online or select cash-on-delivery with our hand-to-hand payment at delivery. Shop with GymMatch Store and elevate your fitness journey with everything you need!</p>
+            <p><strong> GymMatch, we are dedicated to providing top-quality fitness essentials to support your goals. Our store is organized into three categories: Supplements & Nutrition for premium protein powders and energy boosters, Activewear & Footwear for stylish and durable workout clothing, and Gym Equipment for all your training needs, including dumbbells and yoga mats. For your convenience, we offer flexible payment options—choose to pay securely online or select cash-on-delivery with our hand-to-hand payment at delivery. Shop with GymMatch Store and elevate your fitness journey with everything you need!</strong></p>
         </div>
     </section>
 
@@ -97,349 +120,298 @@
       <!-- Product Grid Section -->
    <section class="product-grid">
     <!-- Example of a Product Card -->
-    <div class="product-card">
-        <img src="img/workset1.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/workset1.jpg" alt="Product Image" data-category="Activewear & Footwear">
         <div class="product-info">
-            <h4>Black Workout Set</h4>
+            <h4>black Workout Set</h4>
             <div class="price">3000DA</div>
-            <div class="category">Activewear & Footwear</div>
-            <div class="availability">Available</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
         </div>
         <div class="size-buttons">
-            <button>S</button>
-            <button>M</button>
-            <button>L</button>
-            <button>XL</button>
-            <button>XXL</button>
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
-    <div class="product-card">
-        <img src="img/workset2.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/workset2.jpg" alt="Product Image" data-category="Activewear & Footwear">
         <div class="product-info">
-            <h4>White Workout set</h4>
+            <h4>White Workout Set</h4>
             <div class="price">3000DA</div>
-            <div class="category">Activewear & Footwear</div>
-            <div class="availability">Available</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
         </div>
         <div class="size-buttons">
-            <button>S</button>
-            <button>M</button>
-            <button>L</button>
-            <button>XL</button>
-            <button>XXL</button>
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
-    <div class="product-card">
-        <img src="img/workset3.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/workset3.jpg" alt="Product Image" data-category="Activewear & Footwear">
         <div class="product-info">
-            <h4>Gray Workout set </h4>
-            <div class="price">2500DA</div>
-            <div class="category">Activewear & Footwear</div>
-            <div class="availability">Available</div>
+            <h4>gray Workout Set</h4>
+            <div class="price">3000DA</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
         </div>
         <div class="size-buttons">
-            <button>S</button>
-            <button>M</button>
-            <button>L</button>
-            <button>XL</button>
-            <button>XXL</button>
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
-    <div class="product-card">
-        <img src="img/workset4.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/workset4.jpg" alt="Product Image" data-category="Activewear & Footwear">
         <div class="product-info">
-            <h4>Green Workout set</h4>
-            <div class="price">2500DA</div>
-            <div class="category">Activewear & Footwear</div>
-            <div class="availability">Available</div>
+            <h4>green Workout Set</h4>
+            <div class="price">3000DA</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
         </div>
         <div class="size-buttons">
-            <button>S</button>
-            <button>M</button>
-            <button>L</button>
-            <button>XL</button>
-            <button>XXL</button>
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
-    <div class="product-card">
-        <img src="img/hoodies1.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/hoodies1.jpg" alt="Product Image" data-category="Activewear & Footwear">
         <div class="product-info">
-            <h4>Black Hoodie</h4>
-            <div class="price">2500DA</div>
-            <div class="category">Activewear & Footwear</div>
-            <div class="availability">Available</div>
+            <h4>black hoodie</h4>
+            <div class="price">3000DA</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
         </div>
         <div class="size-buttons">
-            <button>S</button>
-            <button>M</button>
-            <button>L</button>
-            <button>XL</button>
-            <button>XXL</button>
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
-    <div class="product-card">
-        <img src="img/hoodies2.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/hoodies2.jpg" alt="Product Image" data-category="Activewear & Footwear">
         <div class="product-info">
-            <h4>Black Hoodie</h4>
-            <div class="price">2500DA</div>
-            <div class="category">Activewear & Footwear</div>
-            <div class="availability">Available</div>
+            <h4>black hoodie</h4>
+            <div class="price">3000DA</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
         </div>
         <div class="size-buttons">
-            <button>S</button>
-            <button>M</button>
-            <button>L</button>
-            <button>XL</button>
-            <button>XXL</button>
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
 
-    <div class="product-card">
-        <img src="img/shoes1.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/shoes1.jpg" alt="Product Image" data-category="Activewear & Footwear">
         <div class="product-info">
-            <h4>Black Shoes</h4>
+            <h4>black shoes</h4>
             <div class="price">3000DA</div>
-            <div class="category">Activewear & Footwear</div>
-            <div class="availability">Available</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
         </div>
         <div class="size-buttons">
-            
-            <button>36</button>
-            <button>38</button>
-            <button>40</button>
-            <button>42</button>
-            <button>44</button>
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
-    <div class="product-card">
-        <img src="img/shoes2.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/shoes2.jpg" alt="Product Image" data-category="Activewear & Footwear">
         <div class="product-info">
-            <h4>Black Shoes</h4>
+            <h4>white shoes </h4>
             <div class="price">3000DA</div>
-            <div class="category">Activewear & Footwear</div>
-            <div class="availability">Available</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
         </div>
         <div class="size-buttons">
-            
-            <button>36</button>
-            <button>38</button>
-            <button>40</button>
-            <button>42</button>
-            <button>44</button>
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
+        </div>
+        <button class="buy-button">Buy</button>
+    </div>
+    <div class="product-card" data-id="1">
+        <img src="img/resistance-bands.jpg" alt="Product Image" data-category="Activewear & Footwear">
+        <div class="product-info">
+            <h4>resistance bands</h4>
+            <div class="price">3000DA</div>
+        </div>
+        <div class="quantity-buttons">
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
+        </div>
+        <div class="size-buttons">
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
 
-    <div class="product-card">
-        <img src="img/resistance-bands.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/resistance-bands2.jpg" alt="Product Image" data-category="Gym Equipment & Accessories">
         <div class="product-info">
-            <h4>Resistance Bands</h4>
+            <h4>resistance bands</h4>
             <div class="price">3000DA</div>
-            <div class="category">Gym Equipment & Accessories</div>
-            <div class="availability">Available</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
+        </div>
+        <div class="size-buttons">
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
-
-    <div class="product-card">
-        <img src="img/resistance-bands2.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/jump-ropes.jpg" alt="Product Image" data-category="Gym Equipment & Accessories">
         <div class="product-info">
-            <h4>Resistance Bands</h4>
+            <h4>jump jump-ropes</h4>
             <div class="price">3000DA</div>
-            <div class="category">Gym Equipment & Accessories</div>
-            <div class="availability">Available</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
+        </div>
+        <div class="size-buttons">
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
-    <div class="product-card">
-        <img src="img/yoga-mat.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/protain.jpg" alt="Product Image" data-category="Supplements & Nutrition">
         <div class="product-info">
-            <h4>Yoga Mat</h4>
-            <div class="price">2000DA</div>
-            <div class="category">Gym Equipment & Accessories</div>
-            <div class="availability">Available</div>
-        </div>
-        <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
-        </div>
-        <button class="buy-button">Buy</button>
-    </div>
-    <div class="product-card">
-        <img src="img/jump-ropes.jpg" alt="Product Image">
-        <div class="product-info">
-            <h4>Jump Ropes</h4>
-            <div class="price">1000DA</div>
-            <div class="category">Gym Equipment & Accessories</div>
-            <div class="availability">Available</div>
-        </div>
-        <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
-        </div>
-        <button class="buy-button">Buy</button>
-    </div>
-    <div class="product-card">
-        <img src="img/protain.jpg" alt="Product Image">
-        <div class="product-info">
-            <h4>Protein</h4>
+            <h4>protain</h4>
             <div class="price">3000DA</div>
-            <div class="category">Supplements & Nutrition</div>
-            <div class="availability">Available</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
+        </div>
+        <div class="size-buttons">
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
-    <div class="product-card">
-        <img src="img/creatine.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/creatine.jpg" alt="Product Image" data-category="Supplements & Nutrition">
         <div class="product-info">
             <h4>creatine</h4>
-            <div class="price">2000DA</div>
-            <div class="category">Supplements & Nutrition</div>
-            <div class="availability">Available</div>
+            <div class="price">3000DA</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
+        </div>
+        <div class="size-buttons">
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
-    <div class="product-card">
-        <img src="img/energy-bars.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/energy-bars.jpg" alt="Product Image" data-category="Supplements & Nutrition">
         <div class="product-info">
-            <h4>Energy Bars</h4>
-            <div class="price">500DA</div>
-            <div class="category">Supplements & Nutrition</div>
-            <div class="availability">Available</div>
+            <h4>energy bars</h4>
+            <div class="price">3000DA</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
+        </div>
+        <div class="size-buttons">
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
-    <div class="product-card">
-        <img src="img/hydration-drinks.jpg" alt="Product Image">
+    <div class="product-card" data-id="1">
+        <img src="img/hydration-drinks.jpg" alt="Product Image" data-category="Supplements & Nutrition">
         <div class="product-info">
-            <h4>Hydratation Drinks</h4>
-            <div class="price">700DA</div>
-            <div class="category">Supplements & Nutrition</div>
-            <div class="availability">Available</div>
+            <h4>hydration drinks</h4>
+            <div class="price">3000DA</div>
         </div>
         <div class="quantity-buttons">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button class="quantity-minus">-</button>
+            <input type="number" class="quantity-value" value="1" min="1">
+            <button class="quantity-plus">+</button>
+        </div>
+        <div class="size-buttons">
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
         </div>
         <button class="buy-button">Buy</button>
     </div>
 </section>
 <script src="/components/dhiaa/js/header.js"></script>
 <script src="/components/dounia/gym-match/store/store.js"></script>
-<script>
-    // Select the quantity display and buttons
-    const quantityDisplay = document.getElementById('quantity-display');
-    const increaseBtn = document.getElementById('increase-btn');
-    const decreaseBtn = document.getElementById('decrease-btn');
 
-    // Initialize quantity
-    let quantity = 1;
 
-    // Function to increase quantity
-    increaseBtn.addEventListener('click', () => {
-        quantity++;
-        quantityDisplay.textContent = quantity;
-    });
-
-    // Function to decrease quantity, with a minimum value of 1
-    decreaseBtn.addEventListener('click', () => {
-        if (quantity > 1) {
-            quantity--;
-            quantityDisplay.textContent = quantity;
-        }
-    });
-    // Select the button and category list elements
-    const categoriesToggle = document.getElementById('categories-toggle');
-    const categoryList = document.getElementById('category-list');
-
-    // Toggle the category list visibility on button click
-    categoriesToggle.addEventListener('click', () => {
-        // Toggle between showing and hiding the category list
-        categoryList.style.display = categoryList.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Optional: Hide the category list if the user clicks outside of it
-    document.addEventListener('click', (event) => {
-        if (!categoriesToggle.contains(event.target) && !categoryList.contains(event.target)) {
-            categoryList.style.display = 'none';
-        }
-    });
-</script>
 </body>
 </html>
 
