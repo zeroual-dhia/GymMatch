@@ -343,16 +343,17 @@ ol {
     margin-top: 15px;
 }
 
-
 /* Product Grid */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic columns */
     gap: 20px;
     padding: 40px;
     background-color: black;
+    justify-content: center; /* Center cards when fewer columns are present */
 }
 
+/* Product Card */
 .product-card {
     background-color: #444;
     border-radius: 10px;
@@ -373,6 +374,7 @@ ol {
     max-height: 200px;
 }
 
+/* Product Info */
 .product-info h4 {
     margin: 10px 0;
     font-size: 1.5em;
@@ -401,27 +403,29 @@ ol {
 .size-buttons button:hover,
 .quantity-buttons button:hover,
 .buy-button:hover {
-    background-color: #ff1313; /* Change to a prominent color on hover */
+    background-color: #ff1313;
 }
 
-/* Active size button style */
+/* Active Size Button Style */
 .size-button.selected-size {
-    background-color: #ff1313; /* Highlight color for selected size */
+    background-color: #ff1313;
     color: white;
-    border: 1px solid #ff1313; /* Border to match the background */
+    border: 1px solid #ff1313;
 }
 
+/* Quantity Value */
 .quantity-value {
-    width: 50px; /* Adjust width for smaller size */
-    height: 30px; /* Adjust height */
-    text-align: center; /* Center the number */
-    font-size: 14px; /* Set font size */
-    border: 1px solid #ccc; /* Border for better visibility */
-    border-radius: 5px; /* Rounded corners for aesthetics */
-    padding: 0; /* Remove extra padding */
-    margin: 0 5px; /* Add margin for spacing between buttons */
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0 5px;
 }
 
+/* Buy Button */
 .buy-button {
     background-color: #ff1313;
     margin-top: 10px;
@@ -432,6 +436,27 @@ ol {
     background-color: #e50e0e;
     transform: scale(1.05);
 }
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr); /* Single column for small screens */
+        padding: 20px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    }
+}
+
+@media (min-width: 993px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for large screens */
+    }
+}
+
 /* Styling for the shopping list container */
 #shopping-list-container {
     position: fixed; /* Keeps the container fixed while scrolling */
@@ -441,8 +466,8 @@ ol {
     background-color: white; /* White background */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
     border-radius: 10px; /* Rounded corners */
-    width: 500px; /* Increased width */
-    max-height: 80vh; /* Increased height for larger list */
+    width: 500px; /* Default width */
+    max-height: 80vh; /* Height limit */
     overflow-y: auto; /* Scroll within the container if content exceeds height */
     padding: 20px; /* Spacing around the content */
     z-index: 1000; /* Ensures it appears above other elements */
@@ -521,35 +546,50 @@ ol {
     opacity: 0.9;
 }
 
-/* Additional responsiveness for smaller screens */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     #shopping-list-container {
-        width: 90%; /* Adjust width for smaller screens */
-        max-height: 85vh; /* Adjust height for smaller screens */
+        width: 90%; /* Reduce width for smaller screens */
+        max-height: 70vh; /* Reduce max height */
+        padding: 15px; /* Adjust padding */
     }
 
-    #cancel-button, #pay-button {
-        font-size: 14px; /* Adjust button font size for smaller screens */
+    .shopping-list-header h2 {
+        font-size: 18px; /* Adjust font size */
     }
 
     #shopping-list li {
-        font-size: 14px; /* Adjust list font size for smaller screens */
+        font-size: 14px; /* Adjust list item font size */
+        margin-bottom: 10px; /* Reduce spacing between items */
+    }
+
+    .close-button {
+        width: 30px; /* Adjust size */
+        height: 30px;
+        font-size: 14px; /* Adjust font size */
+    }
+
+    #cancel-button, #pay-button {
+        font-size: 14px; /* Adjust font size */
+        padding: 10px 15px; /* Adjust padding */
     }
 }
 
-
-
-/* Responsive Product Grid */
-@media (max-width: 768px) {
-    .product-card img {
-        max-height: 150px;
+@media (max-width: 480px) {
+    #shopping-list-container {
+        width: 100%; /* Use full width */
+        max-height: 60vh; /* Further reduce max height */
+        border-radius: 0; /* Remove rounded corners */
     }
 
-    .product-info h4 {
-        font-size: 1.3em;
+    .shopping-list-footer {
+        flex-direction: column; /* Stack buttons vertically */
+        margin-top: 10px; /* Adjust spacing */
     }
 
-    .price {
-        font-size: 1.1em;
+    #cancel-button, #pay-button {
+        width: 100%; /* Make buttons full width */
+        margin: 5px 0; /* Add vertical spacing */
     }
 }
+
