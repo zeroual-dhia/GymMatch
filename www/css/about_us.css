@@ -1,235 +1,152 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
-
-/* Preloder */
-*{
+/* Global Reset and Typography */
+* {
     font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+body {
+    background-color: #111; /* Dark background for a sleek look */
+    color: #ffffff;
+}
+
+h2, h4, h5, p {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+}
+
+#image1 {
+    width: 80%;
+    height: 300px;
+}
+
+/* Preloader */
 #preloder {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	z-index: 999999;
-	background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .loader {
-	width: 40px;
-	height: 40px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -13px;
-	margin-left: -13px;
-	border-radius: 60px;
-	animation: loader 0.8s linear infinite;
-	-webkit-animation: loader 0.8s linear infinite;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    border-radius: 60px;
+    animation: loader 0.8s linear infinite;
 }
 
-@keyframes loader {
-	0% {
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
-		border: 4px solid #f44336;
-		border-left-color: transparent;
-	}
-	50% {
-		-webkit-transform: rotate(180deg);
-		transform: rotate(180deg);
-		border: 4px solid #673ab7;
-		border-left-color: transparent;
-	}
-	100% {
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg);
-		border: 4px solid #f44336;
-		border-left-color: transparent;
-	}
+/* Header Styling */
+.header2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    padding: 20px 0;
 }
 
-@-webkit-keyframes loader {
-	0% {
-		-webkit-transform: rotate(0deg);
-		border: 4px solid #f44336;
-		border-left-color: transparent;
-	}
-	50% {
-		-webkit-transform: rotate(180deg);
-		border: 4px solid #673ab7;
-		border-left-color: transparent;
-	}
-	100% {
-		-webkit-transform: rotate(360deg);
-		border: 4px solid #f44336;
-		border-left-color: transparent;
-	}
+.header2 .logo-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-/*---------------------
-  Breadcrumb Section
------------------------*/
 
+.header2 .logo-name p {
+    color: #f44336;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #e16521;
+    border-radius: 4px;
+}
+
+/* Breadcrumb Section */
 .breadcrumb-section {
-    height: 400px; 
-    background-image: url("../assets/images/gallery/hero2.png");
-    background-size: cover; 
-    background-position: center; 
-    display: flex; 
+    height: 400px;
+    background-image: url('../assets/images/gallery/hero2.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .breadcrumb-text {
-    text-align: center;
-  }
-  
-  .breadcrumb-text h2 {
-    font-size: 48px;
-    font-weight: 500;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-family: 'Oswald',sans-serif;
-    margin-bottom: 14px;
-  }
-  
-  .breadcrumb-text .breadcrumb-controls a {
-    font-size: 16px;
-    color: #ffffff;
-    margin-right: 15px;
     position: relative;
-  }
-  
-  .breadcrumb-text .breadcrumb-controls a:after {
+}
+
+.breadcrumb-section:after {
+    content: '';
     position: absolute;
-    right: -13px;
-    top: -2px;
-    content: "";
-    font-size: 16px;
-    color: #ffffff;
-  }
-  
-  .breadcrumb-text .breadcrumb-controls a i {
-    margin-right: 2px;
-  }
-  
-  .breadcrumb-text .breadcrumb-controls span {
-    font-size: 16px;
-    color: #ffffff;
-  }
-/*---------------------
-  AboutUs Section
------------------------*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.breadcrumb-text h2 {
+    font-size: 48px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+/* About Us Section */
 .aboutus-section {
-    background: #000000; /* Set background color to black */
-    padding-top: 90px; /* Top padding */
-    padding-bottom: 80px; /* Bottom padding */
-    margin-bottom: 0; /* Ensure no bottom margin */
+    padding: 90px 0;
+    background: #000;
 }
 
 .aboutus-page-text {
-    text-align: center; /* Center text */
-    color: #ffffff; /* White text color */
-    animation: slideIn 1s ease-out; /* Animation for the entire section */
+    text-align: center;
+    color: #fff;
 }
 
 .aboutus-page-text .section-title {
-    margin-bottom: 45px; /* Margin below title */
-    animation: fadeIn 1s ease-in /* Fade-in animation for title */
-    
+    margin-bottom: 45px;
 }
-.aboutus-page-text .section-title h2{
-    font-size: 3rem;
-     letter-spacing: 4px;
-    -webkit-text-stroke: 1px #f6f7f8;
-    font-weight: bold;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 40px;
-}
-.aboutus-page-text .section-title p{
-    font-size: 1.2rem;
 
-}
-@media only screen and (max-width:600px){
-    .aboutus-page-text .section-title h2{
-        font-size:2rem;
-    }
-    .aboutus-page-text .section-title p{
-        font-size: 1rem;
-    
-    }
+.aboutus-page-text .section-title h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: transparent;
+    letter-spacing: 4px;
+    -webkit-text-stroke: 1px #fff;
 }
 
 .aboutus-page-text img {
-    margin-bottom: 54px; /* Margin below image */
-    border-radius: 10px; /* Rounded corners for image */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    animation: bounce 1s infinite; /* Bounce animation for image */
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-.aboutus-page-text .about-us h4 {
-    font-weight: 500; /* Font weight */
-    text-transform: uppercase; /* Uppercase text */
-    margin-bottom: 30px; /* Margin below heading */
-    animation: fadeIn 1s ease-in; /* Fade-in animation for heading */
-}
-
-.aboutus-page-text .about-us p {
-    line-height: 26px; /* Line height for paragraphs */
-    animation: fadeIn 1s ease-in; /* Fade-in animation for paragraphs */
-}
-
-.aboutus-page-text .about-quality h4 {
-    font-weight: 500; /* Font weight */
-    text-transform: uppercase; /* Uppercase text */
-    margin-bottom: 30px; /* Margin below heading */
-    animation: fadeIn 1s ease-in; /* Fade-in animation for heading */
-}
-
-.aboutus-page-text .about-quality p {
-    line-height: 22px; /* Line height for paragraphs */
-    animation: fadeIn 1s ease-in; /* Fade-in animation for paragraphs */
-}
-
-.aboutus-page-text .about-quality ul li {
-    list-style: none; /* Remove list style */
-    font-size: 16px; /* Font size */
-    line-height: 26px; /* Line height */
-    margin-bottom: 10px; /* Margin below list items */
-}
-
-.aboutus-page-text .about-quality ul li i {
-    color: #e4381C; /* Color for icons */
-    display: inline-block; /* Inline block for icons */
-    margin-right: 9px; /* Margin to the right of icons */
-}
-
-/* Keyframes for animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0; /* Start invisible */
-    }
-    to {
-        opacity: 1; /* End fully visible */
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(50px); /* Start from below */
-        opacity: 0; /* Start invisible */
-    }
-    to {
-        transform: translateY(0); /* End at original position */
-        opacity: 1; /* End fully visible */
-    }
-}
-/*---------------------
-  Trainer Section
------------------------*/
+/*--------------------- Trainer Section -----------------------*/
 .trainer-section {
     background: #000000; /* Set background color to black */
     padding-bottom: 0; /* Bottom padding */
@@ -237,6 +154,7 @@
     font-family: 'Rubik', sans-serif; /* Apply Rubik font */
     color: #ffffff;
 }
+
 .trainer-section .section-title {
     text-align: center;
     margin-bottom: 45px;
@@ -317,140 +235,99 @@
     transition: opacity 0.3s; /* Smooth transition */
     text-align: center; /* Center text */
 }
+
 .trainer-item:hover .ti-pic .trainer-info {
     opacity: 1; /* Show on hover */
 }
-
-/*---------------------
-  Contat Section
------------------------*/
+/*--------------------- Contact Section -----------------------*/
 .contact-section {
-    background: #000000;
-    padding: 20px 0; /* Adjusted padding */
-    font-family: "Rubik", sans-serif;
-    display: flex; /* Enable flexbox */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    min-height: 100vh; /* Ensure it takes full viewport height */
-}
-.contact-form {
-    text-align: center; /* Center text in the form */
-}
-.contact-form h4{
-    font-family: 'Oswald',sans-serif;
-    letter-spacing: 1px;
+    background: #000;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw; /* Ensure the section takes up the full height of the viewport */
+    position: relative; /* Make this container relative for positioning of inner elements */
 }
 
+.contact-form {
+    width: 80vw;  /* Takes up 80% of the viewport width */
+    max-width: 900px; /* Optional: Max width for the form */
+    background: #1f1f1f;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute; /* Make the form container absolute */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for vertical and horizontal centering */
+    padding-right: 10px;
+}
 
 .contact-form h4 {
-	color: #ffffff;
-	text-transform: uppercase;
-	font-weight: 500;
-	margin-bottom: 48px;
+    color: #fff;
+    font-size: 2.5rem;  /* Default font size for larger screens */
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
 
-.contact-form form input {
-	width: 100%;
-	height: 48px;
-	border-radius: 2px;
-	background: #2d2d2d;
-	padding-left: 20px;
-	margin-bottom: 30px;
-	font-size: 16px;
-	color: #a6a6a6;
-	-webkit-transition: all 0.3s;
-	-webkit-transition: 0.3s;
-	-o-transition: 0.3s;
-	transition: 0.3s;
-	border: 1px solid transparent;
-    outline: none;
+/* Make the text responsive */
+@media (max-width: 1024px) {
+    .contact-form h4 {
+        font-size: 2rem;  /* Smaller font size on tablets */
+    }
 }
 
-.contact-form form input::-webkit-input-placeholder {
-	font-weight: 600;
+@media (max-width: 768px) {
+    .contact-form h4 {
+        font-size: 1.8rem;  /* Further smaller font size on smaller screens */
+    }
 }
 
-.contact-form form input::-moz-placeholder {
-	font-weight: 600;
+@media (max-width: 480px) {
+    .contact-form h4 {
+        font-size: 1.5rem;  /* Even smaller font size on very small screens */
+    }
 }
 
-.contact-form form input:-ms-input-placeholder {
-	font-weight: 600;
+.contact-form input, 
+.contact-form textarea {
+    background: #2d2d2d;
+    border-radius: 5px;
+    padding: 15px;
+    width: 100%;
+    border: 1px solid transparent;
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: border 0.3s ease, background 0.3s ease;
 }
 
-.contact-form form input::-ms-input-placeholder {
-	font-weight: 600;
+/* Focus effects */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    background: #333;
+    border: 2px solid #f13f13;
+    color: #fff;
 }
 
-.contact-form form input::placeholder {
-	font-weight: 600;
+/* Button styling */
+.contact-form .c-btn {
+    padding: 12px 40px;
+    background: linear-gradient(45deg, #e16521, #e4381C);
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.contact-form form input:focus {
-    border: 3px solid #f13f13; 
-	font-weight: 600;
+/* Button hover effect */
+.contact-form .c-btn:hover {
+    background: linear-gradient(45deg, #f13f13, #e16521);
 }
-
-.contact-form form textarea {
-    outline: none;
-	width: 100%;
-	height: 198px;
-	border-radius: 2px;
-	background: #2d2d2d;
-	
-	padding-left: 20px;
-	padding-top: 15px;
-	font-size: 16px;
-	color: #a6a6a6;
-	-webkit-transition: all 0.3s;
-	-webkit-transition: 0.3s;
-	-o-transition: 0.3s;
-	transition: 0.3s;
-	resize: none;
-	margin-bottom: 25px;
-    border: 3px solid transparent; 
-}
-
-.contact-form form textarea::-webkit-input-placeholder {
-	font-weight: 600;
-}
-
-.contact-form form textarea::-moz-placeholder {
-	font-weight: 600;
-}
-
-.contact-form form textarea:-ms-input-placeholder {
-	font-weight: 600;
-}
-
-.contact-form form textarea::-ms-input-placeholder {
-	font-weight: 600;
-}
-
-.contact-form form textarea::placeholder {
-	font-weight: 600;
-}
-
-.contact-form form textarea:focus {
-	
-	 font-weight: 600;
-     border: 3px solid #f13f13;   
-}
-
-.contact-form form .c-btn {
-	font-size: 14px;
-	color: #ffffff;
-	font-weight: 500;
-	text-transform: uppercase;
-	background: -o-linear-gradient(45deg, #e16521, #e4381C);
-	background: linear-gradient(45deg, #e16521, #e4381C);
-	padding: 12px 40px;
-	border: none;
-	border: 1px solid #000000;
-	border-radius: 2px;
-}
-
-
-
-
