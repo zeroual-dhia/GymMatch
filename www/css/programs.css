@@ -12,10 +12,8 @@ body{
 
 
 .programs{
-    height: 100vh;
- 
-    padding: 40px;
     
+    padding: 40px;
 }
 
 .programs-back{
@@ -64,6 +62,7 @@ body{
 }
 .special-programs{
     margin-top: 8rem;
+
 }
 .program-name h5{
     font-family: "Oswald" ,sans-serif;

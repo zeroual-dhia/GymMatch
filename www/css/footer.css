@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    box-sizing: border-box;
+	font-family: 'Rubik';
+}
+
+.footer-section{
+	padding: 30px;
+	background: linear-gradient(to bottom, #950101 0%, #630102 50%, #3d0302);} 
+
+.footer-logo-item{
+	display: flex;
+	flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.f-logo{
+	width: 100px;
+	height: 100px;
+}
+
+
+
+.footer-widget a{
+	text-decoration: none;
+	color: white;
+}
+
+.footer-widget a:hover {
+	transform: scale(1.1);
+}
+
+.footer-widget a .active{
+	border-bottom: 1px solid white ;
+}
+.footer-widget p{
+	width: 100%;
+}
+
+
+.footer-widget img{
+	width: 25px;
+	height: auto;
+	padding: 0;
+}
+
+
+.ct-inside{
+	margin-top: 20px;
+	font-size: 0.8rem;
+}
+
+
+
