@@ -1,5 +1,4 @@
 window.onload = () => {
-    const header = document.querySelector('#header');
     const links = document.querySelectorAll('.links a'); 
     let activeLink = document.querySelector('.active');
     const currentPath = window.location.pathname;
@@ -20,17 +19,6 @@ window.onload = () => {
     }
 
 
-
-     //header :
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > scrollPoint) {
-            header.classList.add('active1');
-            header.style.position = "fixed";
-        } else {
-            header.classList.remove('active1');
-            header.style.position = "absolute";
-        }
-    });
 
    
 
