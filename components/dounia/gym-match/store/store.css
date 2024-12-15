@@ -212,17 +212,26 @@ ol {
 /* Small Screens (Optional) */
 @media (max-width: 768px) {
     .categories-button {
-        width: 100%; /* Full-width button on smaller screens */
+        width: 80%; /* Full-width button on smaller screens */
     }
-
+    .cart-button{
+        width:80%;
+    }
     .category-list {
         width: 100%; /* Dropdown matches the button's full width */
     }
 }
-
+.search-section {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    background-color: #000;
+    padding: 20px;
+}
 
 /* Search Bar Container */
 .search-container {
+    display: flex;
     position: relative;
     max-width: 500px;
     flex: 1;
@@ -248,19 +257,36 @@ ol {
     color: #fff;
     font-size: 1.2em;
 }
+.cart-button {
+    background-color: #f60808;
+    color: #fff;
+    border: none;
+    padding: 15px 25px; /* Increased padding for larger button */
+    margin-left: 10px; /* Space between search bar and cart button */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em; /* Increased font size */
+}
 
+.categories-button {
+    background-color: #f60808;
+    color: #fff;
+    border: none;
+    padding: 15px 25px; /* Increased padding for larger button */
+    margin-right: 10px; /* Space between buttons */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em; /* Increased font size */
+}
 @media (max-width: 768px) {
     .search-section {
         flex-direction: column; /* Stack elements vertically */
         gap: 10px; /* Minimal spacing in vertical layout */
     }
 
-    .cart-button,
-    .categories-button {
-        width: auto; /* Let the button adapt to its content */
-        padding: 10px 15px; /* Smaller padding for smaller screens */
-        font-size: 1em; /* Decrease font size */
-    }
+   
 
     .search-container {
         max-width: 100%; /* Full width for the search bar */
@@ -405,9 +431,8 @@ ol {
 
 /* Active Size Button Style */
 .size-button.selected-size {
-    background-color: #ff1313;
+    background-color: black;
     color: white;
-    border: 1px solid #ff1313;
 }
 
 /* Quantity Value */
