@@ -9,47 +9,123 @@
 	background: linear-gradient(to bottom, #950101 0%, #630102 50%, #3d0302);} 
 
 .footer-logo-item{
+  display: flex;
+   justify-content: center ;
+   align-items: center  ;
+   gap: 40px;
+}
+
+.social-links{
 	display: flex;
 	flex-direction: column;
-  align-items: center;
+    justify-content: center;
+	gap: 5px;
+}
+.social-links p{
+	font-size: 20px;
+}
+.info{
+	font-size: 20px;
+}
+
+.social{
+  display: flex;
   justify-content: space-between;
+  gap: 5px;
 }
-
+.social a{
+	transition: all 0.5s;
+}
+.social a :hover {
+	transform: scale(1.2);
+}
 .f-logo{
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
 }
 
 
 
-.footer-widget a{
-	text-decoration: none;
-	color: white;
-}
-
-.footer-widget a:hover {
-	transform: scale(1.1);
-}
-
-.footer-widget a .active{
-	border-bottom: 1px solid white ;
-}
-.footer-widget p{
-	width: 100%;
-}
 
 
-.footer-widget img{
-	width: 25px;
-	height: auto;
-	padding: 0;
+.footer-widget{
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
 }
-
 
 .ct-inside{
 	margin-top: 20px;
-	font-size: 0.8rem;
+	font-size: 15px;
+}
+
+
+.mygird {
+    display: grid;
+    grid-template-columns: 1fr 4fr 15fr;
+    gap: 0.5rem; /* Optional: Adjust spacing between grid items */
+    align-items: center;
+	justify-content: center; /* Align items vertically */
+}
+
+.mygird img {
+    justify-self: start;
+	width: 25px; /* Align icons to the start of their grid cells */
+}
+
+.mygird p {
+    margin: 0; 
+	font-size: 16px;/* Remove extra margin for consistent spacing */
 }
 
 
 
+
+@media only screen and (max-width:765px){
+	.footer-widget{
+	   gap: 30px;
+	   align-items: center;
+	}
+	.mygird{
+		grid-template-columns: 1fr 1fr 2fr;
+		gap: 5px;
+		width: 65%;
+	}
+
+	.ct-inside{
+		margin-top: 50px;
+		
+	}
+	
+}
+
+
+
+@media only screen and (max-width: 600px){
+	.footer-widget{
+	   gap: 30px;
+	   align-items: center;
+	}
+	.mygird{
+		grid-template-columns: 1fr 1fr 2fr;
+		gap: 5px;
+		width: 75%;
+	}
+
+	.mygird p {
+		margin: 0; 
+		font-size: 14px;/* Remove extra margin for consistent spacing */
+	}
+
+	.social-links p{
+		font-size: 16px;
+	}
+	.info{
+		font-size: 16px;
+	}
+	.ct-inside{
+		margin-top: 60px;
+		font-size: 13px;
+	}
+	
+}
