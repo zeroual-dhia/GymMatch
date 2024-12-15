@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - Gym Website</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../css/programs.css">
+    <link rel="stylesheet" href="/node_modules/css/elegant-icons.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/preloader.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+</head>
+
+<body>
+
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <header class="header2">
+        <div class="logo-name">
+            <img id='logo' src="../assets/logo/logo.png" alt="">
+            <p class="text-light GYMMATCH">GYM MATCH</p>
+        </div>
+
+
+        <nav class="links">
+            <a href="" class="active">Home</a>
+            <a href="">About us</a>
+            <a href="">Explore</a>
+            <a href="">Programs</a>
+            <a href="">Store</a>
+
+            <div class="dropdown">
+                <button id="profile-btn" class="profile-btn">
+                    <img src="../assets/icons/profile.png" alt="Profile" />
+                </button>
+                <div class="dropdown-content">
+                    <a href="login.html">Sign In</a>
+                    <a href="#signout">Sign Out</a>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <button id="menu-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+            aria-controls="offcanvasWithBothOptions"><img src="../assets/icons/icons8-menu.svg" alt=""></button>
+
+    </header>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+
+        <nav class="menu">
+            <div class="logo-name">
+                <img id='logo' src="../assets/logo/logo.png" alt="">
+                <p class="text-light GYMMATCH">GYM MATCH</p>
+            </div>
+
+            <div class="pages">
+
+                <a href="" class="active">Home</a>
+
+
+                <a href="">About us</a>
+
+
+                <a href="">Explore</a>
+
+
+                <a href="">Programs</a>
+
+
+                <a href="/">Store</a>
+
+
+
+            </div>
+
+
+
+            <div class="profile">
+                <a href="" class="button"><img src="../assets/images/profile.png" alt="">
+                    <p> Profile</p>
+                </a>
+                <a href="" class="button"><img src="../assets/icons/icons8-logout-32.png" alt="">
+                    <p>Login</p>
+                </a>
+                <a href="" class="button"><img src="../assets/icons/icons8-logout-32.png" alt="">
+                    <p> Logout</p>
+                </a>
+            </div>
+
+
+        </nav>
+    </div>
+
+    <div class="programs container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 hero">
+                <img class="img-fluid programs-back" src="../assets/images/gallery/hero2.png"
+                    alt="Hero programs background">
+                <p class="title text-center text-light">Programs</p>
+            </div>
+            <div class="col-12">
+                <p class="offer text-center text-light">WHAT WE OFFER</p>
+            </div>
+
+            <section class="general-programs col-11 ">
+                <div class="row gap-5">
+                    <div class="col-12 mb-5">
+                        <p class="title-general text-start text-light"><u>General Programs:</u></p>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row justify-content-between">
+                            <div class="col-general  col-lg-4 col-md-6">
+                                <div class="single-program text-center wow fadeInUp" data-wow-duration="1s"
+                                    data-wow-delay=".2s">
+                                    <div class="program-icon">
+                                        <img class="rounded img-fluid" src="../assets/images/gallery/team1.png"
+                                            alt="Team 1 Program" loading="lazy">
+                                        <a class="btn btn-program  text-light  p-2 fw-bold " href="catigory.html">View
+                                            program</a>
+                                    </div>
+                                    <div class="program-name text-center text-light mt-4">
+                                        <h5>INCREASE STRENGTH</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-general col-lg-4 col-md-6">
+                                <div class="single-program text-center wow fadeInUp" data-wow-duration="1s"
+                                    data-wow-delay=".4s">
+                                    <div class="program-icon">
+                                        <img class="rounded img-fluid" src="../assets/images/gallery/team2.png"
+                                            alt="Team 2 Program" loading="lazy">
+                                        <a class="btn btn-program  text-light p-2 fw-bold"
+                                            href="link-to-muscle-gain-program">View program</a>
+                                    </div>
+                                    <div class="program-name text-center text-light mt-4">
+                                        <h5>MUSCLE GAIN</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-general col-lg-4 col-md-6">
+                                <div class="single-program text-center wow fadeInUp" data-wow-duration="1s"
+                                    data-wow-delay=".6s">
+                                    <div class="program-icon">
+                                        <img class="rounded img-fluid" src="../assets/images/gallery/team3.png"
+                                            alt="Team 3 Program" loading="lazy">
+                                        <a class="btn btn-program text-light  btn-program  p-2 fw-bold "
+                                            href="link-to-weight-loss-program">View program</a>
+                                    </div>
+                                    <div class="program-name text-center text-light mt-4">
+                                        <h5>WEIGHT LOSS</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="special-programs col-11 ">
+
+                <div class="row gap-5 justify-content-center">
+                    <div class="col-12 mb-5">
+                        <p class="title-general text-start text-light"><u>Special Programs:</u></p>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row ">
+                            <div class="col-md-12 col-lg-6">
+                                <div class="categories">
+                                    <div class="training-icon">
+                                        <img class="img-fluid TRAINING" src="../assets/images/gallery/cat1.png"
+                                            alt="Team 1 Program" loading="lazy">
+                                        <p class="text-light text-center fw-bold">PERSONAL TRAINING </p>
+                                        <a class="btn btn-1 btn-trainer text-light fw-bold  "
+                                            href="link-to-bodybuilding-program">CHOOSE A TRAINER</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-6">
+                                <div class="categories">
+                                    <div class="training-icon">
+                                        <img class="img-fluid TRAINING" src="../assets/images/gallery/cat2.png"
+                                            alt="Team 1 Program" loading="lazy">
+                                        <p class="text-light text-center fw-bold  ">GROUP TRAINING </p>
+                                        <a class="btn btn-2 btn-trainer text-light fw-bold "
+                                            href="link-to-bodybuilding-program">CHOOSE A TRAINER</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer-section">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <div class="footer-logo-item">
+                        <div class="f-logo">
+                            <a href="#"><img class="img-fluid" src="/assets/logo/logo.png" alt=""></a>
+                        </div>
+                        <div class="social-links">
+                            <h6 class="text-light text-center">Follow us</h6>
+                            <a href="#"><img src="../assets/icons/icons8-facebook.svg" alt=""></a>
+                            <a href="#"><img src="../assets/icons/icons8-instagram.svg" alt=""></a>
+                            <a href="#"><img src="../assets/icons/icons8-linkedin.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 p-2 offset-lg-1">
+                    <div class="footer-widget">
+                        <h5 class="text-light">Pages</h5>
+                        <ul class="footer-pages text-light">
+                            <li><a class="active" href="#">Home </a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Explore</a></li>
+                            <li><a href="#">Programs</a></li>
+                            <li><a href="#">Trainers</a></li>
+                            <li><a href="#">Store</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-5 p-2">
+                    <div class="footer-widget ">
+                        <h5 class=" text-light">Get Info</h5>
+
+                        <div class="col-12">
+                          <div class="row p-2">
+                            <img class="col-4" src="../assets/icons/icons8-phone-30.png" alt="">
+                            <span class="col-2 justify-content-center text-light"><p class="m-0">Phone:</p></span>
+                            <span class="col-8 text-light"><p class="m-0">(12) 34 5 6789</p></span>
+                          </div>
+                           
+                        </div>
+                        <div class="col-12">
+                           <div class="row   p-2 ">
+                            <img class="col-2" src="../assets/icons/icons8-email-24.png" alt="">
+                            <span class="col-2 text-light"><p class="m-0">Email:</p></span>
+                            <span class="col-9 text-light"><p  class="m-0">Colorlib.info@gmail.com</p></span>
+                           </div>
+                         
+
+                        </div>
+
+
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="text-light ct-inside">
+                            Copyright © 2024 GymMatch. All rights reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="../js/header.js"></script>
+</body>

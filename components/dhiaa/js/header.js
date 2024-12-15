@@ -6,7 +6,7 @@ window.onload = () => {
     const scrollPoint = 400;
     const preloader = document.getElementById('preloder');
     const pages=document.querySelectorAll('.pages a');
-
+    
      //preloader :
     if (preloader) {
         setTimeout(() => {

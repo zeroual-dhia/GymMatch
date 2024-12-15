@@ -1,0 +1,333 @@
+/* Global Reset and Typography */
+* {
+    font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #111; /* Dark background for a sleek look */
+    color: #ffffff;
+}
+
+h2, h4, h5, p {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+}
+
+#image1 {
+    width: 80%;
+    height: 300px;
+}
+
+/* Preloader */
+#preloder {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    border-radius: 60px;
+    animation: loader 0.8s linear infinite;
+}
+
+/* Header Styling */
+.header2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+.header2 .logo-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header2 .logo-name p {
+    color: #f44336;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #e16521;
+    border-radius: 4px;
+}
+
+/* Breadcrumb Section */
+.breadcrumb-section {
+    height: 400px;
+    background-image: url('../assets/images/gallery/hero2.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.breadcrumb-section:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.breadcrumb-text h2 {
+    font-size: 48px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+/* About Us Section */
+.aboutus-section {
+    padding: 90px 0;
+    background: #000;
+}
+
+.aboutus-page-text {
+    text-align: center;
+    color: #fff;
+}
+
+.aboutus-page-text .section-title {
+    margin-bottom: 45px;
+}
+
+.aboutus-page-text .section-title h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: transparent;
+    letter-spacing: 4px;
+    -webkit-text-stroke: 1px #fff;
+}
+
+.aboutus-page-text img {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/*--------------------- Trainer Section -----------------------*/
+.trainer-section {
+    background: #000000; /* Set background color to black */
+    padding-bottom: 0; /* Bottom padding */
+    margin-top: 0; /* Ensure no top margin */
+    font-family: 'Rubik', sans-serif; /* Apply Rubik font */
+    color: #ffffff;
+}
+
+.trainer-section .section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.trainer-item {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.trainer-item:hover .ti-pic .ti-links {
+    left: 20px;
+}
+
+.trainer-item .ti-pic img {
+    min-width: 90%;
+}
+
+.trainer-item .ti-pic .ti-links {
+    position: absolute;
+    left: -50px;
+    top: 20px;
+    transition: all 0.5s;
+}
+
+.trainer-item .ti-pic .ti-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    color: #afb4bf;
+    background: #ffffff;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.trainer-item .ti-pic .ti-links a:hover {
+    background: linear-gradient(45deg, #e16521, #e4381C);
+    color: #ffffff;
+}
+
+.trainer-item .ti-pic .trainer-text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #e16521, #e4381C);
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 12px;
+    clip-path: polygon(0 0, 100% 0%, 81% 0, 100% 100%, 0 100%);
+}
+
+.trainer-item .ti-pic .trainer-text h5 {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.trainer-item .ti-pic .trainer-text h5 span {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.trainer-item .ti-pic .trainer-info {
+    position: absolute;
+    bottom: 60px; /* Position above the trainer text */
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: #ffffff; /* White text */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth transition */
+    text-align: center; /* Center text */
+}
+
+.trainer-item:hover .ti-pic .trainer-info {
+    opacity: 1; /* Show on hover */
+}
+/*--------------------- Contact Section -----------------------*/
+.contact-section {
+    background: #000;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw; /* Ensure the section takes up the full height of the viewport */
+    position: relative; /* Make this container relative for positioning of inner elements */
+}
+
+.contact-form {
+    width: 80vw;  /* Takes up 80% of the viewport width */
+    max-width: 900px; /* Optional: Max width for the form */
+    background: #1f1f1f;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute; /* Make the form container absolute */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for vertical and horizontal centering */
+    padding-right: 10px;
+}
+
+.contact-form h4 {
+    color: #fff;
+    font-size: 2.5rem;  /* Default font size for larger screens */
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* Make the text responsive */
+@media (max-width: 1024px) {
+    .contact-form h4 {
+        font-size: 2rem;  /* Smaller font size on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form h4 {
+        font-size: 1.8rem;  /* Further smaller font size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form h4 {
+        font-size: 1.5rem;  /* Even smaller font size on very small screens */
+    }
+}
+
+.contact-form input, 
+.contact-form textarea {
+    background: #2d2d2d;
+    border-radius: 5px;
+    padding: 15px;
+    width: 100%;
+    border: 1px solid transparent;
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: border 0.3s ease, background 0.3s ease;
+}
+
+/* Focus effects */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    background: #333;
+    border: 2px solid #f13f13;
+    color: #fff;
+}
+
+/* Button styling */
+.contact-form .c-btn {
+    padding: 12px 40px;
+    background: linear-gradient(45deg, #e16521, #e4381C);
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Button hover effect */
+.contact-form .c-btn:hover {
+    background: linear-gradient(45deg, #f13f13, #e16521);
+}
