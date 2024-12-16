@@ -4,13 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Sample data for gyms (this can be replaced with actual data or fetched from an API)
     let gyms = [
-        { name: "Powerhouse Gym", location: "Downtown", facilities: "Weightlifting, Cardio, Classes", imageSrc: "class-1.jpg" },
-        { name: "Fitness Zone", location: "Uptown", facilities: "Swimming, Yoga, Personal Training", imageSrc: "gym2pic.jpg" },
-        { name: "Bodybuilding Factory", location: "East Side", facilities: "Bodybuilding, Nutrition Counseling", imageSrc: "gym3.webp" },
-        { name: "Flex Gym", location: "West End", facilities: "CrossFit, Yoga, Cardio", imageSrc: "gym-placeholder.jpg" },
-        { name: "Total Fitness", location: "North Side", facilities: "Cardio, Weightlifting, Classes", imageSrc: "gym-placeholder.jpg" },
-        { name: "Strength Zone", location: "South City", facilities: "Bodybuilding, Cardio, Yoga", imageSrc: "gym-placeholder.jpg" }
+        { name: "Powerhouse Gym", location: "Downtown", facilities: "Weightlifting, Cardio, Classes", imageSrc: "../assets/images/img/class-1.jpg" },
+        { name: "Fitness Zone", location: "Uptown", facilities: "Swimming, Yoga, Personal Training", imageSrc: "../assets/images/img/gym2pic.jpg" },
+        { name: "Bodybuilding Factory", location: "East Side", facilities: "Bodybuilding, Nutrition Counseling", imageSrc: "../assets/images/img/gym3.webp" },
+        { name: "Powerhouse Gym", location: "Downtown", facilities: "Weightlifting, Cardio, Classes", imageSrc: "../assets/images/img/gym5.avif" },
+        { name: "Fitness Zone", location: "Uptown", facilities: "Swimming, Yoga, Personal Training", imageSrc: "../assets/images/img/gym4.jpg" },
+        { name: "Bodybuilding Factory", location: "East Side", facilities: "Bodybuilding, Nutrition Counseling", imageSrc: "../assets/images/img/gym6.jpg" },
     ];
+    
     // Function to create a new gym card
     function createGymCard(gym) {
         const gymCard = document.createElement("div");

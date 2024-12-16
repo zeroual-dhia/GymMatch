@@ -133,6 +133,7 @@ body {
 .gym-card img {
     width:100%; /* Full width */
     border-radius:7px ;
+    height: 100% ;
 }
 
 .gym-card h3, .gym-card p {
@@ -192,12 +193,18 @@ h1 {
     font-size: xx-large; /* Font size */
     margin: 0; /* Removes default margin */
 }
+.footer-section {
+    width: 100vw; /* Ensures full viewport width */
+    padding: 30px; /* Keeps internal spacing */
+    margin: 0; /* Removes any default margin */
+}
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .gym-card {
         flex: 1 1 calc(45% - 10px); /* Two cards per row */
         max-width: none; /* Remove max width */
+        
     }
 
     .input {
