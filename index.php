@@ -1,0 +1,1 @@
+<?php include "C:/xampp/htdocs/GymPath/www/pages/login.php" ?>
