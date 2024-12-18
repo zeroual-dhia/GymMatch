@@ -181,28 +181,34 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 offset-lg-1">
                 <div class="contact-form">
-                    <center></center><h4>Get in touch</h4> 
-                    <form id="contactForm">
+                    <center><h4>Get in touch</h4></center>
+                    <!-- Form starts here -->
+                    <form id="contactForm" action="../php/contact.php" method="POST">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
-                                <input type="text" id="name" placeholder="Name">
+                                <input type="text" name="name" id="name" placeholder="Name" required>
                                 <small class="error-message"></small>
                             </div>
                             <div class="col-lg-6">
-                                <input type="text" id="email" placeholder="Email">
+                                <input type="email" name="email" id="email" placeholder="Email" required>
                                 <small class="error-message"></small>
                             </div>
                             <div class="col-lg-12">
-                                <textarea id="message" placeholder="Message"></textarea>
+                                <textarea name="message" id="message" placeholder="Message" required></textarea>
                                 <small class="error-message"></small>
-                                <center> <button type="submit" class="c-btn">Send Message</button>
+                                <center>
+                                    <button type="submit" class="c-btn">Send Message</button>
+                                </center>
                             </div>
                         </div>
-                     </form>
+                    </form>
+                    <!-- Form ends here -->
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Contact Section End -->
     <footer class="footer-section">
         <div class="container-fluid">
             <div class="row justify-content-between align-item-start  ">
@@ -270,7 +276,7 @@
         </div>
 
     </footer>
-    <!-- Contact Section End -->
+    
     <!-- Js Plugins -->
     <script src="../js/header.js"></script>
     <script src="../js/about_us.js"></script>
