@@ -13,7 +13,7 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form class="form-up" action="signup.php" method="post" name="sign-up">
+            <form class="form-up" action="www/includes/signup.php" method="post" name="sign-up">
                 <h1 style="margin-bottom: 20px;">Create Account</h1>
 
                 <div class="form-element">
