@@ -9,12 +9,11 @@
 }
 body{
     background-color: #000;
-    height: 2000px;
-
+    overflow-x: hidden;
 }
 .catigory{
     padding-top: 90px;
-
+    overflow: hidden;   
 }
 
 .workouts{
