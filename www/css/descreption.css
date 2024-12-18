@@ -10,18 +10,10 @@
 
 body{
     background-color: #000;
-    
+    overflow-x: hidden;
 }
 
 
-
-
-/*containers*/
-.program-descreption{
-    height: 100vh;
-    padding-top: 80px;
-   
-}
 
 .program-name{
     font-family: 'Oswald',sans-serif;

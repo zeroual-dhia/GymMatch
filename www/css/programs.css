@@ -12,6 +12,7 @@ body{
 
 
 .programs{
+    overflow: hidden;
     
     padding: 40px;
 }
@@ -106,36 +107,48 @@ body{
 }
 
 .training-icon{
-    position: relative;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
+
 .training-icon p{
     font-family:"Oswald" ,sans-serif; 
     font-size: 2.8rem;
-    letter-spacing: 1px;
-    position: absolute;
-    top: 42%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    letter-spacing: 1px;  
     width: 100%;
+    z-index: 100;
+    
+
 }
 
 .TRAINING{
     opacity: 0.5;
 }
 
+.specialImage{
+    position :absolute ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+        
+}
 .btn-trainer {
     border: 2px solid white;
     border-radius: 0;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
     transition: opacity 0.3s ease, box-shadow 0.7s linear;
     font-size: 1.3rem;
     font-family: 'Oswald', sans-serif;
     opacity: 1;
     padding: 17px 34px;
     box-shadow: 0px 0 0 #ff1313 inset; 
+    z-index: 100;
     /* Initial box shadow */
 }
 .btn-2{
@@ -188,10 +201,21 @@ body{
     padding: 14px 25px;
     font-size: 1.5rem;
     } 
+    .training-icon{
+        height: 520px;
+        
+    }
+   
 
 .training-icon p{
     font-size: 3rem;
 }
+}
+
+@media only screen and (max-width:850px){
+    .specialImage{
+        width:120%;
+    }
 }
 
 @media only screen and (max-width:600px){
@@ -202,8 +226,22 @@ body{
    html{
     font-size: 7px;
    }
+   
+   .specialImage{
+    width:150%
+   }
+.training-icon{
+    height: 400px;
+    
+}
 
+}
 
+@media only screen and (max-width:500px){
+    .training-icon{
+        height: 350px;
+        
+    }
 }
 @media only screen and (max-width:375px){
   .hero{
@@ -212,5 +250,12 @@ body{
   html{
     font-size: 5px;
   }
-
+  .training-icon{
+    height: 280px;
+    
+}
+    
+  .specialImage{
+    width:150%;
+   }
 }

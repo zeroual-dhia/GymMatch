@@ -8,10 +8,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programs - Gym Website</title>
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/animate.min.css">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../css/descreption.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     
 
 
@@ -19,78 +20,12 @@
 
 <body p-0>
         
-    <header class="header2">
-        <div class="logo-name">
-            <img id='logo' src="../assets/logo/logo.png" alt="">
-            <p class="text-light GYMMATCH">GYM MATCH</p>
-        </div>
-       
-
-        <nav class="links">
-            <a href="/components/dounia/gym-match/home/index.html" class="active">Home</a>
-            <a href="/components/rayane/about_us.html">About us</a>
-            <a href="/components/rayane/explore.html">Explore</a>
-            <a href="/components/dhiaa/html/programs.html">Programs</a>
-            <a href="/components/dounia/gym-match/store/store.html">Store</a>
-
-            <div class="dropdown">
-                <button id="profile-btn" class="profile-btn">
-                    <img src="../assets/icons/profile.png" alt="Profile" />
-                </button>
-                <div class="dropdown-content">
-                    <a href="login.html">Sign In</a>
-                    <a href="#signout">Sign Out</a>
-                </div>
-                
-            </div>
-
-            
-        </nav>
-
-        <button id="menu-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-        aria-controls="offcanvasWithBothOptions"><img src="../assets/icons/icons8-menu.svg" alt=""></button>
-    </header>
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-    aria-labelledby="offcanvasWithBothOptionsLabel">
-
-    <nav class="menu">
-        <div class="logo-name">
-            <img id='logo' src="../assets/logo/logo.png" alt="">
-            <p class="text-light GYMMATCH">GYM MATCH</p>
-        </div>
-
-        <div class="pages">
-
-                <a href="/components/dounia/gym-match/home/index.html" class="active">Home</a>
-
-            
-                <a href="/components/rayane/about_us.html">About us</a>
-
-           
-                <a href="/components/rayane/explore.html">Explore</a>
-
-            
-                <a href="/components/dhiaa/html/programs.html">Programs</a>
-
-            
-                <a href="/components/dounia/gym-match/store/store.html">Store</a>
-
-            
-          
-        </div>
+<?php 
+      include 'header.php';
+   ?>
 
 
-
-        <div class="profile">
-            <a href="/components/dounia/gym-match/store/store.html" class="button"><img src="../assets/icons/profile.png" alt=""> <p> Profile</p></a>
-            <a href="/components/dounia/gym-match/store/store.html" class="button"><img src="../assets/icons/icons8-logout-32.png" alt=""> <p>Login</p></a>
-            <a href="/components/dounia/gym-match/store/store.html" class="button"><img src="../assets/icons/icons8-logout-32.png" alt=""> <p> Logout</p></a>
-        </div>
-
-
-    </nav>
-</div>
-
+     
     <div class="program-descreption container-fluid ">
         <div class="row justify-content-center">
             <div class="col-12 mt-5 mb-5">
@@ -157,10 +92,12 @@
         </div>
     </div>
 
-           
+    <?php
+       include 'footer.php';
+    ?>  
 
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/wow.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>

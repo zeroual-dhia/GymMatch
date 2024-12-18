@@ -12,15 +12,15 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form class="form-up" name="sign-up">
+            <form class="form-up" action="../includes/signup.php" method="post" name="sign-up">
                 <h1 style="margin-bottom: 20px;">Create Account</h1>
 
                 <div class="form-element">
-                    <input type="text" id="Name" placeholder="Name" />
+                    <input type="text" id="Name" name="Name" placeholder="Name" />
                     <span id="name-error" class="error-message"></span>
                 </div>
                 <div class="form-element">
-                    <input type="text" id="Email" placeholder="Email" />
+                    <input type="text" id="Email" name="Email" placeholder="Email" />
                     <span id="email-error" class="error-message"></span>
                 </div>
 
@@ -40,12 +40,12 @@
                 </div>
 
                 <div class="form-element">
-                    <input type="number" id="age" placeholder="Your age " />
+                    <input type="number" id="age" name="age" placeholder="Your age " />
                     <span id="age-error" class="error-message"></span>
                 </div>
 
                 <div class="form-element">
-                    <input type="password" id="password" placeholder="Password" />
+                    <input type="password" id="password" name="pwd" placeholder="Password" />
                     <span id="password-error" class="error-message"></span>
                 </div>
 
