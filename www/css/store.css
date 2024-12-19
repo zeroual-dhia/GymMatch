@@ -1,0 +1,617 @@
+/* General Reset */
+html,
+body {
+    height: 100%;
+    font-family: "Muli", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-smooth: antialiased;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    color: #111111;
+    font-weight: 400;
+    font-family: "Oswald", sans-serif;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p {
+    font-size: 14px;
+    font-family: "Muli", sans-serif;
+    color: #a9a9a9;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Breadcrumb Section */
+.breadcrumb-section {
+    height: 650px;
+    padding-top: 230px;
+    background-image: url('../assets/images/imgstore/breadcrumb-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.breadcrumb-text h2 {
+    font-size: 60px;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.breadcrumb-text .bt-option a {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-right: 20px;
+    position: relative;
+}
+
+.breadcrumb-text .bt-option a:after {
+    content: "";
+    font-size: 13px;
+    font-family: "FontAwesome";
+    position: absolute;
+    right: -14px;
+    top: 6px;
+}
+
+.breadcrumb-text .bt-option span {
+    font-size: 18px;
+    color: #ff1313;
+    font-weight: 700;
+}
+
+/* Responsive Breadcrumb Section */
+@media (max-width: 768px) {
+    .breadcrumb-section {
+        height: 300px;
+        padding-top: 150px;
+    }
+
+    .breadcrumb-text h2 {
+        font-size: 40px;
+    }
+}
+
+/* From Uiverse.io by vinodjangid07 */ 
+.file-upload-form {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .file-upload-label input {
+    display: none;
+  }
+  .file-upload-label svg {
+    height: 50px;
+    fill: white;
+    margin-bottom: 20px;
+  }
+  .file-upload-label {
+    cursor: pointer;
+    background-color:gray;
+    padding: 30px 70px;
+    border-radius: 40px;
+    border: 2px dashed white;
+    box-shadow: 0px 0px 200px -50px rgba(0, 0, 0, 0.719);
+  }
+  .file-upload-design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .browse-button {
+    background-color: rgb(82, 82, 82);
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.3s;
+  }
+  .browse-button:hover {
+    background-color: rgb(14, 14, 14);
+  }
+  
+
+/* Dropdown List */
+.category-list {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position relative to the parent button */
+    top: 100%; /* Directly below the button */
+    left: 0;
+    margin: 0; /* Ensure no unintended spacing */
+    padding: 5px 0; /* Optional padding for better spacing */
+    background-color: #fff; /* White background */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+    border-radius: 5px; /* Rounded corners */
+    z-index: 1000; /* Ensure it appears above other elements */
+    width: 150px; /* Matches the button's width */
+}
+
+/* List Items */
+.category-list ul {
+    list-style: none; /* Remove default bullet points */
+    margin: 0;
+    padding: 0;
+}
+
+.category-list ul li {
+    padding: 10px 15px; /* Add padding for clickable area */
+    color: #000; /* Black text */
+    font-size: 1em;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd; /* Divider between items */
+    text-align: left;
+}
+
+.category-list ul li:last-child {
+    border-bottom: none; /* Remove divider for the last item */
+}
+
+/* Hover Effects */
+.category-list ul li:hover {
+    background-color: #f60808; /* Match button hover color */
+    color: #fff; /* White text on hover */
+}
+
+/* Small Screens (Optional) */
+@media (max-width: 768px) {
+    .categories-button {
+        width: 80%; /* Full-width button on smaller screens */
+    }
+    .cart-button{
+        width:80%;
+    }
+    .category-list {
+        width: 100%; /* Dropdown matches the button's full width */
+    }
+}
+.search-section {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    background-color: #000;
+    padding: 20px;
+}
+
+/* Search Bar Container */
+.search-container {
+    display: flex;
+    position: relative;
+    max-width: 500px;
+    flex: 1;
+    margin: 0 20px; /* 20px space on left and right */
+}
+
+.search-bar {
+    width: 100%;
+    padding: 15px 15px 15px 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.2em;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1.2em;
+}
+.cart-button {
+    background-color: #f60808;
+    color: #fff;
+    border: none;
+    padding: 15px 25px; /* Increased padding for larger button */
+    margin-left: 10px; /* Space between search bar and cart button */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em; /* Increased font size */
+}
+
+.categories-button {
+    background-color: #f60808;
+    color: #fff;
+    border: none;
+    padding: 15px 25px; /* Increased padding for larger button */
+    margin-right: 10px; /* Space between buttons */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em; /* Increased font size */
+}
+@media (max-width: 768px) {
+    .search-section {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 10px; /* Minimal spacing in vertical layout */
+    }
+
+   
+
+    .search-container {
+        max-width: 100%; /* Full width for the search bar */
+        margin: 10px 0; /* Minimal vertical spacing */
+    }
+
+    .search-bar {
+        padding: 10px 10px 10px 40px; /* Reduce padding */
+        font-size: 1em; /* Decrease font size */
+        border-radius: 4px; /* Slightly smaller corners */
+    }
+
+    .search-icon {
+        font-size: 1em; /* Reduce size of the search icon */
+        left: 15px; /* Adjust position */
+    }
+}
+/* Section Styles */
+.section-parag {
+    padding: 40px 20px; /* Adds space around the section */
+    background-color: #000; /* Optional background color to make content stand out */
+}
+
+.section-title {
+    max-width: 1200px; /* Centers content with a width constraint */
+    margin: 0 auto; /* Centers the content horizontally */
+    text-align: center; /* Center-aligns the text */
+    padding: 0 15px; /* Adds horizontal padding for extra spacing */
+}
+
+/* Heading Styles */
+.section-title h2 {
+    font-size: 2.5em; /* Increases heading size */
+    color: #888; /* Sets heading color to gray */
+    margin-bottom: 20px; /* Adds spacing below the heading */
+    line-height: 1.3; /* Improves readability */
+}
+
+/* Paragraph Styles */
+.section-title p {
+    font-size: 1.2em; /* Increases paragraph font size slightly */
+    color: #fff; /* Sets paragraph color to white */
+    line-height: 1.8; /* Improves line spacing for readability */
+}
+
+
+#shopping-list-container {
+    margin-top: 20px;
+}
+
+#shopping-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#shopping-list .remove-button {
+    cursor: pointer;
+    color: red;
+}
+
+#pay-button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#pay-button:hover {
+    background-color: #218838;
+}
+
+#total-price-container {
+    margin-top: 15px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic columns */
+    gap: 20px;
+    padding: 40px;
+    background-color: black;
+    justify-content: center; /* Center cards when fewer columns are present */
+}
+
+/* Product Card */
+.product-card {
+    background-color: #444;
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-height: 200px;
+}
+
+/* Product Info */
+.product-info h4 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.price {
+    font-size: 1.3em;
+    color: #f45e13;
+}
+
+/* Buttons inside Product Cards */
+.size-buttons button,
+.quantity-buttons button,
+.buy-button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.size-buttons button:hover,
+.quantity-buttons button:hover,
+.buy-button:hover {
+    background-color: #ff1313;
+}
+
+/* Active Size Button Style */
+.size-button.selected-size {
+    background-color: black;
+    color: white;
+}
+
+/* Quantity Value */
+.quantity-value {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0 5px;
+}
+
+/* Buy Button */
+.buy-button {
+    background-color: #ff1313;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.buy-button:hover {
+    background-color: #e50e0e;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr); /* Single column for small screens */
+        padding: 20px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    }
+}
+
+@media (min-width: 993px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for large screens */
+    }
+}
+
+/* Styling for the shopping list container */
+#shopping-list-container {
+    position: fixed; /* Keeps the container fixed while scrolling */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact centering */
+    background-color: white; /* White background */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+    border-radius: 10px; /* Rounded corners */
+    width: 500px; /* Default width */
+    max-height: 80vh; /* Height limit */
+    overflow-y: auto; /* Scroll within the container if content exceeds height */
+    padding: 20px; /* Spacing around the content */
+    z-index: 1000; /* Ensures it appears above other elements */
+}
+
+/* Header styling */
+.shopping-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Increased spacing for better visibility */
+}
+
+.shopping-list-header h2 {
+    font-size: 20px; /* Increased font size */
+    color: black;
+    font-weight: bold;
+}
+
+/* Close button styling */
+.close-button {
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    border: none;
+    font-size: 16px;
+    border-radius: 50%; /* Circular shape */
+    width: 35px; /* Increased size for better usability */
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* List item styling */
+#shopping-list li {
+    color: black; /* Black text for product info */
+    margin-bottom: 15px; /* Increased spacing between items */
+    font-size: 16px; /* Increased font size for better readability */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.5; /* Improved spacing for multi-line items */
+}
+
+/* Total price styling */
+#shopping-list li strong {
+    font-size: 18px; /* Increased font size for emphasis */
+    color: black;
+    display: block;
+    text-align: right;
+    margin-top: 10px; /* Added spacing above total */
+}
+
+/* Footer styling (buttons) */
+.shopping-list-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Increased spacing above buttons */
+}
+
+#cancel-button, #pay-button {
+    background-color: #ff1313; /* Custom red color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px; /* Increased padding for uniform size */
+    font-size: 16px; /* Increased font size */
+    cursor: pointer;
+    flex: 1; /* Make buttons equal width */
+    margin: 0 5px; /* Add spacing between buttons */
+    text-align: center;
+}
+
+#cancel-button:hover, #pay-button:hover {
+    opacity: 0.9;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #shopping-list-container {
+        width: 90%; /* Reduce width for smaller screens */
+        max-height: 70vh; /* Reduce max height */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .shopping-list-header h2 {
+        font-size: 18px; /* Adjust font size */
+    }
+
+    #shopping-list li {
+        font-size: 14px; /* Adjust list item font size */
+        margin-bottom: 10px; /* Reduce spacing between items */
+    }
+
+    .close-button {
+        width: 30px; /* Adjust size */
+        height: 30px;
+        font-size: 14px; /* Adjust font size */
+    }
+
+    #cancel-button, #pay-button {
+        font-size: 14px; /* Adjust font size */
+        padding: 10px 15px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    #shopping-list-container {
+        width: 100%; /* Use full width */
+        max-height: 60vh; /* Further reduce max height */
+        border-radius: 0; /* Remove rounded corners */
+    }
+
+    .shopping-list-footer {
+        flex-direction: column; /* Stack buttons vertically */
+        margin-top: 10px; /* Adjust spacing */
+    }
+
+    #cancel-button, #pay-button {
+        width: 100%; /* Make buttons full width */
+        margin: 5px 0; /* Add vertical spacing */
+    }
+}
+
