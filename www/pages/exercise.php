@@ -10,7 +10,7 @@
     <title>Programs - Gym Website</title>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/descreption.css">
+    <link rel="stylesheet" href="../css/exercise.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     
@@ -26,7 +26,7 @@
 
 
      
-    <div class="program-descreption container-fluid ">
+    <div class="program-descreption container-fluid mb-5">
         <div class="row justify-content-center">
             <div class="col-12 mt-5 mb-5">
                 <h3 class="program-name text-light text-center fw-bold">Military press</h3>

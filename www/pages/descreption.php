@@ -192,31 +192,31 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td scope="row"><a href="exercise.html" style="text-decoration: none;">Miltary Press</a></td>
+                                            <td scope="row"><a href="exercise.php" style="text-decoration: none;">Miltary Press</a></td>
                                             <td>5</td>
                                             <td>3-5</td>
                                             <td>3 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Incline Bench Press</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Incline Bench Press</a></td>
                                             <td>4</td>
                                             <td>3-5</td>
                                             <td>3 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Dummble Bench Press</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Dummble Bench Press</a></td>
                                             <td >3</td>
                                             <td>5</td>
                                             <td>2 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Tricep Dip</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Tricep Dip</a></td>
                                             <td >3</td>
                                             <td>5</td>
                                             <td>2 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Overhead EZ Bar Tricep Extension</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Overhead EZ Bar Tricep Extension</a></td>
                                             <td >3</td>
                                             <td>5</td>
                                             <td>2 min</td>
@@ -246,31 +246,31 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td scope="row"><a href="exercise.html" style="text-decoration: none;">Miltary Press</a></td>
+                                            <td scope="row"><a href="exercise.php" style="text-decoration: none;">Miltary Press</a></td>
                                             <td>5</td>
                                             <td>3-5</td>
                                             <td>3 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Incline Bench Press</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Incline Bench Press</a></td>
                                             <td>4</td>
                                             <td>3-5</td>
                                             <td>3 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Dummble Bench Press</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Dummble Bench Press</a></td>
                                             <td >3</td>
                                             <td>5</td>
                                             <td>2 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Tricep Dip</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Tricep Dip</a></td>
                                             <td >3</td>
                                             <td>5</td>
                                             <td>2 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Overhead EZ Bar Tricep Extension</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Overhead EZ Bar Tricep Extension</a></td>
                                             <td >3</td>
                                             <td>5</td>
                                             <td>2 min</td>
@@ -300,31 +300,31 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td scope="row"><a href="exercise.html" style="text-decoration: none;">Miltary Press</a></td>
+                                            <td scope="row"><a href="exercise.php" style="text-decoration: none;">Miltary Press</a></td>
                                             <td>5</td>
                                             <td>3-5</td>
                                             <td>3 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Incline Bench Press</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Incline Bench Press</a></td>
                                             <td>4</td>
                                             <td>3-5</td>
                                             <td>3 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Dummble Bench Press</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Dummble Bench Press</a></td>
                                             <td >3</td>
                                             <td>5</td>
                                             <td>2 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Tricep Dip</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Tricep Dip</a></td>
                                             <td >3</td>
                                             <td>5</td>
                                             <td>2 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Overhead EZ Bar Tricep Extension</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Overhead EZ Bar Tricep Extension</a></td>
                                             <td >3</td>
                                             <td>5</td>
                                             <td>2 min</td>
@@ -354,31 +354,31 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td scope="row"><a href="exercise.html" style="text-decoration: none;">Miltary Press</a></td>
+                                            <td scope="row"><a href="exercise.php" style="text-decoration: none;">Miltary Press</a></td>
                                             <td>5</td>
                                             <td>3-5</td>
                                             <td>3 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Incline Bench Press</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Incline Bench Press</a></td>
                                             <td>4</td>
                                             <td>3-5</td>
                                             <td>3 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Dummble Bench Press</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Dummble Bench Press</a></td>
                                             <td >3</td>
                                             <td>5</td>
                                             <td>2 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Tricep Dip</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Tricep Dip</a></td>
                                             <td >3</td>
                                             <td>5</td>
                                             <td>2 min</td>
                                         </tr>
                                         <tr>
-                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.html">Overhead EZ Bar Tricep Extension</a></td>
+                                            <td scope="row"><a style="text-decoration: none;"  href="exercise.php">Overhead EZ Bar Tricep Extension</a></td>
                                             <td >3</td>
                                             <td>5</td>
                                             <td>2 min</td>
