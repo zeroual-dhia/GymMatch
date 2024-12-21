@@ -54,7 +54,7 @@
                                     <div class="program-icon">
                                         <img class="rounded img-fluid" src="../assets/images/gallery/team1.png"
                                             alt="Team 1 Program" loading="lazy">
-                                        <a class="btn btn-program  text-light  p-2 fw-bold " href="catigory.php">View
+                                        <a class="btn btn-program  text-light  p-2 fw-bold " href="catigory.php?category=Increase+Strength">View
                                             program</a>
                                     </div>
                                     <div class="program-name text-center text-light mt-4">
@@ -69,7 +69,7 @@
                                         <img class="rounded img-fluid" src="../assets/images/gallery/team2.png"
                                             alt="Team 2 Program" loading="lazy">
                                         <a class="btn btn-program  text-light p-2 fw-bold"
-                                            href="link-to-muscle-gain-program">View program</a>
+                                            href="catigory.php?category=Muscle+Gain">View program</a>
                                     </div>
                                     <div class="program-name text-center text-light mt-4">
                                         <h5>MUSCLE GAIN</h5>
@@ -83,7 +83,7 @@
                                         <img class="rounded img-fluid" src="../assets/images/gallery/team3.png"
                                             alt="Team 3 Program" loading="lazy">
                                         <a class="btn btn-program text-light  btn-program  p-2 fw-bold "
-                                            href="link-to-weight-loss-program">View program</a>
+                                            href="catigory.php?category=Fat+Loss">View program</a>
                                     </div>
                                     <div class="program-name text-center text-light mt-4">
                                         <h5>WEIGHT LOSS</h5>
