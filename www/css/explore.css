@@ -261,6 +261,7 @@ h1 {
     .gym-list{
         grid-template-columns: 1fr 1fr;
     }
+
 }
 
 @media only screen and (max-width:500px ){

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - Gym Website</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/exercise.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    
+
+
+</head>
+
+<body p-0>
+        
+<?php 
+      include 'header.php';
+   ?>
+
+
+     
+    <div class="program-descreption container-fluid mb-5">
+        <div class="row justify-content-center">
+            <div class="col-12 mt-5 mb-5">
+                <h3 class="program-name text-light text-center fw-bold">Military press</h3>
+            </div>
+            <div class="col-12 ">
+                <img style="width: 40%;" class=" img-fluid descreption-image rounded mx-auto d-block" src="../assets/images/exercises/militarypress.gif"
+                    alt="">
+                    
+            </div>
+
+            <div class="col-lg-8 col-md-10 col-sm-11 mt-3 ">
+                <div class="row justify-content-center">
+                    <div class="col-11 motivation mb-5 mt-5 p-3   wow fadeInLeft ">
+                        <p class="text-center text-light fw-600">The military press is a complete shoulder building exercise perfect for building shoulder muscle. The military press is an exercise with many names and is often referred to as the shoulder press, overhead press, and strict press.</p>
+                    </div>
+                    <div class="col-12 workout-summary  wow fadeInLeft" data-wow-duration="2s">
+                        <table class="table caption-top">
+                            <caption class="caption fw-bold ">Exercise profile</caption>
+
+                            <tbody>
+                                <tr class="table-row">
+                                    <td id="col1">Target Muscle Group</td>
+                                    <td>
+                                        Shoulders</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td id="col1">Exercise Type</td>
+                                    <td>Strength</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td id="col1">Equipment Required</td>
+                                    <td>Barbell</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td id="col1">Machines</td>
+                                    <td>Coumpound</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td id="col1">Force Type</td>
+                                    <td>Push (Bilateral)</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td id="col1">Experience Level</td>
+                                    <td>Intermediate</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td id="col1">Secondary Muscles</td>
+                                    <td>
+                                        Abs, Traps, Triceps </td>
+                                </tr>
+                             
+
+                            </tbody>
+                        </table>
+
+
+                         
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
+       include 'footer.php';
+    ?>  
+
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+        <script src="../js/header.js"></script>
+
+    </body>
+    
+     
+
+    </html>
