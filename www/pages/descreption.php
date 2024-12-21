@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include_once '../php/connect.php'
-    ?>
+<?php include_once '../php/connect.php'; ?>
 
 <head>
 
