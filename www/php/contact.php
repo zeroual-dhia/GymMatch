@@ -1,51 +1,41 @@
 <?php
-
-$servername = "localhost"; 
-$username = "root";        
-$password = "";           
-$dbname = "gym-match";    
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Include the database connection
+include 'connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
+    // Retrieve form data
     $name = $_POST['name'];
+    $email = $_POST['email'];
     $message = $_POST['message'];
-    
-    // Get current timestamp for contact_time
-    $contact_time = date('Y-m-d H:i:s'); // This will store the current date and time.
 
-    // You can either set user_id to NULL or a default value like 1 if needed
-    $user_id = 1;  // You can modify this based on your actual logic.
+    // Get current timestamp
+    $contact_time = date('Y-m-d H:i:s'); // Format: YYYY-MM-DD HH:MM:SS
 
-    // Prepare the SQL query to insert data into the `contacts` table
-    $sql = "INSERT INTO contacts (contact_name, contact_msg, contact_time, user_id) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    
+    // Set a default user_id, assuming user_id is not coming from the form
+    $user_id = 1;
+
+    // Prepare the SQL query to insert data into the contacts table
+    $stmt = $connect->prepare("INSERT INTO contacts (contact_name, contact_email, contact_msg, contact_time, user_id) VALUES (?, ?, ?, ?, ?)");
+
     if ($stmt === false) {
-        die('MySQL prepare error: ' . $conn->error); // If prepare fails
+        die("Prepare failed: " . $connect->error);
     }
 
-    // Bind parameters (name, message, contact_time, user_id)
-    $stmt->bind_param("sssi", $name, $message, $contact_time, $user_id);
+    // Bind parameters
+    $stmt->bind_param("ssssi", $name, $email, $message, $contact_time, $user_id);
 
-    // Execute the query and check the result
+    // Execute the statement
     if ($stmt->execute()) {
-        // Redirect to success page after successful insert
+        // Redirect to a success page
         header("Location: ../pages/about_us.html");
-        exit; // Make sure to exit after the redirect
+        exit;
     } else {
-        echo "Error: " . $stmt->error; // Show any error if insert fails
+        echo "Error: " . $stmt->error;
     }
 
     // Close the statement and connection
     $stmt->close();
-    $conn->close();
+    $connect->close();
 }
 ?>
+

@@ -11,6 +11,11 @@ let initialValues={};
     email: document.querySelector(".input-mail").value,
     bib: document.querySelector(".biography").value
   };
+  
+
+
+
+
 let savedValues={};
   function savevalues(){
 savedValues={
@@ -143,8 +148,8 @@ function deleteAccount(password) {
 
     
     if (!validateform()) {
-        alert("The form is not valid. Please correct the errors and try again.");
-        return; 
+        
+      return; 
     }
 
    
@@ -177,54 +182,112 @@ function deleteAccount(password) {
     document.querySelector(".button-c").style.visibility="hidden";
    
   updateInitialValues();
-   
+  clearErrors()
     
   })
-  function isValidDate(dateString) {
-    const date = Date.parse(dateString);
-    return !isNaN(date);
+  
+function showError(inputSelector, message) {
+  const inputElement = document.querySelector(inputSelector);
+  let errorElement = inputElement.nextElementSibling;
+
+  // Check if an error message element already exists; if not, create one.
+  if (!errorElement || !errorElement.classList.contains('error-message')) {
+      errorElement = document.createElement('span');
+      errorElement.className = 'error-message';
+      errorElement.style.color = 'red';
+      errorElement.style.fontSize = '0.875em';
+      inputElement.parentNode.insertBefore(errorElement, inputElement.nextSibling);
+  }
+
+  // Set the error message.
+  errorElement.textContent = message;
 }
-  function validateform() {
-    let username = document.querySelector(".username").value;
-    let name = document.querySelector(".namee").value;
-    let phone = document.querySelector(".phone").value;
-    let status = document.querySelector(".statuss").value;
-    let gender = document.querySelector(".genderr").value;
-    let email = document.querySelector(".input-mail").value;
-    let date = document.querySelector(".datee").value;
 
-    const phoneRegex = /^([0]{1}[5-7]{1}[0-9]{8})$/;  
-    const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+function clearErrors() {
+  const errorMessages = document.querySelectorAll('.error-message');
+  errorMessages.forEach((errorElement) => {
+      errorElement.textContent = '';
+  });
+}
+function isValidDate(dateString) {
+  // Attempt to parse the string into a date object
+  const date = new Date(dateString);
 
-    if (username.length < 5) {
-        alert("Username must be at least 5 characters long.");
-        return false;
-    } else if (name.length < 5) {
-        alert("Name must be at least 5 characters long.");
-        return false;
-    } else if (phone.length > 15) {
-        alert("Phone number should not exceed 15 digits.");
-        return false;
-    } else if (!phoneRegex.test(phone)) {
-        alert("Incorrect phone format.");
-        return false;
-    } else if (!["trainer", "member", "gymowner"].includes(status.toLowerCase())) {
-        alert("Invalid status.");
-        return false;
-    } else if (!["male", "female"].includes(gender.toLowerCase())) {
-        alert("Invalid gender.");
-        return false;
-    } else if (!emailRegex.test(email)) {
-        alert("Invalid email format.");
-        return false;
-    }
-    else if(!isValidDate(date)){
-        alert("invalid date format.");
-        return false;
-    }
-    //in the bio u can put anything so no need to validation
+  // Check if the date is invalid or if the input string results in an invalid date
+  if (isNaN(date.getTime())) {
+      return false; // Invalid date
+  }
 
-    return true;
+  // Additional check: ensure the date string matches the expected format (e.g., YYYY-MM-DD)
+  const regex = /^\d{4}-\d{2}-\d{2}$/;
+  if (!regex.test(dateString)) {
+      return false; // Input doesn't match the expected format
+  }
+
+  // Ensure the date object correctly represents the input string (e.g., no auto-correction like Feb 30 -> Mar 2)
+  const [year, month, day] = dateString.split('-').map(Number);
+  if (
+    date.getFullYear() !== year ||
+    date.getMonth() !== month - 1 || // Months are 0-based in JavaScript Date
+    date.getDate() !== day
+) {
+    return false; // Date components don't match
+}
+
+// Check if the date is in the past
+const today = new Date();
+today.setHours(0, 0, 0, 0); // Normalize today's date to midnight
+return date < today; // Returns true if the date is in the past
+}
+function validateform() {
+  clearErrors(); // Clear previous error messages.
+
+  let isValid = true;
+
+  const username = document.querySelector(".username").value;
+  const name = document.querySelector(".namee").value;
+  const phone = document.querySelector(".phone").value;
+  const status = document.querySelector(".statuss").value;
+  const gender = document.querySelector(".genderr").value;
+  const email = document.querySelector(".input-mail").value;
+  const date = document.querySelector(".datee").value;
+
+  const phoneRegex = /^([0]{1}[5-7]{1}[0-9]{8})$/;  
+  const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+
+  if (username.length < 5) {
+      showError(".username", "Username too short.");
+      isValid = false;
+  }
+  if (name.length < 5) {
+      showError(".namee", "Name too short.");
+      isValid = false;
+  }
+  if (phone.length > 15) {
+      showError(".phone", "Phone num less than 15 digits.");
+      isValid = false;
+  } else if (!phoneRegex.test(phone)) {
+      showError(".phone", "Incorrect phone format.");
+      isValid = false;
+  }
+  if (!["trainer", "member", "gymowner"].includes(status.toLowerCase())) {
+      showError(".statuss", "Invalid status.");
+      isValid = false;
+  }
+  if (!["male", "female"].includes(gender.toLowerCase())) {
+      showError(".genderr", "Invalid gender.");
+      isValid = false;
+  }
+  if (!emailRegex.test(email)) {
+      showError(".input-mail", "Invalid email format.");
+      isValid = false;
+  }
+  if (!isValidDate(date) ) {
+      showError(".datee", "Invalid date format.");
+      isValid = false;
+  }
+
+  return isValid;
 }
 
 

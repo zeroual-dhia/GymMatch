@@ -3,7 +3,7 @@
     color: white;
 }
 body{
-    background-color: rgb(0, 0, 0);
+    background-color: #121212;
 }
 .box{
     display: flex;
@@ -15,6 +15,9 @@ body{
 @media screen and (max-width: 800px) {
     .box {
       flex-direction: column;
+    }
+    .logo{
+        margin-left: 140px;
     }
   }
 .pic{
@@ -69,7 +72,7 @@ body{
 }
 input::placeholder,
 textarea::placeholder {
-  color: black;
+ 
   opacity: 1;
 }
 
@@ -110,9 +113,19 @@ p {
     
 }
 input{
-    background-color:rgb(211, 196, 196) ;
-    border: 2px solid transparent;
-    padding: 6px;
+    background-color: #29293d; /* Dark background for inputs */
+    border: 1px solid #444455; /* Subtle border */
+    border-radius: 4px; /* Rounded corners */
+    color: #ffffff; /* White text color */
+    padding: 10px; /* Padding inside the input */
+    font-size: 0.8em; /* Font size */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    outline: none; /* Remove default focus outline */
+    transition: border-color 0.3s ease; /* Smooth border-color transition */
+    margin-right: 8px;
+    border-radius: 6px;
+    outline: none;
 }
 .texting{
     margin-bottom: 4px;
@@ -123,11 +136,14 @@ input{
     display: inline-block;
 }
 input{
-    margin-right: 8px;
-    border-radius: 6px;
-    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     
    
+}
+.error-message {
+    color: red;
+    font-size: 0.875em; /* Slightly smaller text */
+    margin-top: 5px;
 }
 input:focus, input:active{
 
@@ -174,7 +190,7 @@ input:focus, input:active{
 }
 input::placeholder{
 
-    color: black;
+    color: #888899;
 }
 .biography::placeholder{
     position: absolute;
@@ -278,9 +294,12 @@ input::placeholder{
 }
 .image-container:hover .hover-text {
     display: block; }
+.hastwoelem{
 
-
-
+display: flex;
+flex-direction: column;
+margin-right: 15px;
+}
 
 
 
