@@ -29,7 +29,7 @@ try {
     header("Location:index.php");
     die();
 } catch (PDOException $e) {
-    die("query failed: " . e->getMessage());
+    die("query failed: " . $e->getMessage());
 }
 
 }
