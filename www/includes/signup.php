@@ -1,3 +1,4 @@
+
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -26,7 +27,7 @@ try {
 
     $pdo=null;
     $stmt=null;
-    header("Location:C:\xampp\htdocs\GymPath\index.php");
+    header("Location:../../index.php");
     die();
 } catch (PDOException $e) {
     die("query failed: " . $e->getMessage());
@@ -35,5 +36,5 @@ try {
 }
 else{
 
-    header("Location:C:\xampp\htdocs\GymPath\index.php");//user did not enter any data so nothing happens
+    header("Location:../../index.php");//user did not enter any data so nothing happens
 }
