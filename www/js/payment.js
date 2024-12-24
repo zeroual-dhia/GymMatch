@@ -46,9 +46,10 @@ document.querySelector('form').addEventListener('submit', (event) => {
         cvvError.textContent = 'CVV must be a 3-digit number.';
         isValid = false;
     }
-
+    
     if (isValid) {
         alert('Payment successful!');
+        this.submit();
     }
 });
 

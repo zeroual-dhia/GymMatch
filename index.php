@@ -22,7 +22,7 @@
 <div class="container p-0">
 <div class="card px-4">
     <p class="h8 py-3">Payment Details</p>
-<form action="www/includes/pay.php" method="post">
+<form action="/GymPath/www/includes/pay.php" method="POST">
     <div class="row gx-3">
         <div class="col-12">
             <div class="d-flex flex-column">

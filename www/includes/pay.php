@@ -21,8 +21,8 @@ try {
     $stmt->execute();
     $pdo=null;
     $stmt=null;
-
-    header("Location:../../index.php");
+    echo "done";
+    //header("Location:../../index.php");
     die();
 
 } catch (PDOException $e) {
