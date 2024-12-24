@@ -1,0 +1,73 @@
+
+
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - Gym Website</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="www/css/payment.css">
+</head>
+
+<body>
+    
+   
+
+<div class="container p-0">
+<div class="card px-4">
+    <p class="h8 py-3">Payment Details</p>
+<form action="www/includes/pay.php" method="post">
+    <div class="row gx-3">
+        <div class="col-12">
+            <div class="d-flex flex-column">
+                <p class="text mb-1">Person Name</p>
+                <input class="form-control mb-1" type="text" name="person_name" placeholder="Name" value="Barry Allen">
+                <span  id="name-error" class="error-message mb-2"></span>
+
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="d-flex flex-column">
+                <p class="text mb-1">Card Number</p>
+                <input class="form-control mb-1" type="text" name="card_num" placeholder="1234 5678 435678">
+                <span id="card-error" class="error-message mb-2"></span>
+
+
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="d-flex flex-column">
+                <p class="text mb-1">Expiry</p>
+                <input class="form-control mb-1" type="text" name="expiry" placeholder="MM/YYYY">
+                <span id="expiry-error" class="error-message mb-2"></span>
+
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="d-flex flex-column">
+                <p class="text mb-1">CVV/CVC</p>
+                <input class="form-control mb-1 pt-2 " type="password" name="cvv" placeholder="***">
+                <span id="cvv-error" class="error-message mb-2"></span>
+
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-submit btn-primary mb-3">
+                <span class="ps-3">Pay $243</span>
+                <span class="fas fa-arrow-right"></span>
+            </button>
+        </div>
+    </div>
+</form>
+    
+</div>
+</div>
+<script src="www/js/payment.js"></script>
+
+</body>
