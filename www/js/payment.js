@@ -48,7 +48,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
     }
     
     if (isValid) {
-        alert('Payment successful!');
+       
         this.submit();
     }
 });
