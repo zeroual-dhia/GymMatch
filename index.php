@@ -1,73 +1,95 @@
-
-
-
+<!DOCTYPE html>
 <html lang="en">
 
-
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programs - Gym Website</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/animate.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="www/css/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="www/css/login.css">
+    <title>Animated Login Page</title>
 </head>
 
 <body>
-    
-   
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form class="form-up" action="/GymPath/www/includes/signup.php" method="post" name="sign-up">
+                <h1 style="margin-bottom: 20px;">Create Account</h1>
 
-<div class="container p-0">
-<div class="card px-4">
-    <p class="h8 py-3">Payment Details</p>
-<form action="/GymPath/www/includes/pay.php" method="POST">
-    <div class="row gx-3">
-        <div class="col-12">
-            <div class="d-flex flex-column">
-                <p class="text mb-1">Person Name</p>
-                <input class="form-control mb-1" type="text" name="person_name" placeholder="Name" value="Barry Allen">
-                <span  id="name-error" class="error-message mb-2"></span>
+                <div class="form-element">
+                    <input type="text" id="Name" name="Name" placeholder="Name" />
+                    <span id="name-error" class="error-message"></span>
+                </div>
+                <div class="form-element">
+                    <input type="text" id="Email" name="Email" placeholder="Email" />
+                    <span id="email-error" class="error-message"></span>
+                </div>
 
-            </div>
+                <div class="form-element">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone number ">
+                    <span id="phone-error" class="error-message"></span>
+                </div>
+
+                <div class="form-element">
+                    <select id="item" name="item" required>
+                        <option value="" disabled selected hidden>--Select your role--</option>
+                        <option value="item1">Member</option>
+                        <option value="item2">Owner</option>
+                        <option value="item3">Trainer</option>
+
+                    </select>
+                </div>
+
+                <div class="form-element">
+                    <input type="number" id="age" name="age" placeholder="Your age " />
+                    <span id="age-error" class="error-message"></span>
+                </div>
+
+                <div class="form-element">
+                    <input type="password" id="password" name="pwd" placeholder="Password" />
+                    <span id="password-error" class="error-message"></span>
+                </div>
+
+
+                <button type="submit">Sign up </button>
+            </form>
         </div>
-        <div class="col-12">
-            <div class="d-flex flex-column">
-                <p class="text mb-1">Card Number</p>
-                <input class="form-control mb-1" type="text" name="card_num" placeholder="1234 5678 435678">
-                <span id="card-error" class="error-message mb-2"></span>
+        <div class="form-container sign-in">
+            <form class="form-in">
+                <h1 style="margin-bottom: 20px;">Sign In</h1>
+                
+                <div class="form-element">
+                    <input type="text" id="signin-email" name="Email" placeholder="Email" />
+                    <span id="signin-email-error" class="error-message"></span>
+                </div>
 
+                <div class="form-element">
+                    <input type="password" id="signin-password" name="Email" placeholder="Password" />
+                    <span id="signin-password-error" class="error-message"></span>
+                </div>
 
-            </div>
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
+            </form>
         </div>
-        <div class="col-6">
-            <div class="d-flex flex-column">
-                <p class="text mb-1">Expiry</p>
-                <input class="form-control mb-1" type="text" name="expiry" placeholder="MM/YYYY">
-                <span id="expiry-error" class="error-message mb-2"></span>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
 
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="d-flex flex-column">
-                <p class="text mb-1">CVV/CVC</p>
-                <input class="form-control mb-1 pt-2 " type="password" name="cvv" placeholder="***">
-                <span id="cvv-error" class="error-message mb-2"></span>
-
-            </div>
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-submit btn-primary mb-3">
-                <span class="ps-3">Pay $243</span>
-                <span class="fas fa-arrow-right"></span>
-            </button>
         </div>
     </div>
-</form>
-    
-</div>
-</div>
-<script src="www/js/payment.js"></script>
+
+    <script src="www/js/login.js"></script>
 
 </body>
+
+</html>

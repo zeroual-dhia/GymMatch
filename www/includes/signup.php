@@ -27,7 +27,7 @@ try {
 
     $pdo=null;
     $stmt=null;
-    header("Location:../index.php");
+    header("Location:../../index.php");
     die();
 } catch (PDOException $e) {
     die("query failed: " . e->getMessage());
@@ -36,5 +36,5 @@ try {
 }
 else{
 
-    header("Location:../index.php");//user did not enter any data so nothing happens
+    header("Location:../../index.php");//user did not enter any data so nothing happens
 }

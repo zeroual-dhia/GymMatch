@@ -49,7 +49,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
     
     if (isValid) {
         alert('Payment successful!');
-        event.target.submit()
+        event.target.submit();
     }
 });
 
