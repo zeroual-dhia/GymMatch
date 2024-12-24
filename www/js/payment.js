@@ -1,5 +1,5 @@
 document.querySelector('form').addEventListener('submit', (event) => {
-    
+    event.preventDefault();
     // Input elements
     const nameInput = document.querySelector('input[placeholder="Name"]');
     const cardInput = document.querySelector('input[placeholder="1234 5678 435678"]');
@@ -49,7 +49,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
     
     if (isValid) {
        
-        this.submit();
+        event.target.submit()
     }
 });
 
