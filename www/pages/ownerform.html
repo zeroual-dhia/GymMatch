@@ -8,24 +8,25 @@
 </head>
 <body>
     
-    <div class="form">
+    
+    <form id="ownerform" action="../includes/owner.php" method="POST" enctype="multipart/form-data">     
         <h1 class="title ">Gym Owner Registration</h1>
         <!-- Other input fields --> 
         <div class="input-block">
-            <input class="input" type="text" id="gymName" required="" placeholder="Gym Name">
+            <input class="input" type="text" name="gymName" id="gymName" required="" placeholder="Gym Name">
         </div>
         <div class="input-block">
-            <input class="input" type="text" id="location" required="" placeholder="Location">
+            <input class="input" type="text" name="location" id="location" required="" placeholder="Location">
         </div>
         <div class="input-block">
-            <input class="input" type="text" id="openingHours" required="" placeholder="Opening Hours">
+            <input class="input" type="text" name="openingHours" id="openingHours" required="" placeholder="Opening Hours">
         </div>
         <div class="input-block">
-            <input class="input" type="text" id="facilities" required="" placeholder="Facilities">
+            <input class="input" type="text" name="facilities" id="facilities" required="" placeholder="Facilities">
         </div>
         <div class="input-block ">
             <label for="targetGender"></label>
-            <select class="input" id="targetGender" required="" >
+            <select class="input" name="targetGender" id="targetGender" required="" >
                 <option value="" disabled selected>Target Gender</option>
                 <option value="women">Women</option>
                 <option value="men">Men</option>
@@ -34,11 +35,11 @@
         </div>
 
         <div class="input-block">
-            <textarea id="activities" rows="5" placeholder="extra activities"></textarea>
+            <textarea id="activities" name="activities" rows="5" placeholder="extra activities"></textarea>
         </div>
 
         <div class="input-block">
-            <textarea class="input" id="description" required="" rows ="5" placeholder="descreption"></textarea>
+            <textarea class="input" name="descreption" id="description" required="" rows ="5" placeholder="descreption"></textarea>
             
         </div>
             
@@ -72,13 +73,13 @@
           ></path>
         </svg>
        Upload your time table 
-        <input class="file" name="text" type="file" />
+        <input class="file" name="timetable" type="file" />
       </button>
         <div class="input-block text-area">
-            <textarea class="input" id="membershipPlans" required="" rows ="5" placeholder="membershipPlans"></textarea>
+            <textarea class="input" name="membershipPlans" id="membershipPlans" required="" rows ="5" placeholder="membershipPlans"></textarea>
         </div>
         <div class="input-block fileupload">
-            <label for="file" class="custum-file-upload">
+            <label for="file" name="gymImage" class="custum-file-upload">
                 <div class="icon">
                     <svg viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -98,8 +99,11 @@
         <div class="input-block submit">
             <button type="submit" id="submit">Submit</button>
         </div>
-    </div>
+    </form>
+   
+   
 
 <script src="../js/form.js"></script>
+
 </body>
 </html>
