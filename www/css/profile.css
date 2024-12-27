@@ -4,6 +4,7 @@
 }
 body{
     background-color: #121212;
+    margin-top: 80px;
 }
 .box{
     display: flex;
@@ -17,7 +18,7 @@ body{
       flex-direction: column;
     }
     .logo{
-        margin-left: 140px;
+        margin-left: 50px;
     }
   }
 .pic{
