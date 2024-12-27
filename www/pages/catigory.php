@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include_once '../php/connect.php';?>
+<?php include_once '../includes/connect.php';?>
 <html lang="en">
 
 <head>
