@@ -84,7 +84,8 @@ function formvalidation (event){
      }
 
    if (isvalid){
-    window.location.href="/components/dounia/gym-match/home/index.html"
+    event.target.submit();
+    
    }
 
     return isvalid ;
