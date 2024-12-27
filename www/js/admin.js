@@ -110,120 +110,90 @@
   });
 
   // Single Line Chart
-  var ctx3 = $("#line-chart").get(0).getContext("2d");
-  var myChart3 = new Chart(ctx3, {
-    type: "line",
-    data: {
-      labels: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],
-      datasets: [
-        {
-          label: "Salse",
-          fill: false,
-          backgroundColor: "rgba(235, 22, 22, .7)",
-          data: [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15],
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-    },
-  });
-
-  // Single Bar Chart
-  var ctx4 = $("#bar-chart").get(0).getContext("2d");
-  var myChart4 = new Chart(ctx4, {
-    type: "bar",
-    data: {
-      labels: ["Italy", "France", "Spain", "USA", "Argentina"],
-      datasets: [
-        {
-          backgroundColor: [
-            "rgba(235, 22, 22, .7)",
-            "rgba(235, 22, 22, .6)",
-            "rgba(235, 22, 22, .5)",
-            "rgba(235, 22, 22, .4)",
-            "rgba(235, 22, 22, .3)",
-          ],
-          data: [55, 49, 44, 24, 15],
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-    },
-  });
 })(jQuery);
 
-document.querySelector("form").addEventListener(
-  "submit",
-  (event) => {
-    //addproduct form validation
-    event.preventDefault();
-    let productImage = document.getElementById("productImage").value;
-    let productName = document.getElementById("productName").value;
-    let productQuantity = document.getElementById("productQuantity").value;
-    let productType = document.getElementById("productType").value;
-    let productSize = document.querySelector(".productSize").value;
-    let productPrice = document.getElementById("productPrice").value;
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .querySelector("#forming")
+    .addEventListener("submit", function (event) {
+      console.log("Form submission intercepted.");
+      event.preventDefault();
 
-    const file = productImage.files[0];
-    if (!file) {
-      alert("Please select an image file.");
-      return;
-    }
-    if (file && !file.type.startsWith("image/")) {
-      alert("Please select a valid image file.");
-      return;
-    }
+      const productImage = document.getElementById("productImage");
+      const productName = document.getElementById("productName");
+      const productQuantity = document.getElementById("productQuantity");
+      const productType = document.getElementById("productType");
+      const productSize = document.querySelector(".productSize");
+      const productPrice = document.getElementById("productPrice");
 
-    if (
-      !productName.value.trim() ||
-      !productQuantity.value.trim() ||
-      !productType.value.trim() ||
-      !productPrice.value.trim()
-    ) {
-      alert("Please fill in all required fields.");
-      return;
-    }
+      console.log("Inputs fetched:", {
+        productImage,
+        productName,
+        productQuantity,
+        productType,
+        productSize,
+        productPrice,
+      });
 
-    const quantity = parseInt(productQuantity.value);
-    const price = parseFloat(productPrice.value);
-    if (isNaN(quantity) || quantity <= 0) {
-      alert("Quantity must be a positive number.");
-      return;
-    }
-    if (isNaN(price) || price <= 0) {
-      alert("Price must be a positive number.");
-      return;
-    }
+      let valid = true;
 
-    if (
-      productType.value.trim().toLowerCase() === "Activewear & Footwear" &&
-      productSize.value === ""
-    ) {
-      alert("Please select a size for Activewear & Footwear.");
-      return;
-    }
+      // Validate Image
+      const file = productImage.files[0];
+      if (!file) {
+        console.log("No file selected.");
+        alert("Please select a picture of the product.");
+        valid = false;
+      } else {
+        const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
+        const fileExtension = file.name.split(".").pop().toLowerCase();
+        if (!allowedExtensions.includes(fileExtension)) {
+          console.log("Invalid file type.");
+          alert(
+            "Invalid file type. Please select a valid image (JPG, JPEG, PNG, GIF)."
+          );
+          valid = false;
+        }
+      }
 
-    /*const reader = new FileReader();
-  reader.onload = function (e) {
-    const productData = {
-      image: e.target.result, // Base64 encoded image
-      name: productName.value,
-      quantity: productQuantity.value,
-      type: productType.value,
-      size: productSize.value,
-      price: productPrice.value,
-    };
-*/
-    productImage.value = "";
-    productName.value = "";
-    productQuantity.value = "";
-    productType.value = "";
-    productSize.value = "";
-    productPrice.value = "";
+      // Validate Name
+      if (!productName.value.trim()) {
+        console.log("Product name missing.");
+        alert("Product name is required.");
+        valid = false;
+      }
 
-    alert("Product added successfully!");
-  }
-  // reader.readAsDataURL(productImage.files[0]);
-);
+      // Validate Quantity
+      const quantity = parseInt(productQuantity.value);
+      if (isNaN(quantity) || quantity <= 0) {
+        console.log("Invalid quantity.");
+        alert("Please enter a valid product quantity (greater than 0).");
+        valid = false;
+      }
+
+      // Validate Type
+      if (!productType.value.trim()) {
+        console.log("Product type missing.");
+        alert("Product type is required.");
+        valid = false;
+      }
+
+      // Validate Price
+      const price = parseFloat(productPrice.value);
+      if (isNaN(price) || price <= 0) {
+        console.log("Invalid price.");
+        alert("Please enter a valid product price (greater than 0).");
+        valid = false;
+      }
+
+      // Validate Size
+
+      console.log("Form validation result:", valid);
+
+      if (valid) {
+        console.log("Form is valid. Submitting...");
+        event.target.submit();
+      } else {
+        console.log("Form is invalid. Submission prevented.");
+      }
+    });
+});

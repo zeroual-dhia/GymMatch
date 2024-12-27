@@ -365,22 +365,37 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Add product</h6>
-                            <form action="/www/includes/AddProduct.php" method="post" >
+                            <form id="forming" action="/www/includes/AddProduct.php" method="post" enctype="multipart/form-data" >
                             <div class="mb-3">
-                                <label for="formFile" class="form-label">Select a picture of the product</label>
+                                <label for="productImage" class="form-label">Select a picture of the product</label>
                                 <input id="productImage" class="form-control bg-dark" type="file" name="imaga" id="formFile" required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Product name</label>
+                                <label for="productName" class="form-label">Product name</label>
                                 <input id="productName" type="text" class="form-control" name="pname" id="exampleInputPassword1" required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">product quantity</label>
+                                <label for="productQuantity"  class="form-label">product quantity</label>
                                 <input id="productQuantity" type="text" class="form-control" name="quantity" id="exampleInputPassword1" required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Product type </label>
-                                <input id="productType" type="text" class="form-control" name="type" id="exampleInputPassword1" required>
+                                <label for="productType" class="form-label">Product type </label>
+                                <select name="type" class="form-select productSize" id="floatingSelect"
+                                    aria-label="Floating label select example">
+                                    <option selected>Open the menu</option>
+                                    
+                                    <option value="Supplements & Nutrition">Supplements & Nutrition</option>
+                                    <option value="Activewear & Footwear">Activewear & Footwear</option>
+                                    <option value="Gym Equipment & Accessories">Gym Equipment & Accessories</option>
+                                    
+                                    
+                                    
+
+                                    
+
+                                </select>
+                                
+                                
                             </div>
                             <div class="form-floating mb-3">
                                 <select name="size" class="form-select productSize" id="floatingSelect"
@@ -397,10 +412,10 @@
                                     
 
                                 </select>
-                                <label for="floatingSelect">size</label>
+                                <label for="floatingSelect" >size</label>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Product price </label>
+                                <label for="productPrice" class="form-label">Product price </label>
                                 <input id="productPrice" type="text" class="form-control" name="price" id="exampleInputPassword1" required>
                             </div>
                             <button  type="submit" class="btn btn-primary">Add</button>

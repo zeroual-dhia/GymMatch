@@ -1,5 +1,7 @@
+
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check if an image file is uploaded
     if (isset($_FILES['imaga']) && $_FILES['imaga']['error'] === UPLOAD_ERR_OK) {
         $fileTmpPath = $_FILES['imaga']['tmp_name'];
         $fileName = $_FILES['imaga']['name'];
@@ -11,70 +13,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             die("Invalid file type. Please upload an image.");
         }
 
-        // Read the image file content as binary data
+        // Convert the image to Base64
         $imageData = file_get_contents($fileTmpPath);
+        $base64Image = base64_encode($imageData); // Convert to Base64 string
 
-        // Sanitize file name (optional, just for storing in DB if necessary)
+        // Sanitize file name (optional, for storing purposes)
         $newFileName = uniqid() . '.' . $fileExtension;
+
+        // Get other POST data
+        $pname = $_POST["pname"];
+        $quantity = $_POST["quantity"];
+        $type = $_POST["type"];
+        $size = $_POST["size"];
+        $price = $_POST["price"];
+
+        // Determine size column based on selected size
+        $sizeColumn = "";
+        switch ($size) {
+            case '36':
+                $sizeColumn = "quantity_36";
+                break;
+            case '38':
+                $sizeColumn = "quantity_38";
+                break;
+            case '40':
+                $sizeColumn = "quantity_40";
+                break;
+            case '42':
+                $sizeColumn = "quantity_42";
+                break;
+            case 'Open the menu':
+                 $sizeColumn = "product_quantity";
+                break;
+            default:
+                die("Invalid size selected.");
+        }
+
+        try {
+            require_once "dbh.inc.php"; // Connection to the database
+
+            // Insert query to store product details, including Base64-encoded image string
+            $query = "INSERT INTO products (product_name, product_img, product_category, product_prix, $sizeColumn) 
+                      VALUES (:pname, :imaga, :typ, :price, :quantity)";
+            $stmt = $pdo->prepare($query);
+
+            // Bind parameters for the query
+            $stmt->bindParam(":pname", $pname);
+            $stmt->bindParam(":imaga", $base64Image, PDO::PARAM_STR); // Store Base64 image string
+            $stmt->bindParam(":typ", $type);
+            $stmt->bindParam(":price", $price);
+            $stmt->bindParam(":quantity", $quantity);
+
+            // Execute the query
+            $stmt->execute();
+
+            // Close connection
+            $pdo = null;
+            $stmt = null;
+
+            // Redirect after successful insert
+            header("Location: ../../index.php");
+            die();
+        } catch (PDOException $e) {
+            die("Query failed: " . $e->getMessage());
+        }
+    } else {
+        echo "Error uploading file.";
     }
-
-
-
-
-
-
-    
-    $pname= $_POST["pname"];
-    $quantity= $_POST["quantity"];
-    $type= $_POST["type"];
-    $size= $_POST["size"];
-    $price= $_POST["price"];
-    $sizeColumn = "";
-    switch ($size) {
-        case '36':
-            $sizeColumn = "quantity_36";
-            break;
-        case '38':
-            $sizeColumn = "quantity_38";
-            break;
-        case '40':
-            $sizeColumn = "quantity_40";
-            break;
-        case '42':
-            $sizeColumn = "quantity_42";
-            break;
-        default:
-            die("Invalid size selected.");
-    }
-    
-    try {
-        require_once "dbh.inc.php";//connection to the database
-        $query = "INSERT INTO products(product_name,product_img,
-        product_category,product_prix,$sizeColumn) VALUES (
-        :pname,:imaga,:typ,:price,:quantity);";
-        
-        
-        $stmt=$pdo->prepare($query);
-        $stmt->bindParam(":pname",$pname);
-        $stmt->bindParam(":imaga",$imaga,PDO::PARAM_LOB);
-        $stmt->bindParam(":typ",$type);
-        $stmt->bindParam(":price",$price);
-        $stmt->bindParam(":quantity",$quantity);
-        $stmt->execute();
-        
-        $pdo=null;
-        $stmt=null;
-        header("Location:../../index.php");
-        die();
-    }catch (PDOException $e) {
-        die("query failed: " . $e->getMessage());
-    }
-    
-
+} else {
+    header("Location: ../../index.php");
 }
-else{
-    header("Location:../../index.php");
-
-}
-
-

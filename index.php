@@ -1,94 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+<form id="forming" action="/GymPath/www/includes/AddProduct.php" method="post" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="productImage" class="form-label">Select a picture of the product</label>
+                                <input id="productImage" class="form-control bg-dark" type="file" name="imaga"  required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="productName" class="form-label">Product name</label>
+                                <input id="productName" type="text" class="form-control" name="pname" id="exampleInputPassword1" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="productQuantity"  class="form-label">product quantity</label>
+                                <input id="productQuantity" type="text" class="form-control" name="quantity" id="exampleInputPassword1" required>
+                            </div>
+                            <div class="mb-3">
+                            <select name="type" class="form-select productSize" id="floatingSelect"
+                                    aria-label="Floating label select example">
+                                    <option selected>Open the menu</option>
+                                    
+                                    <option value="Supplements & Nutrition">Supplements & Nutrition</option>
+                                    <option value="Activewear & Footwear">Activewear & Footwear</option>
+                                    <option value="Gym Equipment & Accessories">Gym Equipment & Accessories</option>
+                                    
+                                    
+                                    
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="www/css/login.css">
-    <title>Animated Login Page</title>
-</head>
+                                    
 
-<body>
-    <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form class="form-up" action="/GymPath/www/includes/signup.php" method="post" name="sign-up">
-                <h1 style="margin-bottom: 20px;">Create Account</h1>
+                                </select>
+                                <label for="productType" class="form-label">Product type </label>
+                                
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select name="size" class="form-select productSize" id="floatingSelect"
+                                    aria-label="Floating label select example">
+                                    <option selected>Open the menu</option>
+                                    
+                                    <option value="36">36</option>
+                                    <option value="38">38</option>
+                                    <option value="34">40</option>
+                                    <option value="42">42</option>
+                                    
+                                    
 
-                <div class="form-element">
-                    <input type="text" id="Name" name="Name" placeholder="Name" />
-                    <span id="name-error" class="error-message"></span>
-                </div>
-                <div class="form-element">
-                    <input type="text" id="Email" name="Email" placeholder="Email" />
-                    <span id="email-error" class="error-message"></span>
-                </div>
+                                    
 
-                <div class="form-element">
-                    <input type="tel" id="phone" name="phone" placeholder="Phone number ">
-                    <span id="phone-error" class="error-message"></span>
-                </div>
-
-                <div class="form-element">
-                    <select id="item" name="item" required>
-                        <option value="" disabled selected hidden>--Select your role--</option>
-                        <option value="item1">Member</option>
-                        <option value="item2">Owner</option>
-                        <option value="item3">Trainer</option>
-
-                    </select>
-                </div>
-
-                <div class="form-element">
-                    <input type="number" id="age" name="age" placeholder="Your age " />
-                    <span id="age-error" class="error-message"></span>
-                </div>
-
-                <div class="form-element">
-                    <input type="password" id="password" name="pwd" placeholder="Password" />
-                    <span id="password-error" class="error-message"></span>
-                </div>
-
-
-                <button type="submit">Sign up </button>
-            </form>
-        </div>
-        <div class="form-container sign-in">
-            <form class="form-in">
-                <h1 style="margin-bottom: 20px;">Sign In</h1>
-                
-                <div class="form-element">
-                    <input type="text" id="signin-email" name="Email" placeholder="Email" />
-                    <span id="signin-email-error" class="error-message"></span>
-                </div>
-
-                <div class="form-element">
-                    <input type="password" id="signin-password" name="Email" placeholder="Password" />
-                    <span id="signin-password-error" class="error-message"></span>
-                </div>
-
-                <a href="#">Forgot your password?</a>
-                <button type="submit">Sign In</button>
-            </form>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Hello, Friend!</h1>
-                    <p>Register with your personal details to use all of site features</p>
-                    <button class="hidden" id="login">Sign In</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Welcome Back!</h1>
-                    <p>Enter your personal details to use all of site features</p>
-
-                    <button class="hidden" id="register">Sign Up</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="www/js/login.js"></script>
-
-</body>
-
-</html>
+                                </select>
+                                <label for="floatingSelect" >size</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="productPrice" class="form-label">Product price </label>
+                                <input id="productPrice" type="text" class="form-control" name="price" id="exampleInputPassword1" required>
+                            </div>
+                            <button  type="submit" class="btn btn-primary">Add</button>
+                            </form>
