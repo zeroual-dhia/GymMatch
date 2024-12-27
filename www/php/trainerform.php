@@ -1,0 +1,81 @@
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   
+    try {
+        require_once "dbh.inc.php";
+    } catch (PDOException $e) {
+        die("Connection failed: " . $e->getMessage());
+    }
+
+    // Required Fields
+    $facebook = $_POST['facebook'] ?? null;
+    $instagram = $_POST['instagram'] ?? null;
+    $youtube = $_POST['youtube'] ?? null;
+    $gender_preference = $_POST['gender_preference'] ?? null;
+    $specialization = $_POST['specialization'] ?? null;
+    $user_id = $_POST['user_id'] ?? null; // Received via session or preset
+
+    // Validate required fields
+    if (empty($specialization) || empty($user_id)) {
+        die("Error: All required fields must be filled.");
+    }
+
+    // Handle profile picture upload
+    if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
+        $profile_picture = file_get_contents($_FILES['profile_picture']['tmp_name']);
+
+        // Check file size (e.g., max 2MB)
+        if ($_FILES['profile_picture']['size'] > 2 * 1024 * 1024) {
+            die("Error: Profile picture must not exceed 2MB.");
+        } 
+
+        // Check file type
+        $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
+        if (!in_array($_FILES['profile_picture']['type'], $allowed_types)) {
+            die("Error: Profile picture must be a JPG, PNG, or GIF file.");
+        }
+    } else {
+        die("Error: Profile picture is required.");
+    }
+
+    // Handle CV upload
+    if (isset($_FILES['cv']) && $_FILES['cv']['error'] === UPLOAD_ERR_OK) {
+        $cv = file_get_contents($_FILES['cv']['tmp_name']);
+
+        // Check file size (e.g., max 5MB)
+        if ($_FILES['cv']['size'] > 5 * 1024 * 1024) {
+            die("Error: CV must not exceed 5MB.");
+        }
+
+        // Check file type
+        if ($_FILES['cv']['type'] !== 'application/pdf') {
+            die("Error: CV must be a PDF file.");
+        }
+    } else {
+        die("Error: CV is required.");
+    }
+
+    // Insert data into the database
+    try {
+        $sql = "INSERT INTO trainers (trainer_fb, trainer_insta, trainer_ytb, gender_prefrence, trainer_spe, trainer_img, trainer_cv, user_id) 
+                VALUES (:facebook, :instagram, :youtube, :gender_preference, :specialization, :profile_picture, :cv, :user_id)";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':facebook', $facebook);
+        $stmt->bindParam(':instagram', $instagram);
+        $stmt->bindParam(':youtube', $youtube);
+        $stmt->bindParam(':gender_preference', $gender_preference);
+        $stmt->bindParam(':specialization', $specialization);
+        $stmt->bindParam(':profile_picture', $profile_picture, PDO::PARAM_LOB);
+        $stmt->bindParam(':cv', $cv, PDO::PARAM_LOB);
+        $stmt->bindParam(':user_id', $user_id);
+
+        $stmt->execute();
+
+        echo "Trainer data successfully added.";
+    } catch (PDOException $e) {
+        die("Error: " . $e->getMessage());
+    }
+}
+

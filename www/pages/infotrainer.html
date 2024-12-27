@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trainers info</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/infotrainer.css">
+</head>
+<body class="p-0">
+    <header class="header2">
+        <div class="logo-name">
+            <img id='logo' src="/assets/logo/logo.png" alt="">
+            <p class="text-light GYMMATCH">GYM MATCH</p>
+        </div>
+       
+
+        <nav class="links">
+            <a href="../pages/home.html" class="active">Home</a>
+            <a href="../pages/about_us.html">About us</a>
+            <a href="../pages/explore.html">Explore</a>
+            <a href="../pages/programs.html">Programs</a>
+            <a href="../pages/store.html">Store</a>
+
+            <div class="dropdown">
+                <button id="profile-btn" class="profile-btn">
+                    <img src="../assets/icons/profile.png" alt="Profile" />
+                </button>
+                <div class="dropdown-content">
+                    <a href="login.html">Sign In</a>
+                    <a href="#signout">Sign Out</a>
+                </div>
+                
+            </div>
+
+            
+        </nav>
+
+        <button id="menu-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+        aria-controls="offcanvasWithBothOptions"><img src="../assets/icons/icons8-menu.svg" alt=""></button>
+
+    </header>
+    <div class="program-descreption container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 mt-5 mb-5">
+                <h3 class="program-name text-light text-center fw-bold"><br>trainer info</h3>
+            </div>
+            <div class="col-12">
+                <img class="img-fluid descreption-image rounded mx-auto d-block" src="../assets/images/team/team-1.jpg" alt="">
+            </div>
+    
+            <div class="col-8 mt-3">
+                <div class="row justify-content-center">
+                    <div class="col-11 motivation mb-5 mt-5 p-3">
+                        <p class="text-center text-light fw-600">train with : trainer 1</p>
+                    </div>
+                    <div class="col-12 workout-summary">
+                        <table class="table caption-top">
+                            <caption class="caption fw-bold">trainer 1 info</caption>
+                            <tbody>
+                                <tr class="table-row">
+                                    <td id="col1">Name</td>
+                                    <td>TrainerName</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td id="col1">Address</td>
+                                    <td>TrainerAddress</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td id="col1">Email</td>
+                                    <td>Trainer1@gmail.com</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td id="col1">Phone Number</td>
+                                    <td>(+213) ... ... ...</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td id="col1">Target Gender</td>
+                                    <td>Both men and women</td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td id="col1">Services</td>
+                                    <td>personal training</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-12 mt-5 text">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3 class="fw-bold">Bio</h3>
+                            </div>
+                            <div class="col-12">
+                                <p class="text-light">trainer's bio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="node_modules/bootstrap/dist/js/wow.min.js"></script>
+<script src="../js/header.js"></script>
+
+</body>
+</html>
