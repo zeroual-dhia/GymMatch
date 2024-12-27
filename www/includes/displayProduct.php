@@ -1,7 +1,7 @@
-<<?php
+<?php
 
 try {
-    require_once "www/includes/dbh.inc.php";
+    require_once "/GymPath/www/includes/dbh.inc.php";
     $query="SELECT * FROM products;";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
@@ -27,7 +27,8 @@ try {
     <title>Document</title>
 </head>
 <body>
-<?php
+    <h3>results:</h3>
+    <?php
     if(empty($results)){
         echo "<div>";
         echo "<p> there is no product </p>";
@@ -37,15 +38,7 @@ try {
 
     }
     else{
-        foreach ($results as $row){
-            
-            echo "<h1>";
-            echo htmlspecialchars($row["product_name"]) ; 
-            echo "</h1>";
-            
-
-
-        }
+        var_dump($results);
 
     }
     
@@ -53,10 +46,3 @@ try {
     ?>
 </body>
 </html>
-     
-
-
-
-
-
-
