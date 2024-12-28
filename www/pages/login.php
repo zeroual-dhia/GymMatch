@@ -1,3 +1,9 @@
+<?php
+require_once "../includes/config_session.php";
+require_once "../includes/signup_view.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,6 +58,9 @@
                 <button type="submit">Sign up </button>
             </form>
         </div>
+        <?php
+    check_signup();
+        ?>
         <div class="form-container sign-in">
             <form class="form-in">
                 <h1 style="margin-bottom: 20px;">Sign In</h1>

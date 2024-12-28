@@ -12,6 +12,32 @@ $pwd=$_POST["pwd"];
 
 try {
     require_once "dbh.inc.php";//connection to the database
+    require_once "signup_model.php";
+    require_once "signup_contr.php";
+   
+    $errors = [];
+    if(is_empty($Name,$Email,$phone,$item,$age,$pwd)){
+        $errors["empty_input"]="fill in all fields";
+    }
+    if(is_email_valid($Email)){
+        $errors["invalid_email"]="invalid email";
+    }
+    if(is_username_taken($pdo,$Name)){
+        $errors["username_taken"]="username already taken";
+    }
+    if(is_email_taken($pdo,$Email)){
+        $errors["email_used"]="email already taken";
+    }
+
+    require_once "config_session.php";
+
+    if($errors){
+
+
+        $_SESSION["error_signup"]= $errors;
+        header("Location:../pages/login.php");
+    }
+
     $query="INSERT INTO users (user_name, user_phonenum, user_email, user_pw, user_acc, user_age, user_status) VALUES 
     (:username, :phone, :email, :pwd, :accname, :age ,:statuss );";
     $stmt=$pdo->prepare($query);
@@ -27,7 +53,7 @@ try {
 
     $pdo=null;
     $stmt=null;
-    header("Location:../../index.php");
+    header("Location:../pages/login.php");
     die();
 } catch (PDOException $e) {
     die("query failed: " . $e->getMessage());
@@ -36,5 +62,5 @@ try {
 }
 else{
 
-    header("Location:../../index.php");//user did not enter any data so nothing happens
+    header("Location:../pages/login.php");//user did not enter any data so nothing happens
 }
