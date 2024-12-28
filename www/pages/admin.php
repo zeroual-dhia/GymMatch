@@ -380,7 +380,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="productType" class="form-label">Product type </label>
-                                <select name="type" class="form-select productSize" id="floatingSelect"
+                                <select name="type" id="productType" class="form-select productSize" id="floatingSelect"
                                     aria-label="Floating label select example">
                                     <option selected>Open the menu</option>
                                     
