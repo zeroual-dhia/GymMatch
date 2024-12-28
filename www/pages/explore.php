@@ -1,22 +1,39 @@
+<?php
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "gym-match";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch gym data
+$sql = "SELECT gym_id, gym_name, gym_location, gym_targender, gym_extra, gym_img FROM gyms";
+$result = $conn->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Gyms</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/node_modules/css/elegant-icons.css">
     <link rel="stylesheet" href="../css/explore.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/preloader.css">
     <link rel="stylesheet" href="../css/footer.css">
-    
 </head>
 <body>
-    <div id="preloder">
+     <div id="preloder">
         <div class="loader"></div>
     </div>
     <header class="header2">
@@ -50,7 +67,8 @@
         <button id="menu-btn"><img src="../icons/icons8-menu.svg" alt=""></button>
 
     </header>
-     <!-- Breadcrumb Section Begin -->
+
+       <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg spad" data-setbg="../images/gallery/hero2.png">
         <div class="container">
             <div class="row">
@@ -65,9 +83,7 @@
         </div>
     </section>
     <!-- Breadcrumb End -->
-     <section class="explore_page">
-    <center>
-    <div class="search-container">
+   <div class="search-container">
         <div class="InputContainer">
             <div class="searchFields">
                 <input
@@ -87,32 +103,60 @@
             </label>
         </div>
     </center>
-    <center> <h2> OUR GYMS </h2> </center>
-    <div class="gym-list">
-        <div class="gym-card">
-            <a href="info.html" class="gym-link">
-                <img src="../assets/images/img/gym6" alt="Powerhouse Gym">
-                <h3>Powerhouse Gym</h3>
-                <p>Location: Downtown<br>Facilities: Weightlifting, Cardio, Classes</p>
-            </a>
+    <section class="explore_page">
+        <center>
+            <h2>OUR GYMS</h2>
+        </center>
+        <div class="gym-list">
+            <?php
+            if ($result->num_rows > 0) {
+                // Output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    $gymName = htmlspecialchars($row['gym_name']);
+                    $gymLocation = htmlspecialchars($row['gym_location']);
+                    $gymExtra = htmlspecialchars($row['gym_extra']);
+                    $gymImage = base64_encode($row['gym_img']);
+
+                    echo "<div class='gym-card'>";
+                    echo "<a href='info.html' class='gym-link'>";
+                    echo "<img src='data:image/jpeg;base64,$gymImage' alt='$gymName'>";
+                    echo "<h3>$gymName</h3>";
+                    echo "<p>Location: $gymLocation<br>";
+                    echo (!empty($gymExtra) ? "Facilities: $gymExtra" : "") . "</p>";
+                    echo "</a>";
+                    echo "</div>";
+                }
+            } else {
+                // Default gym cards when no data exists
+                echo "<div class='gym-card'>";
+                echo "<a href='info.html' class='gym-link'>";
+                echo "<img src='../assets/images/img/gym6' alt='Powerhouse Gym'>";
+                echo "<h3>Powerhouse Gym</h3>";
+                echo "<p>Location: Downtown<br>Facilities: Weightlifting, Cardio, Classes</p>";
+                echo "</a>";
+                echo "</div>";
+
+                echo "<div class='gym-card'>";
+                echo "<a href='info.html' class='gym-link'>";
+                echo "<img src='../assets/images/img/gym2pic.jpg' alt='Fitness Zone'>";
+                echo "<h3>Fitness Zone</h3>";
+                echo "<p>Location: Uptown<br>Facilities: Swimming, Yoga, Personal Training</p>";
+                echo "</a>";
+                echo "</div>";
+
+                echo "<div class='gym-card'>";
+                echo "<a href='info.html' class='gym-link'>";
+                echo "<img src='../assets/images/img/gym3.webp' alt='Bodybuilding Factory'>";
+                echo "<h3>Bodybuilding Factory</h3>";
+                echo "<p>Location: East Side<br>Facilities: Bodybuilding, Nutrition Counseling</p>";
+                echo "</a>";
+                echo "</div>";
+            }
+            ?>
         </div>
-        <div class="gym-card">
-            <a href="info.html" class="gym-link">
-                <img src="../assets/images/img/gym2pic.jpg" alt="Fitness Zone">
-                <h3>Fitness Zone</h3>
-                <p>Location: Uptown<br>Facilities: Swimming, Yoga, Personal Training</p>
-            </a>
-        </div>
-        <div class="gym-card">
-            <a href="info.html" class="gym-link">
-                <img src="../assets/images/img/gym3.webp" alt="Bodybuilding Factory">
-                <h3>Bodybuilding Factory</h3>
-                <p>Location: East Side<br>Facilities: Bodybuilding, Nutrition Counseling</p>
-            </a>
-        </div>
-    </div>
     </section>
-    <footer class="footer-section">
+
+     <footer class="footer-section">
         <div class="container-fluid">
             <div class="row justify-content-between align-item-start  ">
                 <div class="col-lg-5 col-md-6 col-sm-12  ">
@@ -183,3 +227,7 @@
  <script src="../js/explore.js"></script>
 </body>
 </html>
+
+<?php
+$conn->close();
+?>
