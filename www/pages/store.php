@@ -42,17 +42,17 @@ try {
 
     <header class="header2">
         <div class="logo-name">
-            <img id='logo' src="/assets/logo/logo.png" alt="">
+            <img id='logo' src="../assets/logo/logo.png" alt="">
             <p class="text-light GYMMATCH">GYM MATCH</p>
         </div>
        
 
         <nav class="links">
-            <a href="../pages/home.html" class="active">Home</a>
-            <a href="../pages/about_us.html">About us</a>
-            <a href="../pages/explore.html">Explore</a>
-            <a href="../pages/programs.html">Programs</a>
-            <a href="../pages/store.html">Store</a>
+            <a href="../pages/home.php" class="active">Home</a>
+            <a href="../pages/about_us.php">About us</a>
+            <a href="../pages/explore.php">Explore</a>
+            <a href="../pages/programs.php">Programs</a>
+            <a href="../pages/store.php">Store</a>
 
             <div class="dropdown">
                 <button id="profile-btn" class="profile-btn">
@@ -82,7 +82,7 @@ try {
                     <div class="breadcrumb-text">
                         <h2>Our Store</h2>
                         <div class="bt-option">
-                            <a href="../pages/index.html"><i class="fa fa-home"></i> Home</a>
+                            <a href="./store.php"><i class="fa fa-home"></i> Home</a>
                             <span>Store</span>
                         </div>
                     </div>
@@ -159,6 +159,11 @@ try {
   
             
               echo '<div class="product-card" data-id="1">';
+              if (isset($row['product_img']) && !empty($row['product_img'])) {
+                $imageData = base64_encode($row['product_img']);
+                $imageSrc = 'data:image/png;base64,' . $imageData;
+                echo "<img src=\"$imageSrc\" alt=\"Product Image\" >";
+            } 
               echo "<div class=\"product-info\">" ;
               echo "<h4>";
               echo htmlspecialchars($row["product_name"]) ; 
