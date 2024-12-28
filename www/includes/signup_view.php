@@ -5,10 +5,10 @@ function check_signup(){
 
 
         $errors = $_SESSION['error_signup'];
-        echo "<br>";
+        
         foreach($errors as $error){
 
-            echo '<p>' . $error . '</p>';
+            echo '<span id="password-error" class="error-message">' . $error . '</span>';
         }
         unset($_SESSION['error_signup']);
 

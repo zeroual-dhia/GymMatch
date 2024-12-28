@@ -21,7 +21,10 @@ require_once "../includes/signup_view.php";
                 <h1 style="margin-bottom: 20px;">Create Account</h1>
 
                 <div class="form-element">
-                    <input type="text" id="Name" name="Name" placeholder="Name" />
+                    <input type="text" id="Name" name="Name" placeholder="username" />
+                    <?php
+            check_signup();
+        ?>
                     <span id="name-error" class="error-message"></span>
                 </div>
                 <div class="form-element">
@@ -56,11 +59,10 @@ require_once "../includes/signup_view.php";
 
 
                 <button type="submit">Sign up </button>
+                
             </form>
         </div>
-        <?php
-    check_signup();
-        ?>
+        
         <div class="form-container sign-in">
             <form class="form-in">
                 <h1 style="margin-bottom: 20px;">Sign In</h1>

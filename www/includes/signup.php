@@ -19,9 +19,7 @@ try {
     if(is_empty($Name,$Email,$phone,$item,$age,$pwd)){
         $errors["empty_input"]="fill in all fields";
     }
-    if(is_email_valid($Email)){
-        $errors["invalid_email"]="invalid email";
-    }
+   
     if(is_username_taken($pdo,$Name)){
         $errors["username_taken"]="username already taken";
     }
@@ -35,16 +33,22 @@ try {
 
 
         $_SESSION["error_signup"]= $errors;
-        header("Location:../pages/login.php");
+        header("Location:../pages/login.php?signup=fail");
+        die();
     }
 
     $query="INSERT INTO users (user_name, user_phonenum, user_email, user_pw, user_acc, user_age, user_status) VALUES 
     (:username, :phone, :email, :pwd, :accname, :age ,:statuss );";
+    $options = [
+
+        'cost' => 12 
+    ];
+    $hashedpw = password_hash($pwd,PASSWORD_BCRYPT,$options); 
     $stmt=$pdo->prepare($query);
     $stmt->bindParam(":username",$Name);
     $stmt->bindParam(":phone",$phone);
     $stmt->bindParam(":email",$Email);
-    $stmt->bindParam(":pwd",$pwd);
+    $stmt->bindParam(":pwd",$hashedpw);
     $stmt->bindParam(":accname",$Name);
     $stmt->bindParam(":age",$age);
     $stmt->bindParam(":statuss",$item);   
@@ -53,7 +57,7 @@ try {
 
     $pdo=null;
     $stmt=null;
-    header("Location:../pages/login.php");
+    header("Location:../pages/login.php?signup=success");
     die();
 } catch (PDOException $e) {
     die("query failed: " . $e->getMessage());

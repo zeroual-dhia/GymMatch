@@ -8,18 +8,6 @@ function is_empty($name,$email,$phone,$item,$age,$passwrod){
         return false; 
     }
 }
-function is_email_valid($email){
-if(filter_var($email,FILTER_VALIDATE_EMAIL)){
-    return true;
-
-}
-else{
-    return false;
-}
-
-
-
-}
 function is_username_taken(object $pdo,$username){
 if(get_username($pdo,$username)){
 
