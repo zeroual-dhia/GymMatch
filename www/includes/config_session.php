@@ -11,20 +11,46 @@ session_set_cookie_params([
     'httponly' => true
 ]);
 session_start();
+if(isset($_SESSION["id"])){
+
+    if(!isset($_SESSION["last_regeneration"])){
+        session_regenerate_id_logged();
+    }
+    else{
+        $interval = 60 * 30;
+        if(time() - $_SESSION["last_regeneration"] >= $interval ){
+    
+            session_regenerate_id_logged();
+            $_SESSION["last_regeneration"]= time();
+    
+        }
+    }
+
+}
+else {
+
 if(!isset($_SESSION["last_regeneration"])){
-    session_regenerate_id();
+    session_regenerate_id(true);
     $_SESSION["last_regeneration"]= time();
 }
-else{
+else{ 
     $interval = 60 * 30;
     if(time() - $_SESSION["last_regeneration"] >= $interval ){
 
-        session_regenerate_id();
+        session_regenerate_id(true);
         $_SESSION["last_regeneration"]= time();
 
     }
 }
 
+}
+function session_regenerate_id_logged(){
+    $userid = $_SESSION["id"];
+    session_regenerate_id(true);
+    $newid = session_create_id();
+    $sessionid = $newid . "_" . $userid;
+    session_id($sessionid);
 
-
+    $_SESSION["last_regeneration"]= time(); 
+}
 
