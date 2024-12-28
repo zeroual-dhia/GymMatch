@@ -365,7 +365,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Add product</h6>
-                            <form id="forming" action="/www/includes/AddProduct.php" method="post" enctype="multipart/form-data" >
+                            <form id="forming" action="/GymPath/www/includes/AddProduct.php" method="post" enctype="multipart/form-data" >
                             <div class="mb-3">
                                 <label for="productImage" class="form-label">Select a picture of the product</label>
                                 <input id="productImage" class="form-control bg-dark" type="file" name="imaga" id="formFile" required>
