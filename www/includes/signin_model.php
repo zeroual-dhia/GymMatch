@@ -1,6 +1,6 @@
 <?php
 
-function get_user(pbject $pdo,$email){
+function get_user(object $pdo,$email){
 
     $query = "SELECT * FROM users WHERE user_email = :username;  ";
     $stmt = $pdo->prepare($query);
