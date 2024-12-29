@@ -12,10 +12,12 @@ body {
 
 }
 .explore_page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    background-color: #000; /* Background for the section */
 }
+
 .breadcrumb-section {
     height: 400px;
     background-image: url('../assets/images/gallery/hero2.png');
@@ -134,15 +136,21 @@ body {
 .micButton:hover {
     background-color: rgb(207, 47, 47);
 }
-
-.gym-list {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    width: 90%;
-    gap : 40px ; /* Space between gym cards */
+.gym-list-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
+.gym-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 10px;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
 .gym-card {
     background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
     border-radius: 8px;
@@ -226,9 +234,12 @@ h1 {
     margin: 0; /* Removes default margin */
 }
 .footer-section {
-    width: 100vw; /* Ensures full viewport width */
-    padding: 30px; /* Keeps internal spacing */
-    margin: 0; /* Removes any default margin */
+    background-color: #111;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 0; /* Remove default margin */
+    text-align: center;
+    width: 100%;
 }
 
 /* Media Queries for Responsiveness */

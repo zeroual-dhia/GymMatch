@@ -6,8 +6,8 @@
     <title>Gym owner dashboard</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/www/css/gymdashboard.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/gymdashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -21,19 +21,19 @@
     <div class="container">
         <div class="pic">
             <a href="/www/pages/profile.html">
-                <img class="picture" src="/www//assets/images/gymdashboard/imgg.jfif" alt="none">
+                <img class="picture" src="../assets/images/gymdashboard/imgg.jfif" alt="none">
             </a>
             
         </div>
         <div class="content">
 
 
-            <li class="elem">
+            <li class="elema">
                 Gym members
                 <hr>
                 
 	          </li>
-              <li class="elem">
+              <li  class="elemb">
 	            Gym subs
                 <hr>
 	            
@@ -49,7 +49,7 @@
     
 
 
-    <script src="/www/js/dashboard.js"></script>
+    <script src="../js/dashboard.js"></script>
     
     
 </body>
