@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = null;
 
             // Redirect after successful insert
-            header("Location: ../../index.php");
+            header("Location: ../pages/admin.php");
             die();
         } catch (PDOException $e) {
             die("Query failed: " . $e->getMessage());
@@ -81,5 +81,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error uploading file.";
     }
 } else {
-    header("Location: ../../index.php");
+    header("Location: ../pages/admin.php");
 }

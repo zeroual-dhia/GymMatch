@@ -348,7 +348,7 @@ include_once '../includes/connect.php'; ?>
 
 
     <!-- Template Javascript -->
-    <script src="../js/admin.js"></script>
+    <script src="../js/admin2.js"></script>
 </body>
 
 </html>

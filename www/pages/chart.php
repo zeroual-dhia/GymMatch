@@ -231,7 +231,7 @@
     <script src="../../node_modules/@popperjs/core/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../js/admin.js"></script>
+    <script src="../js/admin2.js"></script>
 </body>
 
 </html>

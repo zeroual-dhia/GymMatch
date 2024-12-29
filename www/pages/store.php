@@ -1,3 +1,28 @@
+<<<<<<< HEAD
+=======
+<?php
+
+try {
+    require_once "../includes/dbh.inc.php";
+    $query="SELECT * FROM products;";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $pdo=null;
+    $stmt=null;
+} catch (PDOException $e) {
+    die("query faild : " . $e->getMessage());
+    //throw $th;
+}
+    
+
+
+
+?>
+
+
+>>>>>>> 164ea9324a3bcabde90551f62a1f20ea01892ecf
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,17 +45,29 @@
 
     <header class="header2">
         <div class="logo-name">
+<<<<<<< HEAD
             <img id='logo' src="/assets/logo/logo.png" alt="">
+=======
+            <img id='logo' src="../assets/logo/logo.png" alt="">
+>>>>>>> 164ea9324a3bcabde90551f62a1f20ea01892ecf
             <p class="text-light GYMMATCH">GYM MATCH</p>
         </div>
        
 
         <nav class="links">
+<<<<<<< HEAD
             <a href="../pages/home.html" class="active">Home</a>
             <a href="../pages/about_us.html">About us</a>
             <a href="../pages/explore.html">Explore</a>
             <a href="../pages/programs.html">Programs</a>
             <a href="../pages/store.html">Store</a>
+=======
+            <a href="../pages/home.php" class="active">Home</a>
+            <a href="../pages/about_us.php">About us</a>
+            <a href="../pages/explore.php">Explore</a>
+            <a href="../pages/programs.php">Programs</a>
+            <a href="../pages/store.php">Store</a>
+>>>>>>> 164ea9324a3bcabde90551f62a1f20ea01892ecf
 
             <div class="dropdown">
                 <button id="profile-btn" class="profile-btn">
@@ -60,7 +97,11 @@
                     <div class="breadcrumb-text">
                         <h2>Our Store</h2>
                         <div class="bt-option">
+<<<<<<< HEAD
                             <a href="../pages/index.html"><i class="fa fa-home"></i> Home</a>
+=======
+                            <a href="./store.php"><i class="fa fa-home"></i> Home</a>
+>>>>>>> 164ea9324a3bcabde90551f62a1f20ea01892ecf
                             <span>Store</span>
                         </div>
                     </div>
@@ -122,6 +163,7 @@
 
 
       <!-- Product Grid Section -->
+<<<<<<< HEAD
    <section class="product-grid">
     <!-- Example of a Product Card -->
     <div class="product-card" data-id="1">
@@ -371,6 +413,64 @@
         <button class="buy-button">Buy</button>
     </div>
 </section>
+=======
+      <?php
+      if(empty($results)){
+          echo "<div>";
+          echo "<p> there is no product </p>";
+          echo "</div>";
+  
+  
+  
+      }
+      else{
+          echo '<section class="product-grid">';
+          foreach ($results as $row){
+  
+            
+              echo '<div class="product-card" data-id="1">';
+              if (isset($row['product_img']) && !empty($row['product_img'])) {
+                $imageData = base64_encode($row['product_img']);
+                $imageSrc = 'data:image/png;base64,' . $imageData;
+                echo "<img src=\"$imageSrc\" alt=\"Product Image\" >";
+            } 
+              echo "<div class=\"product-info\">" ;
+              echo "<h4>";
+              echo htmlspecialchars($row["product_name"]) ; 
+              echo "</h4>";
+              echo "<div class=\"price\">";
+              echo htmlspecialchars($row["product_prix"]) . ' DA';
+              echo "</div>";
+              echo "</div>";
+              if(isset($row["product_quantity"]) || isset($row["quantity_36"]) ){
+  
+                echo   '<div class="quantity-buttons">';
+              echo '<button class="quantity-minus">-</button>';
+              echo ' <input type="number" class="quantity-value" value="1" min="1">';
+              echo '<button class="quantity-plus">+</button>';
+             echo "</div>";
+             echo '<div class="size-buttons">';
+             echo '<button class="size-button">36</button>';
+             echo '<button class="size-button">38</button>';
+             echo' <button class="size-button">40</button>';
+              echo' <button class="size-button">42</button>';
+              echo '</div>';
+              }
+  
+  
+  
+              echo '<button class="buy-button">Buy</button>';
+  
+              echo "</div>";
+              
+              
+          }
+          echo '</section>';
+      }
+      
+      
+      ?>
+>>>>>>> 164ea9324a3bcabde90551f62a1f20ea01892ecf
 
 
 
