@@ -27,7 +27,7 @@
      <link href="/node_modules/css/admin-bootstrap.css" rel="stylesheet">
  
      <!-- Template Stylesheet -->
-     <link href="/www/css/admin.css" rel="stylesheet">
+     <link href="../css/admin.css" rel="stylesheet">
 </head>
 
 <body>
@@ -183,7 +183,7 @@
 
 
     <!-- Template Javascript -->
-    <script src="/www/js/admin.js"></script>
+    <script src="../js/admin.js"></script>
 </body>
 
 </html>

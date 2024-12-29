@@ -161,8 +161,8 @@ try {
               echo '<div class="product-card" data-id="1">';
               if (isset($row['product_img']) && !empty($row['product_img'])) {
                 $imageData = base64_encode($row['product_img']);
-                $imageSrc = 'data:image/png;base64,' . $imageData;
-                echo "<img src=\"$imageSrc\" alt=\"Product Image\" >";
+                $imageSrc = 'data:image/jpg;base64,' . $imageData;
+                echo "<img src=" . $imageSrc . " alt=\"Product Image\" >";
             } 
               echo "<div class=\"product-info\">" ;
               echo "<h4>";
