@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="/www/css/profile.css">
+    <link rel="stylesheet" href="../css/profile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -57,7 +57,7 @@
            
             <div class="image-container">
                
-            <img class="image" src="/www/assets/images/profile/pfp.jfif" alt="none">
+            <img class="image" src="../assets/images/profile/pfp.jfif" alt="none">
             <input type="file" id="upload-picture" accept="image/*" style="display: none;">
             <div class="hover-text">Change PFP</div>
             </div>
@@ -68,7 +68,7 @@
             </div>
             <div class="edit">
                
-                <img class="edit-icon" src="/www/assets/images/profile/logo.png" alt="none">
+                <img class="edit-icon" src="../assets/images/profile/logo.png" alt="none">
                 <p >Edit</p>
             </div>
             <div class="humicon">
@@ -191,7 +191,7 @@
 
 
         <div>
-            <img class="logo" src="/www/assets/logo/logo.png" alt="none">
+            <img class="logo" src="../assets/logo/logo.png" alt="none">
            
         </div>
         
@@ -212,6 +212,7 @@
 
     </div>
 
-<script src="/www/js/profile.js"></script>
+<script src="../js/profile.js"></script>
+<script src="../js/header.js"></script>
 </body>
 </html>
