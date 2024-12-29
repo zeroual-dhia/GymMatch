@@ -124,6 +124,7 @@
     } else {
         echo '<p class="text-light">No programs found for the selected goal.</p>';
     }
+    $result->close();
     ?>
 
 
@@ -139,7 +140,7 @@
     $sql2->bind_param('i', $_GET['id']);
     $sql2->execute();
     $result2 = $sql2->get_result();
-    $i=1;
+    $i = 1;
     if ($result2 && $result2->num_rows > 0) {
         while ($row2 = $result2->fetch_assoc()) {
 
@@ -149,8 +150,8 @@
 
             <div class="col-12 mt-4 Workout">
                 <div class="col-12">
-                    <h4 class="text-light">Workout ' . $i++ . ':'.$row2['workout_title'].' </h4>
-                    <p class="text-light fw-500">'.$row2['workout_descreption'].' </p>
+                    <h4 class="text-light">Workout ' . $i++ . ':' . $row2['workout_title'] . ' </h4>
+                    <p class="text-light fw-500">' . $row2['workout_descreption'] . ' </p>
                 </div>
 
                 <table class="table table-striped mt-5 table-hover">
@@ -206,6 +207,8 @@
     } else {
 
     }
+    $result2->close();
+    $connect->close();
     ?>
 
 

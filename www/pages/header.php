@@ -7,11 +7,11 @@
 
 
         <nav class="links">
-            <a href="" class="active">Home</a>
-            <a href="">About us</a>
-            <a href="">Explore</a>
-            <a href="">Programs</a>
-            <a href="">Store</a>
+            <a href="home.php" class="active">Home</a>
+            <a href="about_us.php">About us</a>
+            <a href="explore.php">Explore</a>
+            <a href="programs.php">Programs</a>
+            <a href="store.php">Store</a>
 
             <div class="dropdown">
                 <button id="profile-btn" class="profile-btn">
@@ -42,21 +42,11 @@
 
             <div class="pages">
 
-                <a href="" class="active">Home</a>
-
-
-                <a href="">About us</a>
-
-
-                <a href="">Explore</a>
-
-
-                <a href="">Programs</a>
-
-
-                <a href="/">Store</a>
-
-
+            <a href="home.php" class="active">Home</a>
+            <a href="about_us.php">About us</a>
+            <a href="explore.php">Explore</a>
+            <a href="programs.php">Programs</a>
+            <a href="store.php">Store</a>
 
             </div>
 
@@ -78,4 +68,4 @@
         </nav>
  </div>
 
-    
+ <script src="../js/header.js"></script>

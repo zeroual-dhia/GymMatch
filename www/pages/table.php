@@ -208,7 +208,9 @@ include_once '../includes/connect.php'; ?>
                                         }
                                     } else {
                                         echo '<tr><td colspan="4">No trainers found.</td></tr>';
-                                    } ?>
+                                    } 
+                                    $result ->close();  
+                                ?>
 
 
                                 </tbody>
@@ -252,7 +254,7 @@ include_once '../includes/connect.php'; ?>
                                     </tr>';
                                         }
                                     }
-
+                                    $result2->close();
                                     ?>
 
 
@@ -299,7 +301,8 @@ include_once '../includes/connect.php'; ?>
                                         </tr>';
                                             }
                                         }
-
+                                        $result3->close();
+                                        $connect->close();
                                         ?>
                                     </tbody>
                                 </table>
