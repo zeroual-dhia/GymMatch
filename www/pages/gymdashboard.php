@@ -28,12 +28,12 @@
         <div class="content">
 
 
-            <li class="elem">
+            <li class="elem1">
                 Gym members
                 <hr>
                 
 	          </li>
-              <li class="elem">
+              <li  class="elem2">
 	            Gym subs
                 <hr>
 	            

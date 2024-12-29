@@ -1,5 +1,10 @@
-document.querySelectorAll(".elem").forEach(
+document.querySelector(".elem1").forEach(
   addEventListener("click", () => {
-    window.location.href = "/GymPath/www/pages/table_copy.php";
+    window.location.href = "../pages/table_copy.php";
+  })
+);
+document.querySelector(".elem2").forEach(
+  addEventListener("click", () => {
+    window.location.href = "../pages/table_copy.php";
   })
 );
