@@ -1,10 +1,9 @@
 window.onload = () => {
-    const links = document.querySelectorAll('.links a'); 
+    const links = document.querySelectorAll('.links a,.pages a'); 
     let activeLink = document.querySelector('.active');
-    const currentPath = window.location.pathname;
-    const scrollPoint = 400;
+    const currentPath =  window.location.pathname.split('/').pop()
     const preloader = document.getElementById('preloder');
-    const pages=document.querySelectorAll('.pages a');
+    
 
      //preloader :
     if (preloader) {
@@ -17,34 +16,21 @@ window.onload = () => {
             }, 500); 
         }, 200); 
     }
+    console.log('1');
 
-
-
-   
-
-
-
-    
+    console.log(currentPath);
      //menu :
-    
-    pages.forEach((link) => {
-        ChangeLink(link);
-    });
 
- 
-    
     links.forEach((link) => {
         ChangeLink(link);
     });
 
     function ChangeLink(link) {
+        
         if (currentPath === link.getAttribute('href')) {
             activeLink?.classList.remove('active'); 
             link.classList.add('active');
             activeLink = link;
         }
     }
-
-
-
 };
