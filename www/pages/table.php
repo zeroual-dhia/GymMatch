@@ -191,7 +191,7 @@ include_once '../includes/connect.php'; ?>
                                     $sql = '
                                      SELECT users.user_name, users.user_email, users.user_phonenum
                                       FROM users
-                                     JOIN (SELECT user_id FROM trainers) AS trainer_ids
+                                     JOIN (SELECT user_id FROM trainers where tr_accepted=1) AS trainer_ids
                                       ON users.user_id = trainer_ids.user_id;
                                  ';
                                     $result = $connect->query($sql);
