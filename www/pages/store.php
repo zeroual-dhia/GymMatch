@@ -160,9 +160,9 @@ try {
             
               echo '<div class="product-card" data-id="1">';
               if (isset($row['product_img']) && !empty($row['product_img'])) {
-                $imageData = base64_encode($row['product_img']);
-                $imageSrc = 'data:image/png;base64,' . $imageData;
-                echo "<img src=\"$imageSrc\" alt=\"Product Image\" >";
+                $imageData = $row['product_img'];
+                $imageSrc = 'data:image/jpg;base64,' . $imageData;
+                echo "<img src=" . $imageSrc . " alt=\"Product Image\" data-category=\"" . $row['product_category'] . "\" >";
             } 
               echo "<div class=\"product-info\">" ;
               echo "<h4>";
@@ -172,13 +172,14 @@ try {
               echo htmlspecialchars($row["product_prix"]) . ' DA';
               echo "</div>";
               echo "</div>";
-              if(isset($row["product_quantity"]) || isset($row["quantity_36"]) ){
-  
-                echo   '<div class="quantity-buttons">';
+              echo   '<div class="quantity-buttons">';
               echo '<button class="quantity-minus">-</button>';
               echo ' <input type="number" class="quantity-value" value="1" min="1">';
               echo '<button class="quantity-plus">+</button>';
              echo "</div>";
+              if($row["product_category"] === "Activewear & Footwear" ){
+  
+               
              echo '<div class="size-buttons">';
              echo '<button class="size-button">36</button>';
              echo '<button class="size-button">38</button>';

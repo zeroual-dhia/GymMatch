@@ -1,33 +1,33 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if an image file is uploaded
+   
     if (isset($_FILES['imaga']) && $_FILES['imaga']['error'] === UPLOAD_ERR_OK) {
         $fileTmpPath = $_FILES['imaga']['tmp_name'];
         $fileName = $_FILES['imaga']['name'];
         $fileExtension = pathinfo($fileName, PATHINFO_EXTENSION);
 
-        // Allowed file types
+        
         $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
         if (!in_array(strtolower($fileExtension), $allowedExtensions)) {
             die("Invalid file type. Please upload an image.");
         }
 
-        // Convert the image to Base64
+        
         $imageData = file_get_contents($fileTmpPath);
-        $base64Image = base64_encode($imageData); // Convert to Base64 string
+        
 
-        // Sanitize file name (optional, for storing purposes)
+        
         $newFileName = uniqid() . '.' . $fileExtension;
 
-        // Get other POST data
+        
         $pname = $_POST["pname"];
         $quantity = $_POST["quantity"];
         $type = $_POST["type"];
         $size = $_POST["size"];
         $price = $_POST["price"];
 
-        // Determine size column based on selected size
+      
         $sizeColumn = "";
         switch ($size) {
             case '36':
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Bind parameters for the query
             $stmt->bindParam(":pname", $pname);
-            $stmt->bindParam(":imaga", $base64Image, PDO::PARAM_STR); // Store Base64 image string
+            $stmt->bindParam(":imaga", $imageData, PDO::PARAM_STR); // Store Base64 image string
             $stmt->bindParam(":typ", $type);
             $stmt->bindParam(":price", $price);
             $stmt->bindParam(":quantity", $quantity);

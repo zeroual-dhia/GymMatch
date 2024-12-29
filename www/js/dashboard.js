@@ -1,4 +1,5 @@
-document.querySelectorAll(".elem").forEach(addEventListener('click',()=>{
-
-    window.location.href="/www/pages/table copy.html"
-}))
+document.querySelectorAll(".elem").forEach(
+  addEventListener("click", () => {
+    window.location.href = "/GymPath/www/pages/table_copy.php";
+  })
+);
