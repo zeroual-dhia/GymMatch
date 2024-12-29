@@ -4,16 +4,20 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "gym-match";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
+$port = 8081; // Using custom port 8081
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
+} else {
+    // Optional: Confirm successful connection
+    // echo "Connected successfully.";
 }
+// Increase max execution time (e.g., 300 seconds for testing)
+ini_set('max_execution_time', 300); // Increase to 5 minutes for testing
 
-// Fetch gym data
-$sql = "SELECT gym_id, gym_name, gym_location, gym_targender, gym_extra, gym_img FROM gyms";
+// Fetch gym data with a LIMIT to prevent large query issues
+$sql = "SELECT gym_id, gym_name, gym_location, gym_targender, gym_extra, gym_img FROM gyms LIMIT 10"; // Fetch 10 records for testing
 $result = $conn->query($sql);
 
 ?>
@@ -104,57 +108,41 @@ $result = $conn->query($sql);
         </div>
     </center>
     <section class="explore_page">
-        <center>
-            <h2>OUR GYMS</h2>
-        </center>
+    <center>
+        <h2>OUR GYMS</h2>
+    </center>
+    <div class="gym-list-container">
         <div class="gym-list">
-            <?php
-            if ($result->num_rows > 0) {
-                // Output data of each row
-                while ($row = $result->fetch_assoc()) {
-                    $gymName = htmlspecialchars($row['gym_name']);
-                    $gymLocation = htmlspecialchars($row['gym_location']);
-                    $gymExtra = htmlspecialchars($row['gym_extra']);
-                    $gymImage = base64_encode($row['gym_img']);
+        <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $gymName = htmlspecialchars($row['gym_name']);
+                        $gymLocation = htmlspecialchars($row['gym_location']);
+                        $gymExtra = htmlspecialchars($row['gym_extra']);
+                        $gymImage = base64_encode($row['gym_img']);
 
+                        echo "<div class='gym-card'>";
+                        echo "<a href='info.html' class='gym-link'>";
+                        echo "<img src='data:image/jpeg;base64,$gymImage' alt='$gymName'>";
+                        echo "<h3>$gymName</h3>";
+                        echo "<p>Location: $gymLocation<br>";
+                        echo (!empty($gymExtra) ? "Facilities: $gymExtra" : "") . "</p>";
+                        echo "</a>";
+                        echo "</div>";
+                    }
+                } else {
                     echo "<div class='gym-card'>";
                     echo "<a href='info.html' class='gym-link'>";
-                    echo "<img src='data:image/jpeg;base64,$gymImage' alt='$gymName'>";
-                    echo "<h3>$gymName</h3>";
-                    echo "<p>Location: $gymLocation<br>";
-                    echo (!empty($gymExtra) ? "Facilities: $gymExtra" : "") . "</p>";
+                    echo "<img src='../assets/images/img/gym6' alt='Powerhouse Gym'>";
+                    echo "<h3>Powerhouse Gym</h3>";
+                    echo "<p>Location: Downtown<br>Facilities: Weightlifting, Cardio, Classes</p>";
                     echo "</a>";
                     echo "</div>";
                 }
-            } else {
-                // Default gym cards when no data exists
-                echo "<div class='gym-card'>";
-                echo "<a href='info.html' class='gym-link'>";
-                echo "<img src='../assets/images/img/gym6' alt='Powerhouse Gym'>";
-                echo "<h3>Powerhouse Gym</h3>";
-                echo "<p>Location: Downtown<br>Facilities: Weightlifting, Cardio, Classes</p>";
-                echo "</a>";
-                echo "</div>";
-
-                echo "<div class='gym-card'>";
-                echo "<a href='info.html' class='gym-link'>";
-                echo "<img src='../assets/images/img/gym2pic.jpg' alt='Fitness Zone'>";
-                echo "<h3>Fitness Zone</h3>";
-                echo "<p>Location: Uptown<br>Facilities: Swimming, Yoga, Personal Training</p>";
-                echo "</a>";
-                echo "</div>";
-
-                echo "<div class='gym-card'>";
-                echo "<a href='info.html' class='gym-link'>";
-                echo "<img src='../assets/images/img/gym3.webp' alt='Bodybuilding Factory'>";
-                echo "<h3>Bodybuilding Factory</h3>";
-                echo "<p>Location: East Side<br>Facilities: Bodybuilding, Nutrition Counseling</p>";
-                echo "</a>";
-                echo "</div>";
-            }
-            ?>
+                ?>
         </div>
-    </section>
+    </div>
+</section>
 
      <footer class="footer-section">
         <div class="container-fluid">
