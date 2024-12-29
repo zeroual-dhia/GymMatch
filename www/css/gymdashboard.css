@@ -33,12 +33,29 @@ p{
     margin-right: 10px;
     color: rgb(110, 107, 107);
 }
-.elem{
+.elema{
     cursor: pointer;
     color: #da0a0a;
 
 }
-.elem:active{
+.elemb{
+    cursor: pointer;
+    color: #da0a0a;
+
+}
+.elema:hover{
+    color:black;
+    transition: 0.1s;
+}
+.elemb:hover{
+    color:black;
+    transition: 0.1s;
+}
+.elema:active{
+    color:black;
+    transition: 0.1s;
+}
+.elemb:active{
     color:black;
     transition: 0.1s;
 }

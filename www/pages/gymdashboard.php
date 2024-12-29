@@ -6,7 +6,7 @@
     <title>Gym owner dashboard</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/gymdashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,12 +28,12 @@
         <div class="content">
 
 
-            <li class="elem1">
+            <li class="elema">
                 Gym members
                 <hr>
                 
 	          </li>
-              <li  class="elem2">
+              <li  class="elemb">
 	            Gym subs
                 <hr>
 	            
