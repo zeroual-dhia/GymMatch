@@ -39,7 +39,7 @@
 
 <body>
     <div class="container-fluid position-relative d-flex p-0">
-       
+
 
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
@@ -135,34 +135,21 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex" >Requests</span>
+                            <span class="d-none d-lg-inline-flex">Requests</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
+
                             <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                                 
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-                            aria-controls="offcanvasWithBothOptions">See all Requests</a>
+                            <a href="#" class="dropdown-item text-center btn" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">See
+                                all Requests</a>
                         </div>
 
-                        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-                        aria-labelledby="offcanvasWithBothOptionsLabel">
-                          <?php  include '../includes/requests.php' 
-                            
-                          ?>
+                        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1"
+                            id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                            <?php include '../includes/requests.php'
+
+                                ?>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -327,7 +314,7 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-secondary rounded p-4">
+                        <div class="h-100 bg-secondary rounded p-4 " style="overflow-y: auto;">
                             <div class="d-flex align-items-center justify-content-between mb-2">
                                 <h6 class="mb-0">Messages</h6>
 
@@ -337,7 +324,7 @@
                             <?php
                             include("../includes/messages.php");
                             ?>
-                            
+
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6">
@@ -447,7 +434,7 @@
 
         <script src="../js/admin.js"></script>
         <script src="../js/message.js"></script>
-        
+
 </body>
 
 </html>

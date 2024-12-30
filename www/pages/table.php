@@ -31,16 +31,18 @@ include_once '../includes/connect.php'; ?>
         rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
+    
     <link href="../../node_modules/css/admin-bootstrap.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
+
     <link href="../css/admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/msg_and_request.css">
 </head>
 
 <body>
     <div class="container-fluid position-relative d-flex p-0">
-      
- 
+
+
 
 
         <!-- Sidebar Start -->
@@ -133,26 +135,22 @@ include_once '../includes/connect.php'; ?>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                            <span class="d-none d-lg-inline-flex">Requests</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
+                            
                             <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
-                        </div>
+                            <a href="#" class="dropdown-item text-center btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                            aria-controls="offcanvasWithBothOptions">See all Requests</a>  
+                            
+                        </div>    
+                            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1"
+                                id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                                <?php include '../includes/requests.php'
+
+                                    ?>
+                            </div>
+                       
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -208,9 +206,9 @@ include_once '../includes/connect.php'; ?>
                                         }
                                     } else {
                                         echo '<tr><td colspan="4">No trainers found.</td></tr>';
-                                    } 
-                                    $result ->close();  
-                                ?>
+                                    }
+                                    $result->close();
+                                    ?>
 
 
                                 </tbody>
@@ -236,7 +234,7 @@ include_once '../includes/connect.php'; ?>
                                     $sql2 = '
                                       SELECT users.user_name, users.user_email, users.user_phonenum,gyms.gym_name
                                       FROM users
-                                      JOIN (SELECT user_id,gym_name FROM gyms )as gyms  
+                                      JOIN (SELECT user_id,gym_name FROM gyms where gym_accepted= 1 )as gyms  
                                       ON users.user_id = gyms.user_id;
                                      ';
                                     $result2 = $connect->query($sql2);
@@ -292,11 +290,11 @@ include_once '../includes/connect.php'; ?>
 
                                                 echo ' <tr>
                                             <th scope="row">' . $l++ . '</th>
-                                            <td>'.$row3['user_name'].'</td>
-                                            <td>'.$row3['user_phonenum'].'</td>
-                                            <td>'.$row3['user_email'].'</td>
+                                            <td>' . $row3['user_name'] . '</td>
+                                            <td>' . $row3['user_phonenum'] . '</td>
+                                            <td>' . $row3['user_email'] . '</td>
                                             <td>ALG</td>
-                                            <td>'.$row3['user_address'].'</td>
+                                            <td>' . $row3['user_address'] . '</td>
                                             <td>Member</td>
                                         </tr>';
                                             }
