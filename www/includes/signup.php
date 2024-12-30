@@ -26,6 +26,16 @@ try {
     if(is_email_taken($pdo,$Email)){
         $errors["email_used"]="email already taken";
     }
+    $Name = test_input($Name);
+    $Email=test_input($Email);
+    $phone=test_input($phone);
+    
+    $age=test_input($age);
+    $pwd=test_input( $pwd);
+
+
+
+
 
     require_once "config_session.php";
 

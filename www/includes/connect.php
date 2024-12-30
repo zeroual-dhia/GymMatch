@@ -4,7 +4,7 @@
 $servername = "localhost"; 
 $username = "root";        
 $password = "";           
-$dbname = "GymMatch";    
+$dbname = "gym-match";    
 
 // Create connection
 

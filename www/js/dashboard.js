@@ -1,5 +1,6 @@
-document.querySelectorAll(".elem").forEach(
-  addEventListener("click", () => {
-    window.location.href = "/GymPath/www/pages/table_copy.php";
-  })
-);
+document.querySelector(".elema").addEventListener("click", () => {
+  window.location.href = "../pages/table_copy.php";
+});
+document.querySelector(".elemb").addEventListener("click", () => {
+  window.location.href = "../pages/table_copy.php";
+});

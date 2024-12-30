@@ -22,8 +22,6 @@ function is_email_wrong($results){
         return false;
     }
 
-
-
 }
 function is_password_wrong($psw,$hashedpsw){
 

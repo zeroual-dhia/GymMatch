@@ -37,3 +37,11 @@ function is_email_taken(object $pdo,$email){
     
     
     }
+    function test_input($data){
+        $data = trim($data);
+        $data = stripcslashes($data);
+        $data = htmlspecialchars($data);
+
+
+        return $data;
+    }

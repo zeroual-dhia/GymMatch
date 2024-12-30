@@ -1,3 +1,43 @@
+<?php
+
+try {
+    require_once "../includes/dbh.inc.php";
+    $query=" SELECT 
+            gm.gmember_id,
+            u.user_name,
+            u.user_email,
+            u.user_phonenum,
+            gm.start_date,
+            gm.end_date,
+            gm.ship_id,
+            CASE 
+                WHEN gm.ship_id IS NULL THEN 'No Membership'
+                ELSE 'Has Membership'
+            END AS membership_status
+        FROM 
+            users u
+        JOIN 
+            gym_members gm ON u.user_id = gm.user_id;";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $pdo=null;
+    $stmt=null;
+} catch (PDOException $e) {
+    die("query faild : " . $e->getMessage());
+    //throw $th;
+}
+    
+
+
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,11 +60,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
      <!-- Libraries Stylesheet -->
-     <link href="/node_modules/@popperjs/core/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-     <link href="/node_modules/@popperjs/core/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+     <link href="../../node_modules/@popperjs/core/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+     <link href="../../node_modules/@popperjs/core/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
  
      <!-- Customized Bootstrap Stylesheet -->
-     <link href="/node_modules/css/admin-bootstrap.css" rel="stylesheet">
+     <link href="../../node_modules/css/admin-bootstrap.css" rel="stylesheet">
  
      <!-- Template Stylesheet -->
      <link href="../css/admin.css" rel="stylesheet">
@@ -33,129 +73,180 @@
 <body>
     
       
+<?php
+            
+            echo '<div class="container-fluid pt-4 px-4">';
+             echo '   <div class="row g-4">';
+                 echo '   <div class="col-sm-12 col-xl-6">';
+                    echo '    <div class="bg-secondary rounded h-100 p-4">';
+                       echo '     <h6 class="mb-4">';
+                        echo 'members with subs';
+                         echo '</h6>';
+                           echo ' <table class="table">';
+                                echo ' <thead>';
+                                  echo '  <tr>';
+                                     echo '   <th scope="col">';
+                                     echo 'id';
+                                     echo '</th>';
+                                       echo ' <th scope="col">';
+                                       echo ' username';
+                                        echo '</th>';
+                                         echo '<th scope="col">';
+                                         echo 'Email';
+                                         echo '</th>';
+                                     echo '</tr>';
+                                 echo '</thead>';
+                                echo ' <tbody>';
+                                foreach($results as $row){
+                                    if($row['membership_status']=='Has Membership'){
+                                    echo '<tr>';
+                                        echo '<th scope="row">';
+                                        echo htmlspecialchars($row['gmember_id']);
+                                        echo '</th>';
+                                        echo '<td>';
+                                        echo htmlspecialchars($row['user_name']);
+                                        echo '</td>';
+                                        echo '<td>';
+                                        echo htmlspecialchars($row['user_email']);
+                                        echo '</td>';
+                                    echo '</tr>';
+                                }
 
-            <!-- Table Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">members with subs</h6>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First Name</th>
-                                        <th scope="col">Last Name</th>
-                                        <th scope="col">Email</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>John</td>
-                                        <td>Doe</td>
-                                        <td>jhon@email.com</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>mark@email.com</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>jacob@email.com</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">members without subs</h6>
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First Name</th>
-                                        <th scope="col">Last Name</th>
-                                        <th scope="col">Email</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>John</td>
-                                        <td>Doe</td>
-                                        <td>jhon@email.com</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>mark@email.com</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>jacob@email.com</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4"> All Members Table</h6>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">First Name</th>
-                                            <th scope="col">Last Name</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Country</th>
-                                            <th scope="col">ZIP</th>
-                                            <th scope="col">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>jhon@email.com</td>
-                                            <td>USA</td>
-                                            <td>123</td>
-                                            <td>Member</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>mark@email.com</td>
-                                            <td>UK</td>
-                                            <td>456</td>
-                                            <td>Member</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>jacob@email.com</td>
-                                            <td>AU</td>
-                                            <td>789</td>
-                                            <td>Member</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                                }
+                                    
+                                 echo '</tbody>';
+                           echo ' </table>';
+                         echo '</div>';
+                     echo '</div>';
+                    echo '   <div class="col-sm-12 col-xl-6">';
+                           echo '    <div class="bg-secondary rounded h-100 p-4">';
+                       echo '     <h6 class="mb-4">';
+                        echo 'members with no subs';
+                         echo '</h6>';
+                           echo ' <table class="table">';
+                                echo ' <thead>';
+                                  echo '  <tr>';
+                                     echo '   <th scope="col">';
+                                     echo 'id';
+                                     echo '</th>';
+                                       echo ' <th scope="col">';
+                                       echo ' username';
+                                        echo '</th>';
+                                         echo '<th scope="col">';
+                                         echo 'Email';
+                                         echo '</th>';
+                                     echo '</tr>';
+                                 echo '</thead>';
+                                echo ' <tbody>';
+                                foreach($results as $row){
+                                    if($row['membership_status']=='No Membership'){
+                                    echo '<tr>';
+                                        echo '<th scope="row">';
+                                        echo htmlspecialchars($row['gmember_id']);
+                                        echo '</th>';
+                                        echo '<td>';
+                                        echo htmlspecialchars($row['user_name']);
+                                        echo '</td>';
+                                        echo '<td>';
+                                        echo htmlspecialchars($row['user_email']);
+                                        echo '</td>';
+                                    echo '</tr>';
+                                }
+                                
+
+                                }
+                                    
+                                 echo '</tbody>';
+                           echo ' </table>';
+                         echo '</div>';
+                     echo '</div>';
+                     
+                    
+                    if(empty($results)){
+                        echo "<div>";
+                        echo "<p> there is no product </p>";
+                        echo "</div>";
+                
+                
+                
+                    }
+                    
+                    else{
+                        echo '<div class="col-12">';
+                        echo '<div class="bg-secondary rounded h-100 p-4">';
+                            echo '<h6 class="mb-4"> All Members Table</h6>';
+                             echo '<div class="table-responsive">';
+
+                             echo '<table class="table">';
+                                    echo '<thead>';
+                                      echo   '<tr>';
+                                         echo    '<th scope="col">';
+                                         echo "#";
+                                         echo '</th>';
+                                         echo    '<th scope="col">';
+                                         echo 'user_name';
+                                         echo '</th>';
+                                           echo ' <th scope="col">';
+                                           echo 'Email';
+                                           echo '</th>';
+                                            echo '<th scope="col">';
+                                            echo 'phone number'; 
+                                            echo '</th>';
+                                            echo '<th scope="col">';
+                                            echo 'start date';
+                                            echo '</th>';
+                                            echo '<th scope="col">';
+                                            echo 'end date';
+                                            echo '</th>';
+                                        echo '</tr>';
+                                    echo '</thead>';
+
+                                    echo '<table class="table">';
+                                    
+                                
+                                    echo '<tbody>';
+                        foreach ($results as $row){
+                
+                          
+                            echo '<tr>';
+                                            echo '<th scope="row">';
+                                            echo htmlspecialchars($row['gmember_id']);
+                                            echo'</th>';
+                                            echo '<td>';
+                                            echo htmlspecialchars($row['user_name']);
+                                            echo '</td>';
+                                            echo '<td>';
+                                            echo htmlspecialchars($row['user_email']);
+                                            echo '</td>';
+                                            echo '<td>';
+                                            echo htmlspecialchars($row['user_phonenum']);
+                                            echo '</td>';
+                                            echo '<td>';
+                                            echo htmlspecialchars($row['start_date']);
+                                            echo '</td>';
+                                            echo '<td>';
+                                            echo htmlspecialchars($row['end_date']);
+                                            echo '</td>';
+                                            
+                                        echo '</tr>';
+                            
+                            
+                        }
+                        echo '</tbody>';
+                        echo '</table>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+
+
+
+                    ?>
+                    
+
+
+
+
                 </div>
             </div>
             <!-- Table End -->
@@ -173,13 +264,13 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/node_modules/@popperjs/core/lib/chart/chart.min.js"></script>
-    <script src="/node_modules/@popperjs/core/lib/easing/easing.min.js"></script>
-    <script src="/node_modules/@popperjs/core/lib/waypoints/waypoints.min.js"></script>
-    <script src="/node_modules/@popperjs/core/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="/node_modules/@popperjs/core/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="/node_modules/@popperjs/core/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="/node_modules/@popperjs/core/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="../../node_modules/@popperjs/core/lib/chart/chart.min.js"></script>
+    <script src="../../node_modules/@popperjs/core/lib/easing/easing.min.js"></script>
+    <script src="../../node_modules/@popperjs/core/lib/waypoints/waypoints.min.js"></script>
+    <script src="../../node_modules/@popperjs/core/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../../node_modules/@popperjs/core/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="../../node_modules/@popperjs/core/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="../../node_modules/@popperjs/core/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
 
     <!-- Template Javascript -->
@@ -187,3 +278,8 @@
 </body>
 
 </html>
+
+
+
+
+
