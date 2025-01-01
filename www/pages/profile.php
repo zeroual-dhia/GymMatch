@@ -9,46 +9,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" href="../css/preloader.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="../css/preloader.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
-<header class="header2">
-    <div class="logo-name">
-        <img id='logo' src="../assets/logo/logo.png" alt="">
-        <p class="text-light GYMMATCH">GYM MATCH</p>
-    </div>
 
-
-    <nav class="links">
-        <a href="" class="active">Home</a>
-        <a href="">About us</a>
-        <a href="">Explore</a>
-        <a href="">Programs</a>
-        <a href="">Store</a>
-
-        <div class="dropdown">
-            <button id="profile-btn" class="profile-btn">
-                <img src="../assets/icons/profile.png" alt="Profile" />
-            </button>
-            <div class="dropdown-content">
-                <a href="login.html">Connect</a>
-                <a href="#signout">Sign Out</a>
-            </div>
-
-        </div>
-
-    </nav>
-
-    <button id="menu-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-        aria-controls="offcanvasWithBothOptions"><img src="../assets/icons/icons8-menu.svg" alt=""></button>
-
-</header>
 
 
 <body>
-    
+
+<div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <?php include 'header.php' ?>
     
 
     <div class="box">
@@ -214,5 +191,11 @@
 
 <script src="../js/profile.js"></script>
 <script src="../js/header.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
 </body>
 </html>
