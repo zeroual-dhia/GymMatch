@@ -18,7 +18,7 @@
                     <img src="../assets/icons/profile.png" alt="Profile" />
                 </button>
                 <div class="dropdown-content">
-                    <a href="login.html">Connect</a>
+                    <a href="login.php">Connect</a>
                     <a href="#signout">Sign Out</a>
                 </div>
 
