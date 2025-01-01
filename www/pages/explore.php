@@ -42,7 +42,7 @@ if (!$result) {
     <title>Explore Gyms</title>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/explore.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/preloader.css">
@@ -200,7 +200,7 @@ if (!$result) {
         </div>
     </footer>
     <script src="../js/header.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="../js/explore.js"></script>
 </body>
 </html>
