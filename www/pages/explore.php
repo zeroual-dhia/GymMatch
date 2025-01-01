@@ -4,8 +4,8 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "gym-match";
-$port = 8081; // Using custom port 8081
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
+// Using custom port 8081
+$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
