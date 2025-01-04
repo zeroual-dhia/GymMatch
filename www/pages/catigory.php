@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include_once '../php/connect.php';?>
+<?php include_once '../includes/connect.php'; ?>
 <html lang="en">
 
 <head>
@@ -24,20 +24,21 @@
 
     <div class=" catigory row justify-content-center ">
         <div class="col-8 pb-3">
-        
+
             <?php
             if (isset($_GET['category'])) {
                 $category = urldecode($_GET['category']);
             }
             echo '
-               <h1 class="text-center fw-bold text-light">' .$category. ' Workouts</h1>
+               <h1 class="text-center fw-bold text-light">' . $category . ' Workouts</h1>
             ';
 
             ?>
 
         </div>
         <div class="col-8 mb-4">
-            <p class="text-center text-light">Unleash Your Inner Strength, Transform Your Body, Empower Your Mind – Your Fitness Journey Starts Here</p>
+            <p class="text-center text-light">Unleash Your Inner Strength, Transform Your Body, Empower Your Mind – Your
+                Fitness Journey Starts Here</p>
         </div>
 
         <div class="col-lg-10 col-sm-11 workouts p-4 mb-5">
@@ -55,23 +56,24 @@
                 $result = $sql->get_result();
                 if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        $image_b64=base64_encode($row["pr_image"]);
-                        $image_src='data:image/ ;base64,' . $image_b64 ;
+                        $image_b64 = base64_encode($row["pr_image"]);
+                        $image_src = 'data:image/ ;base64,' . $image_b64;
                         echo '<div class="col-lg-4 col-md-6 col-sm-9 col-11 mycard wow fadeInUp">
                         
-                    <img class="img-fluid rounded" src="' .$image_src .'" alt="">
+                    <img class="img-fluid rounded" src="' . $image_src . '" alt="">
                    
                     <h3 class="">' . htmlspecialchars($row['program_title']) . '</h3>
                     <p class=""> ' . htmlspecialchars($row['pr_description']) . '
                     </p>
-                    <a href="descreption.php?id='.$row['program_id'].'"><button>VIEW WORKOUT</button></a>
+                    <a href="descreption.php?id=' . $row['program_id'] . '"><button>VIEW WORKOUT</button></a>
                 </div>';
 
                     }
                 } else {
                     echo '<p class="text-light">No programs found for the selected goal.</p>';
                 }
-
+                $result->close();
+                $connect->close();
                 ?>
 
 

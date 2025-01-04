@@ -23,15 +23,10 @@
     padding: 3px 40px ;
     z-index: 10;
     background: linear-gradient(to bottom, #950101 0%, #630102 50%, #3d0302);
-
-
+ 
 }
 
-.active1{
-    background: linear-gradient(to bottom, #950101 0%, #630102 50%, #3d0302);
-    z-index: 10;
 
-}
 #logo{
     width: 70px;
     margin: 0;
@@ -80,9 +75,6 @@
 .menu a:hover{
  transform: scale(1.1);
 }
-.menu .active{
-    border-bottom: 3px solid white;
-  }
 
 .pages{
     position: absolute;
@@ -150,7 +142,7 @@
 .links a:hover {
    transform: scale(1.1);
 }
-.links .active{
+ .active{
   border-bottom: 3px solid white;
 }
 .profile-btn {

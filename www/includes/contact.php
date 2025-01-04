@@ -1,7 +1,20 @@
 <?php
-// Include the database connection
-include 'connect.php';
+// Database connection
+$host = 'localhost'; // Database server
+$port = 8081;        // Custom MySQL port
+$user = 'root';      // Database username
+$password = '';      // Database password (leave blank for XAMPP default)
+$dbname = 'gym-match'; // Correct database name
 
+// Create a connection
+$connect = new mysqli($host, $user, $password, $dbname, $port);
+
+// Check the connection
+if ($connect->connect_error) {
+    die("Connection failed: " . $connect->connect_error);
+}
+
+// Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $name = $_POST['name'];
@@ -38,4 +51,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $connect->close();
 }
 ?>
-

@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../../node_modules/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="../../node_modules/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="../../node_modules/bootstrap/SlickNav-master.zip" type="text/css">
-    <link rel="stylesheet" href="../css/home.css" type="text/css">
+    <link rel="stylesheet" href="/GymPath/www/css/home.css" type="text/css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/preloader.css">
     <link rel="stylesheet" href="../css/footer.css">

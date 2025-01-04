@@ -1,3 +1,10 @@
+<?php
+require_once "../includes/config_session.php";
+require_once "../includes/signup_view.php";
+require_once "../includes/signin_view.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +22,10 @@
                 <h1 style="margin-bottom: 20px;">Create Account</h1>
 
                 <div class="form-element">
-                    <input type="text" id="Name" name="Name" placeholder="Name" />
+                    <input type="text" id="Name" name="Name" placeholder="username" />
+                    <?php
+                    check_signup();
+                    ?>
                     <span id="name-error" class="error-message"></span>
                 </div>
                 <div class="form-element">
@@ -31,9 +41,9 @@
                 <div class="form-element">
                     <select id="item" name="item" required>
                         <option value="" disabled selected hidden>--Select your role--</option>
-                        <option value="item1">Member</option>
-                        <option value="item2">Owner</option>
-                        <option value="item3">Trainer</option>
+                        <option value="Member">Member</option>
+                        <option value="Owner">Owner</option>
+                        <option value="Trainer">Trainer</option>
 
                     </select>
                 </div>
@@ -50,19 +60,24 @@
 
 
                 <button type="submit">Sign up </button>
+
             </form>
         </div>
+
         <div class="form-container sign-in">
-            <form class="form-in">
+            <form class="form-in" action="../includes/signin.php" method="post">
                 <h1 style="margin-bottom: 20px;">Sign In</h1>
-                
+
                 <div class="form-element">
-                    <input type="text" id="signin-email" name="Email" placeholder="Email" />
+                    <input type="text" id="signin-email" name="email" placeholder="Email" />
+                    <?php
+                    check_signin();
+                    ?>
                     <span id="signin-email-error" class="error-message"></span>
                 </div>
 
                 <div class="form-element">
-                    <input type="password" id="signin-password" name="Email" placeholder="Password" />
+                    <input type="password" id="signin-password" name="psw" placeholder="Password" />
                     <span id="signin-password-error" class="error-message"></span>
                 </div>
 

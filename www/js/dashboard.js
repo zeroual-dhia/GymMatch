@@ -1,4 +1,6 @@
-document.querySelectorAll(".elem").forEach(addEventListener('click',()=>{
-
-    window.location.href="/www/pages/table copy.html"
-}))
+document.querySelector(".elema").addEventListener("click", () => {
+  window.location.href = "../pages/table_copy.php";
+});
+document.querySelector(".elemb").addEventListener("click", () => {
+  window.location.href = "../pages/table_copy.php";
+});

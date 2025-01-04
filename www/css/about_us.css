@@ -45,27 +45,7 @@ h2, h4, h5, p {
 }
 
 /* Header Styling */
-.header2 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-    padding: 20px 0;
-}
 
-.header2 .logo-name {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header2 .logo-name p {
-    color: #f44336;
-    font-size: 24px;
-    font-weight: bold;
-}
 
 .navbar {
     display: flex;

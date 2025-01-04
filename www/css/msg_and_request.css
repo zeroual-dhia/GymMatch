@@ -1,0 +1,26 @@
+
+.message button{
+    margin-top: 10px;
+    font-size: 13px;
+}
+.message-content{
+    display: none;
+}
+
+.offcanvas{
+    background-color:#191C24;
+    padding: 50px 20px;
+    overflow-y: auto; 
+}
+
+.accept{
+    margin-top: 10px;
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    gap: 15px;
+}
+
+.accept button{
+    font-size: 16px;
+}
