@@ -1,41 +1,7 @@
-<?php
-// Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "gym-match";
-//ing custom port 8081
-
-// Enable error reporting for debugging
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} else {
-    // Optional: Confirm successful connection
-    // echo "Connected successfully.";
-}
-
-// Increase max execution time (e.g., 300 seconds for testing)
-ini_set('max_execution_time', 300); // Increase to 5 minutes for testing
-
-// Fetch gym data with a LIMIT to prevent large query issues
-$sql = "SELECT gym_id, gym_name, gym_location, gym_targender, gym_extra, gym_img FROM gyms LIMIT 10"; // Fetch 10 records for testing
-$result = $conn->query($sql);
-
-// Handle query error
-if (!$result) {
-    die("Error executing query: " . $conn->error);
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
+ <?php include_once '../includes/connect.php' ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,8 +14,9 @@ if (!$result) {
     <link rel="stylesheet" href="../css/preloader.css">
     <link rel="stylesheet" href="../css/footer.css">
 </head>
+
 <body>
-     <div id="preloder">
+    <div id="preloder">
         <div class="loader"></div>
     </div>
     <header class="header2">
@@ -100,7 +67,9 @@ if (!$result) {
             </div>
             <label class="labelforsearch" for="nameInput">
                 <svg class="searchIcon" viewBox="0 0 512 512">
-                    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
+                    <path
+                        d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
+                    </path>
                 </svg>
             </label>
         </div>
@@ -110,40 +79,32 @@ if (!$result) {
         <center>
             <h2>OUR GYMS</h2>
         </center>
+
         <div class="gym-list-container">
             <div class="gym-list">
-                <?php
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            $gymName = htmlspecialchars($row['gym_name']);
-                            $gymLocation = htmlspecialchars($row['gym_location']);
-                            $gymExtra = htmlspecialchars($row['gym_extra']);
-                            $gymImage = $row['gym_img'] ? base64_encode($row['gym_img']) : null; // Ensure gym_img exists
 
-                            echo "<div class='gym-card'>";
-                            echo "<a href='info.html' class='gym-link'>";
-                            if ($gymImage) {
-                                echo "<img src='data:image/jpeg;base64,$gymImage' alt='$gymName'>";
-                            } else {
-                                // Use a placeholder image if no gym image is found
-                                echo "<img src='../assets/images/img/default-gym.jpg' alt='No Image Available'>";
-                            }
-                            echo "<h3>$gymName</h3>";
-                            echo "<p>Location: $gymLocation<br>";
-                            echo (!empty($gymExtra) ? "Facilities: $gymExtra" : "") . "</p>";
-                            echo "</a>";
-                            echo "</div>";
-                        }
-                    } else {
-                        echo "<div class='gym-card'>";
-                        echo "<a href='info.html' class='gym-link'>";
-                        echo "<img src='../assets/images/img/default-gym.jpg' alt='Default Gym Image'>";
-                        echo "<h3>Powerhouse Gym</h3>";
-                        echo "<p>Location: Downtown<br>Facilities: Weightlifting, Cardio, Classes</p>";
-                        echo "</a>";
-                        echo "</div>";
-                    }
+
+                <?php
+                $sql=$connect->prepare('select * from gyms ');
+                $sql->execute();
+                $result=$sql->get_result();
+                if($result->num_rows > 0) {
+                while($row=$result->fetch_assoc())
+                {           
+                    $image_b64 = base64_encode($row["gym_img"]);
+                    $image_src = 'data:image/ ;base64,' . $image_b64;
+                echo '<div class="gym-card">
+                    <a href="info.php?id='.$row['gym_id'].'" class="gym-link">  
+                        <img src="'.$image_src.'" alt="Default Gym Image">
+                        <h3>'.$row['gym_name'].'</h3>
+                        <p>Location:'.$row['gym_location'].'<br>Facilities:'.$row['gym_extra'].'</p>
+                    </a>
+                </div>';
+                }}
                 ?>
+
+
+
             </div>
         </div>
     </section>
@@ -162,7 +123,8 @@ if (!$result) {
                             </h6>
                             <div class="social">
                                 <a href="#"><img class="img-fluid" src="../assets/icons/icons8-facebook.svg" alt=""></a>
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-instagram.svg" alt=""></a>
+                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-instagram.svg"
+                                        alt=""></a>
                                 <a href="#"><img class="img-fluid" src="../assets/icons/icons8-linkedin.svg" alt=""></a>
                             </div>
                         </div>
@@ -203,6 +165,7 @@ if (!$result) {
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="../js/explore.js"></script>
 </body>
+
 </html>
 
 <?php

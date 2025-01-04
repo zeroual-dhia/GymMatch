@@ -20,50 +20,25 @@
     <link rel="stylesheet" href="../../node_modules/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="../../node_modules/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="../../node_modules/bootstrap/SlickNav-master.zip" type="text/css">
-    <link rel="stylesheet" href="/node_modules/css/elegant-icons.css">
+    <link rel="stylesheet" href="../../node_modules/css/elegant-icons.css">
     <link rel="stylesheet" href="../css/about_us.css" type="text/css">
-    <link rel="stylesheet" href="../css/header.css">
+
     <link rel="stylesheet" href="../css/preloader.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="/www/pages/table copy.php">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/header.css">
+
 </head>
+
+<?php include 'header.php'?>
 
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
-    <header class="header2">
-        <div class="logo-name">
-            <img id='logo' src="../assets/logo/logo.png" alt="">
-            <p class="text-light GYMMATCH">GYM MATCH</p>
-        </div>
-       
-
-        <nav class="links">
-            <a href="/components/dounia/gym-match/home/index.html" class="active">Home</a>
-            <a href="/components/rayane/about_us.html">About us</a>
-            <a href="/components/rayane/explore.html">Explore</a>
-            <a href="/components/dhiaa/html/programs.html">Programs</a>
-            <a href="/components/dounia/gym-match/store/store.html">Store</a>
-
-            <div class="dropdown">
-                <button id="profile-btn" class="profile-btn">
-                    <img src="../assets/icons/profile.png" alt="Profile" />
-                </button>
-                <div class="dropdown-content">
-                    <a href="login.html">Sign In</a>
-                    <a href="#signout">Sign Out</a>
-                </div>
-                
-            </div>
-
-            
-        </nav>
-
-        <button id="menu-btn"><img src="../assets/icons/icons8-menu.svg" alt=""></button>
-
-    </header>
+  
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg spad" data-setbg="../images/gallery/hero2.png">
         <div class="container">
