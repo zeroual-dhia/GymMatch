@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO trainers (trainer_fb, trainer_insta, trainer_ytb, gender_prefrence, trainer_spe, trainer_img, trainer_cv, user_id) 
                 VALUES (:facebook, :instagram, :youtube, :gender_preference, :specialization, :profile_picture, :cv, :user_id)";
 
-        $stmt = $conn->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':facebook', $facebook);
         $stmt->bindParam(':instagram', $instagram);
         $stmt->bindParam(':youtube', $youtube);
