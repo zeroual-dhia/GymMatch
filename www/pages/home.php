@@ -86,7 +86,7 @@
                         <div class="col-lg-12">
                             <div class="hero-text">
                                 <h2>Connect With Certified Coaches To Guide Your Every Step Of The Way</h2>
-                                <a href="#" class="primary-btn">Connect Now</a>
+                                <a href="../pages/trainers.html" class="primary-btn">Connect Now</a>
                             </div>
                         </div>
                     </div>
@@ -128,21 +128,21 @@
                     <div class="feature-item feature-bg-1">
                         <h3>GYM MEMBER</h3>
                         <p>Find your local gym or the perfect coach<br />to guide your fitness journey <br />with tailored plans to meet your goals</p>
-                        <a href="#" class="primary-btn f-btn">Join Us</a>
+                        <a href="login.html" class="primary-btn f-btn">Join Us</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-item feature-bg-2">
                         <h3>GYM OWNER</h3>
                         <p>looking to expand your gym's reach?<br /> join our platform <br />to attract fitness enthusiasts</p>
-                        <a href="#" class="primary-btn f-btn">Join Us</a>
+                        <a href="../pages/ownerform.html" class="primary-btn f-btn">Join Us</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-item feature-bg-3">
                         <h3>TRAINER</h3>
                         <p>Take your coaching to the next level<br />Create a profile, connect with clients<br />and showcase your expertise </p>
-                        <a href="#" class="primary-btn f-btn">Join Us</a>
+                        <a href="../pages/trainerform.html" class="primary-btn f-btn">Join Us</a>
                     </div>
                 </div>
             </div>
@@ -340,15 +340,15 @@
 
 
     <!-- Js Plugins -->
-    <script src="../js/jstemp/jquery-3.3.1.min.js"></script>
-    <script src="../js/jstemp/bootstrap.min.js"></script>
-    <script src="../js/jstemp/jquery.magnific-popup.min.js"></script>
-    <script src="../js/jstemp/mixitup.min.js"></script>
-    <script src="../js/jstemp/jquery.nice-select.min.js"></script>
-    <script src="../js/jstemp/jquery.slicknav.js"></script>
-    <script src="../js/jstemp/owl.carousel.min.js"></script>
-    <script src="../js/jstemp/masonry.pkgd.min.js"></script>
-    <script src="../js/jstemp/main.js"></script>
+    <script src="../js/jstemphome/jquery-3.3.1.min.js"></script>
+    <script src="../js/jstemphome/bootstrap.min.js"></script>
+    <script src="../js/jstemphome/jquery.magnific-popup.min.js"></script>
+    <script src="../js/jstemphome/mixitup.min.js"></script>
+    <script src="../js/jstemphome/jquery.nice-select.min.js"></script>
+    <script src="../js/jstemphome/jquery.slicknav.js"></script>
+    <script src="../js/jstemphome/owl.carousel.min.js"></script>
+    <script src="../js/jstemphome/masonry.pkgd.min.js"></script>
+    <script src="../js/jstemphome/main.js"></script>
     <script src="../js/header.js"></script>
 
 </body>
