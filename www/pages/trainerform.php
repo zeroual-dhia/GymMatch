@@ -17,32 +17,9 @@
         <h1 class="title ">Trainer Registration</h1>
         <!-- Other input fields --> 
         <form action="../includes/trainerform.php" method="post" enctype="multipart/form-data">
-        <div class="input-block">
-            <input class="input" type="text" id="trainerName" required="" placeholder="Trainer Full Name">
-        </div>
-        <div class="input-block">
-            <input class="input" type="text" id="Address" required="" placeholder="Address">
-        </div>
-        <div class="input-block">
-            <input class="input" type="text" id="availability" required="" placeholder="availability">
-        </div>
-        <div class="input-block">
-            <input class="input" type="text" id="email" required="" placeholder="email">
-        </div>
-        <div class="input-block">
-            <input class="input" type="text" id="phone number" required="" placeholder="phone number">
-        </div>
-        <div class="input-block ">
-            <label for="Gender"></label>
-            <select class="input" id="Gender" required="" >
-                <option value="" disabled selected>Gender</option>
-                <option value="women">Women</option>
-                <option value="men">Men</option>
-            </select>
-        </div>
         <div class="input-block ">
             <label for="services"></label>
-            <select class="input" id="Services" required="" >
+            <select class="input" name="Services" id="Services" required="" >
                 <option value="" disabled selected>Services</option>
                 <option value="personal training">personal training</option>
                 <option value="group training">group training</option>
@@ -53,7 +30,7 @@
         </div>
         <div class="input-block ">
             <label for="Gender preference"></label>
-            <select class="input" id="Gender preference" required="" >
+            <select class="input" id="Gender preference"  name="Gender preference" required="" >
                 <option value="" disabled selected>Gender preference</option>
                 <option value="women">Women</option>
                 <option value="men">Men</option>
@@ -61,27 +38,19 @@
             </select>
         </div>
         <div class="input-block">
-            <input class="input" type="text" id="price" required="" placeholder="price">
-        </div>
-
-        <div class="input-block">
-            <textarea class="input" id="bio" required="" rows ="5" placeholder="Bio"></textarea>
-            
+            <input class="input" type="text" name="instagram"  id="instagram" required="" placeholder="instagram link">
         </div>
         <div class="input-block">
-            <input class="input" type="text" id="instagram" required="" placeholder="instagram link">
+            <input class="input" type="text" name="facebook"  id="facebook" required="" placeholder="facebook link">
         </div>
         <div class="input-block">
-            <input class="input" type="text" id="facebook" required="" placeholder="facebook link">
-        </div>
-        <div class="input-block">
-            <input class="input" type="text" id="youtube" required="" placeholder="youtube channel link">
+            <input class="input" type="text" name="youtube" id="youtube" required="" placeholder="youtube channel link">
         </div>
         
 
         <div class="file-section">
             <div class="pic-profile">
-            <label for="profileImage" class="custum-file-upload">
+            <label for="pic-profile" class="custum-file-upload">
                 <div class="icon">
                     <svg viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -94,14 +63,14 @@
                 <div class="text">
                     <span>Click to upload profile picture</span>
                 </div>
-                <input id="pic-profile" type="file">
+                <input id="pic-profile" name="pic-profile" type="file">
             </label>
         </div>
         </div>
         
         <div class="file-section">
             <div class="CV">
-            <label for="profileImage" class="custum-file-upload">
+            <label for="CV" class="custum-file-upload">
                 <div class="icon">
                     <svg viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -114,7 +83,7 @@
                 <div class="text">
                     <span>Click to upload CV and certifications</span>
                 </div>
-                <input id="CV" type="file">
+                <input id="CV" name="CV" type="file">
             </label>
         </div>
         </div>

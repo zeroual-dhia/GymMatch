@@ -2,11 +2,9 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
-    try {
-        require_once "dbh.inc.php";
-    } catch (PDOException $e) {
-        die("Connection failed: " . $e->getMessage());
-    }
+   
+        
+    
 
     // Required Fields
     $facebook = $_POST['facebook'] ?? null;
@@ -14,7 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $youtube = $_POST['youtube'] ?? null;
     $gender_preference = $_POST['gender_preference'] ?? null;
     $specialization = $_POST['specialization'] ?? null;
-    $user_id = $_POST['user_id'] ?? null; // Received via session or preset
+    session_start();
+    $user_id=$_SESSION["id"];
 
     // Validate required fields
     if (empty($specialization) || empty($user_id)) {
@@ -58,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insert data into the database
     try {
+        require_once "dbh.inc.php";
         $sql = "INSERT INTO trainers (trainer_fb, trainer_insta, trainer_ytb, gender_prefrence, trainer_spe, trainer_img, trainer_cv, user_id) 
                 VALUES (:facebook, :instagram, :youtube, :gender_preference, :specialization, :profile_picture, :cv, :user_id)";
 
