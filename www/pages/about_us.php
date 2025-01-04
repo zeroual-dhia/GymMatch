@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/preloader.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="/www/pages/table copy.php">
+
 </head>
 
 <body>
@@ -168,7 +168,7 @@
                                 <a href="#"><img class="img-fluid" src="../assets/icons/icons8-linkedin.svg" alt=""></a>
                             </div>
                             <div class="trainer-text">
-                                <h5>Bennacer Achref  <span>-ensia 2nd year student </span></h5>
+                                <h5>Bennacer Achref  </h5>
                             </div>
                             
                         </div>
