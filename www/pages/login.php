@@ -81,7 +81,7 @@ require_once "../includes/signin_view.php";
                     <span id="signin-password-error" class="error-message"></span>
                 </div>
 
-                <a href="#">Forgot your password?</a>
+                
                 <button type="submit">Sign In</button>
             </form>
         </div>
