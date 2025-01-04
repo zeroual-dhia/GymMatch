@@ -1,13 +1,12 @@
 <?php
 // Database connection
 $host = 'localhost'; // Database server
-$port = 8081;        // Custom MySQL port
 $user = 'root';      // Database username
 $password = '';      // Database password (leave blank for XAMPP default)
 $dbname = 'gym-match'; // Correct database name
 
 // Create a connection
-$connect = new mysqli($host, $user, $password, $dbname, $port);
+$connect = new mysqli($host, $user, $password, $dbname);
 
 // Check the connection
 if ($connect->connect_error) {
@@ -35,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Bind parameters
-    $stmt->bind_param("ssssi", $name, $email, $message, $contact_time, $user_id);
+    $stmt->bind_param("ssssi", $name, $email, $message, $contact_time,$user_id);
 
     // Execute the statement
     if ($stmt->execute()) {

@@ -19,7 +19,7 @@
         <form action="../includes/trainerform.php" method="post" >
         <div class="input-block ">
             <label for="services"></label>
-            <select class="input" name="services" id="Services" required="" >
+            <select class="input" name="services" id="services" required="" >
                 <option value="" disabled selected>Services</option>
                 <option value="personal training">personal training</option>
                 <option value="group training">group training</option>

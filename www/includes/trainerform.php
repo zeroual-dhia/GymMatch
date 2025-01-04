@@ -1,8 +1,8 @@
 <?php
-header("Location: ../pages/store.php");
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-   
+    header("Location: ../pages/store.php");
         
     
 
@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $facebook = $_POST['facebook'] ?? null;
     $instagram = $_POST['instagram'] ?? null;
     $youtube = $_POST['youtube'] ?? null;
-    $gender_preference = $_POST['gender_preference'] ?? null;
+    $gender_preference = $_POST['Gender preference'] ?? null;
     $specialization = $_POST['services'] ?? null;
     session_start();
     $user_id=$_SESSION["id"];

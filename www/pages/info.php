@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+<?php include_once '../includes/connect.php' ?>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,52 +11,36 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/info.css">
 </head>
+
 <body class="p-0">
-    <header class="header2">
-        <div class="logo-name">
-            <img id='logo' src="../assets/logo/logo.png" alt="">
-            <p class="text-light GYMMATCH">GYM MATCH</p>
-        </div>
-       
+    <?php include 'header.php' ?>
+    <?php
 
-        <nav class="links">
-            <a href="/components/dounia/gym-match/home/index.html" class="active">Home</a>
-            <a href="/components/rayane/about_us.html">About us</a>
-            <a href="/components/rayane/explore.html">Explore</a>
-            <a href="/components/dhiaa/html/programs.html">Programs</a>
-            <a href="/components/dounia/gym-match/store/store.html">Store</a>
+    $sql = $connect->prepare('SELECT gyms.*, users.user_phonenum FROM gyms 
+    JOIN users ON gyms.user_id = users.user_id 
+    WHERE gym_id = ?');
+    $sql->bind_param('i', $_GET['id']);
+    $sql->execute();
+    $result = $sql->get_result();
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $image_b64 = base64_encode($row["gym_img"]);
+            $image_src = 'data:image/ ;base64,' . $image_b64;
 
-            <div class="dropdown">
-                <button id="profile-btn" class="profile-btn">
-                    <img src="/assets/images/profile.png" alt="Profile" />
-                </button>
-                <div class="dropdown-content">
-                    <a href="login.html">Sign In</a>
-                    <a href="#signout">Sign Out</a>
-                </div>
-                
-            </div>
-
-            
-        </nav>
-
-        <button id="menu-btn"><img src="../assets/icons/icons8-menu.svg" alt=""></button>
-
-    </header>
-
-    <div class="program-descreption container-fluid">
+            echo '
+          <div class="program-descreption container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 mt-5 mb-5">
-                <h3 class="program-name text-light text-center fw-bold"><br>Gym : Powerhouse Gym</h3>
+                <h3 class="program-name text-light text-center fw-bold"><br>Gym : ' . $row['gym_name'] . '</h3>
             </div>
             <div class="col-12">
-                <img class="img-fluid descreption-image rounded mx-auto d-block" src="../assets/images/img/gym5.avif" alt="">
+                <img class="img-fluid descreption-image rounded mx-auto d-block" src="' . $image_src . '" alt="">
             </div>
     
             <div class="col-8 mt-3">
                 <div class="row justify-content-center">
                     <div class="col-11 motivation mb-5 mt-5 p-3">
-                        <p class="text-center text-light fw-600">Welcome to Powerhouse Gym,</p>
+                        <p class="text-center text-light fw-600">Welcome to ' . $row['gym_name'] . '</p>
                     </div>
                     <div class="col-12 workout-summary">
                         <table class="table caption-top">
@@ -62,27 +48,20 @@
                             <tbody>
                                 <tr class="table-row">
                                     <td id="col1">Location</td>
-                                    <td>Algiers</td>
+                                    <td>' . $row['gym_location'] . '</td>
                                 </tr>
-                                <tr class="table-row">
-                                    <td id="col1">Opening Hours</td>
-                                    <td>Everyday except Friday, 6am/10pm</td>
-                                </tr>
-                                <tr class="table-row">
-                                    <td id="col1">Facilities</td>
-                                    <td>Cardio machines, weights, classes, personal trainers</td>
-                                </tr>
+                              
                                 <tr class="table-row">
                                     <td id="col1">Extra Activities</td>
-                                    <td>- Sauna <br> - Swimming pool <br> (not included)</td>
+                                    <td>' . $row['gym_extra'] . '</td>
                                 </tr>
                                 <tr class="table-row">
                                     <td id="col1">Target Gender</td>
-                                    <td>Both men and women</td>
+                                    <td>' . $row['gym_targender'] . '</td>
                                 </tr>
                                 <tr class="table-row">
                                     <td id="col1">Contact Information</td>
-                                    <td>(+213) ... ... ...</td>
+                                    <td>' . $row['user_phonenum'] . '</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -93,7 +72,7 @@
                                 <h3 class="fw-bold">Description of our gym:</h3>
                             </div>
                             <div class="col-12">
-                                <p class="text-light">Your ultimate destination for fitness and wellness! Equipped with the latest state-of-the-art machines, our gym is designed to elevate your workout experience. Our dedicated team of six professional trainers is here to guide you every step of the way, providing personalized training programs tailored to your goals. Open six days a week, except Fridays, Powerhouse offers a welcoming environment where you can push your limits and achieve your fitness aspirations. Join us and transform your health—let’s get stronger together!</p>
+                                <p class="text-light">' . $row['gym_desc'] . '</p>
                             </div>
                         </div>
                     </div>
@@ -101,109 +80,67 @@
             </div>
         </div>
     </div>
-<!-- Cards Section -->
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-4">
-            <section class="card">
-                <header>
-                    <h2 class="title">1 Month Membership</h2>
-                    <h1 class="price" > 1,800 DA</h1>
-                </header>
-                <p class="desc">Includes:</p>
-                <ul class="lists">
-                    <li class="list">
-                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
-                        </svg>
-                        <p>Unlimited access to gym facilities</p>
-                    </li>
-                    <li class="list">
-                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
-                        </svg>
-                        <p>Group classes </p>
-                    </li>
-                    <li class="list">
-                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
-                        </svg>
-                        <p>Personal training session (1 complimentary)</p>
-                    </li>
-                </ul>
-                <button class="action" type="button">Get Started</button>
-            </section>
+
+    
+      ';
+        }
+    }
+
+
+    ?>
+
+    <!-- Cards Section -->
+    <div class="container mt-5">
+        <div class="row">
+            <?php
+            $sql1 = $connect->prepare('
+                  select * from memberships where gym_id= ?
+              
+              ');
+            $sql1->bind_param('i', $_GET['id']);
+            $sql1->execute();
+            $result1 = $sql1->get_result();
+            if ($result1->num_rows > 0) {
+                while ($row1 = $result1->fetch_assoc()) {
+
+                    echo '
+              <div class="col-md-4">
+                <section class="card">
+                    <header>
+                        <h2 class="title">'.$row1['ship_duration'].' Membership</h2>
+                        <h1 class="price">'.$row1['ship_price'].'DA</h1>
+                    </header>
+                    <p class="desc">includes :</p>
+                    <ul class="lists">
+                        <li class="list">
+                            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                            <p>'.$row1['ship_offer'].'</p> 
+                        </li>
+                    </ul>
+                    <button class="action" type="button">Get Started</button>
+                </section>
+            </div>
+             
+             ';
+
+                }
+            }
+
+            ?>
+
         </div>
 
-        <div class="col-md-4">
-            <section class="card">
-                <header>
-                    <h2 class="title">6 Months Membership</h2>
-                    <h1 class="price">6,000 DA </h1>
-                </header>
-                <p class="desc">includes:</p>
-                <ul class="lists">
-                    <li class="list">
-                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
-                        </svg>
-                        <p>Unlimited access to gym facilities</p>
-                    </li>
-                    <li class="list">
-                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
-                        </svg>
-                        <p>8 personal training sessions</p>
-                    </li>
-                    <li class="list">
-                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
-                        </svg>
-                        <p>Nutrition consultation</p>
-                    </li>
-                </ul>
-                <button class="action" type="button" >Get Started</button>
-            </section>
-        </div>
 
-        <div class="col-md-4">
-            <section class="card">
-                <header>
-                    <h2 class="title">1 Year Membership</h2>
-                    <h1 class="price">15,000 DA</h1>
-                </header>
-                <p class="desc">includes :</p>
-                <ul class="lists">
-                    <li class="list">
-                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
-                        </svg>
-                        <p>Unlimited access to gym facilities</p>
-                    </li>
-                    <li class="list">
-                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
-                        </svg>
-                        <p>all group classes </p>
-                    </li>
-                    <li class="list">
-                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
-                        </svg>
-                        <p>Access to exclusive member events</p>
-                    </li>
-                </ul>
-                <button class="action" type="button">Get Started</button>
-            </section>
-        </div>
     </div>
-
-
-</div>
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-<script src="node_modules/bootstrap/dist/js/wow.min.js"></script>
-<script src="../js/info.js"></script>
-<script src="../js/header.js"></script>
-<script src="../js/info.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="node_modules/bootstrap/dist/js/wow.min.js"></script>
+    <script src="../js/info.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/info.js"></script>
 </body>
+
 </html>
