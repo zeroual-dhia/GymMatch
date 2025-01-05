@@ -16,7 +16,7 @@
     <div class="form">
         <h1 class="title ">Trainer Registration</h1>
         <!-- Other input fields --> 
-        <form action="../includes/trainerform.php" method="post" enctype="multipart/form-data">
+        <form action="../includes/trainerform.php" method="post" >
         <div class="input-block ">
             <label for="services"></label>
             <select class="input" name="services" id="services" required="" >
@@ -30,7 +30,7 @@
         </div>
         <div class="input-block ">
             <label for="Gender preference"></label>
-            <select class="input" id="Gender preference"  name="Gender preference" required="" >
+            <select class="input" id="Gender preference"  name="gender_preference" required="" >
                 <option value="" disabled selected>Gender preference</option>
                 <option value="women">Women</option>
                 <option value="men">Men</option>
@@ -83,7 +83,7 @@
                 <div class="text">
                     <span>Click to upload CV and certifications</span>
                 </div>
-                <input id="CV" name="CV" type="file">
+                <input id="CV" name="cv" type="file">
             </label>
         </div>
         </div>
@@ -93,21 +93,11 @@
         <div class="input-block submit">
             <button type="submit">Submit</button>
         </div>
+        </form>
     </div>
-    
 
-<script>
-    document.getElementById('toggleExtraActivities').addEventListener('click', function() {
-        const extraActivitiesContainer = document.getElementById('extraActivitiesContainer');
-        extraActivitiesContainer.classList.toggle('hidden');
-        // Change button text based on visibility
-        if (extraActivitiesContainer.classList.contains('hidden')) {
-            this.textContent = ' Extra Activities : ';
-        } else {
-            this.textContent = 'Hide Extra Activities';
-        }
-    });
-</script>
+
+
 <script src="../js/trainerform.js"></script>
 </body>
 </html>

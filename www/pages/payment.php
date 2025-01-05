@@ -10,9 +10,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programs - Gym Website</title>
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/payment.css">
+    <link rel="stylesheet" href="/GymPath/node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="/GymPath/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/GymPath/www/css/payment.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 <div class="container p-0">
 <div class="card px-4">
     <p class="h8 py-3">Payment Details</p>
-<form action="../includes/pay.php" method="post">
+<form action="/GymPath/www/includes/pay.php" method="post">
     <div class="row gx-3">
         <div class="col-12">
             <div class="d-flex flex-column">
@@ -68,6 +68,6 @@
     
 </div>
 </div>
-<script src="../js/payment.js"></script>
+<script src="/GymPath/www/js/payment.js"></script>
 
 </body>

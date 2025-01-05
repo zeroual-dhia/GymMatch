@@ -1,8 +1,8 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   
-   
+    
+    header("Location: ../pages/store.php");
         
     
 
@@ -21,17 +21,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Handle profile picture upload
-    if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
-        $profile_picture = file_get_contents($_FILES['profile_picture']['tmp_name']);
+    if (isset($_FILES['pic-profile']) && $_FILES['pic-profile']['error'] === UPLOAD_ERR_OK) {
+        $profile_picture = file_get_contents($_FILES['pic-profile']['tmp_name']);
 
         // Check file size (e.g., max 2MB)
-        if ($_FILES['profile_picture']['size'] > 2 * 1024 * 1024) {
+        if ($_FILES['pic-profile']['size'] > 2 * 1024 * 1024) {
             die("Error: Profile picture must not exceed 2MB.");
         } 
 
         // Check file type
         $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
-        if (!in_array($_FILES['profile_picture']['type'], $allowed_types)) {
+        if (!in_array($_FILES['pic-profile']['type'], $allowed_types)) {
             die("Error: Profile picture must be a JPG, PNG, or GIF file.");
         }
     } else {
@@ -72,9 +72,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':user_id', $user_id);
 
         $stmt->execute();
-
+        $pdo=null;
+    $stmt=null;
         echo "Trainer data successfully added.";
+        header("Location: ../pages/store.php");
     } catch (PDOException $e) {
+        header("Location: ../pages/tainers.php");
         die("Error: " . $e->getMessage());
     }
 }

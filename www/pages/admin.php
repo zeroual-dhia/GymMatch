@@ -19,22 +19,22 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="/GymPath/node_modules/bootstrap/dist/css/animate.min.css">
 
 
 
 
 
-    <link href="../../node_modules/@popperjs/core/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../../node_modules/@popperjs/core/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+    <link href="/GymPath/node_modules/@popperjs/core/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/GymPath/node_modules/@popperjs/core/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
         rel="stylesheet" />
 
 
-    <link href="../../node_modules/css/admin-bootstrap.css" rel="stylesheet">
+    <link href="/GymPath/node_modules/css/admin-bootstrap.css" rel="stylesheet">
 
 
-    <link href="../css/admin.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/msg_and_request.css">
+    <link href="/GymPath/www/css/admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="/GymPath/www/css/msg_and_request.css">
 </head>
 
 <body>
@@ -66,8 +66,8 @@
 
 
 
-                    <a href="table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                    <a href="/GymPath/www/pages/table.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                    <a href="/GymPath/www/pages/chart.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
 
                 </div>
             </nav>
@@ -159,7 +159,7 @@
                             <span class="d-none d-lg-inline-flex">Achraf</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="/components/dounia/gym-match/home/index.html" class="dropdown-item">Log Out</a>
+                            <a href="/GymPath/index.php" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -322,7 +322,7 @@
 
 
                             <?php
-                            include("../includes/messages.php");
+                            include("/GymPath/www/pages/includes/messages.php");
                             ?>
 
                         </div>
@@ -402,7 +402,7 @@
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="/components/dounia/gym-match/home/index.html">GYM MATCH</a>, All Right
+                            &copy; <a href="/GymPath/index.php">GYM MATCH</a>, All Right
                             Reserved.
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
@@ -423,17 +423,17 @@
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="../../node_modules/@popperjs/core/lib/chart/chart.min.js"></script>
-        <script src="../../node_modules/@popperjs/core/lib/easing/easing.min.js"></script>
-        <script src="../../node_modules/@popperjs/core/lib/waypoints/waypoints.min.js"></script>
-        <script src="../../node_modules/@popperjs/core/lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="../../node_modules/@popperjs/core/lib/tempusdominus/js/moment.min.js"></script>
-        <script src="../../node_modules/@popperjs/core/lib/tempusdominus/js/moment-timezone.min.js"></script>
-        <script src="../../node_modules/@popperjs/core/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        <script src="/GymPath/node_modules/@popperjs/core/lib/chart/chart.min.js"></script>
+        <script src="/GymPath/node_modules/@popperjs/core/lib/easing/easing.min.js"></script>
+        <script src="/GymPath/node_modules/@popperjs/core/lib/waypoints/waypoints.min.js"></script>
+        <script src="/GymPath/node_modules/@popperjs/core/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="/GymPath/node_modules/@popperjs/core/lib/tempusdominus/js/moment.min.js"></script>
+        <script src="/GymPath/node_modules/@popperjs/core/lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="/GymPath/node_modules/@popperjs/core/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
 
-        <script src="../js/admin.js"></script>
-        <script src="../js/message.js"></script>
+        <script src="/GymPath/www/js/admin.js"></script>
+        <script src="/GymPath/www/js/message.js"></script>
 
 </body>
 
