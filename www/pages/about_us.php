@@ -32,13 +32,15 @@
 
 </head>
 
-<?php include 'header.php'?>
+
 
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
+    
+    <?php include 'header.php'?>
   
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg spad" data-setbg="../images/gallery/hero2.png">
