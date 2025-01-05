@@ -41,7 +41,7 @@
                             <div class="hero-text">
                                 <h1>Where Your Fitness Meets The Right Coach And Gym</h1>
                                 <h2>Explore Top Gyms In Your Area</h2>
-                                <a href="../pages/explore.html" class="primary-btn">Explore More</a>
+                                <a href="www/pages/explore.php" class="primary-btn">Explore More</a>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                         <div class="col-lg-12">
                             <div class="hero-text">
                                 <h2>Connect With Certified Coaches To Guide Your Every Step Of The Way</h2>
-                                <a href="../pages/trainers.html" class="primary-btn">Connect Now</a>
+                                <a href="www/pages/trainers.php" class="primary-btn">Connect Now</a>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                         <div class="col-lg-12">
                             <div class="hero-text">
                                 <h2>Access Free Workout Programs Tailored to Your Goals</h2>
-                                <a href="../pages/programs.html" class="primary-btn">Explore More</a>
+                                <a href="www/pages/programs.php" class="primary-btn">Explore More</a>
                             </div>
                         </div>
                     </div>
@@ -95,21 +95,21 @@
                     <div class="feature-item feature-bg-1">
                         <h3>GYM MEMBER</h3>
                         <p>Find your local gym or the perfect coach<br />to guide your fitness journey <br />with tailored plans to meet your goals</p>
-                        <a href="login.html" class="primary-btn f-btn">Join Us</a>
+                        <a href="www/pages/login.php" class="primary-btn f-btn">Join Us</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-item feature-bg-2">
                         <h3>GYM OWNER</h3>
                         <p>looking to expand your gym's reach?<br /> join our platform <br />to attract fitness enthusiasts</p>
-                        <a href="../pages/ownerform.html" class="primary-btn f-btn">Join Us</a>
+                        <a href="www/pages/ownerform.php" class="primary-btn f-btn">Join Us</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-item feature-bg-3">
                         <h3>TRAINER</h3>
                         <p>Take your coaching to the next level<br />Create a profile, connect with clients<br />and showcase your expertise </p>
-                        <a href="../pages/trainerform.html" class="primary-btn f-btn">Join Us</a>
+                        <a href="www/pages/trainerform.php" class="primary-btn f-btn">Join Us</a>
                     </div>
                 </div>
             </div>
