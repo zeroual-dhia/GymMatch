@@ -70,7 +70,7 @@
                     $image_b64 = base64_encode($row["gym_img"]);
                     $image_src = 'data:image/ ;base64,' . $image_b64;
                 echo '<div class="gym-card">
-                    <a href="index.php?page=explore&id='.$row['gym_id'].'" class="gym-link">  
+                    <a href="index.php?page=info&id='.$row['gym_id'].'" class="gym-link">  
                         <img src="'.$image_src.'" alt="Default Gym Image">
                         <h3>'.$row['gym_name'].'</h3>
                         <p>Location:'.$row['gym_location'].'<br>Facilities:'.$row['gym_extra'].'</p>
