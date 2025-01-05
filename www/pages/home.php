@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="www/css/header.css">
     <link rel="stylesheet" href="www//css/preloader.css">
     <link rel="stylesheet" href="www/css/footer.css">
+    <link rel="stylesheet" href="www/css/header.css">
+
     
 </head>
 
@@ -251,7 +253,10 @@
     <script src="www/js/jstemphome/owl.carousel.min.js"></script>
     <script src="www/js/jstemphome/masonry.pkgd.min.js"></script>
     <script src="www/js/jstemphome/main.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
     <script src="www/js/header.js"></script>
+
 
 </body>
 
