@@ -322,7 +322,7 @@
 
 
                             <?php
-                            include("/GymPath/www/pages/includes/messages.php");
+                            include("../includes/messages.php");
                             ?>
 
                         </div>
