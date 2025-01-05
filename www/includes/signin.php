@@ -43,7 +43,7 @@ if(!is_email_wrong($result) && is_password_wrong($psw,$result["user_pw"])){
 
         $_SESSION["last_regeneration"]= time();
 
-        header("Location:../pages/login.php?signin=success");
+        header("Location:../pages/home.php?signin=success");
 
         $pdo=null;
         $stmt=null;

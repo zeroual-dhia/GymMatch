@@ -1,7 +1,7 @@
 <?php
-require_once "/GymPath/www/includes/config_session.php";
-require_once "/GymPath/www/includes/signup_view.php";
-require_once "/GymPath/www/includes/signin_view.php";
+require_once "../includes/config_session.php";
+require_once "../includes/signup_view.php";
+require_once "../includes/signin_view.php";
 ?>
 
 
