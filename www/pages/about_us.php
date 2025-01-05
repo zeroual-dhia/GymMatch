@@ -13,22 +13,22 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
     <!-- Css Styles -->
-    <link rel="stylesheet" href="../../node_modules/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/SlickNav-master.zip" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/css/elegant-icons.css">
-    <link rel="stylesheet" href="../css/about_us.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/bootstrap/SlickNav-master.zip" type="text/css">
+    <link rel="stylesheet" href="node_modules/css/elegant-icons.css">
+    <link rel="stylesheet" href="www/css/about_us.css" type="text/css">
 
-    <link rel="stylesheet" href="../css/preloader.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="www/css/preloader.css">
+    <link rel="stylesheet" href="www/css/footer.css">
 
-    <link rel="stylesheet" href="/www/pages/table copy.php">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="www/pages/table copy.php">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="www/css/header.css">
 
 </head>
 
@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </div>
-            <img id="image1" src="../assets/images/img/pexels-cottonbro-7689280.jpg" alt="" class="img-fluid mx-auto d-block">
+            <img id="image1" src="www/assets/images/img/pexels-cottonbro-7689280.jpg" alt="" class="img-fluid mx-auto d-block">
             <div class="row">
                 <div class="col-lg-6 mx-auto">
                     <div class="about-us">
@@ -100,9 +100,9 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="trainer-item">
                         <div class="ti-pic">
-                            <img src="../assets/images/img/rayane.jpg" alt="" width="4.9rem">
+                            <img src="www/assets/images/img/rayane.jpg" alt="" width="4.9rem">
                             <div class="ti-links">
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-linkedin.svg" alt=""></a>
+                                <a href="#"><img class="img-fluid" src="www/assets/icons/icons8-linkedin.svg" alt=""></a>
                             </div>
                             <div class="trainer-text">
                                 <h5> Toumi Rayane </h5>
@@ -113,9 +113,9 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="trainer-item">
                         <div class="ti-pic">
-                            <img src="../assets/images/img/dhiaa.webp" alt="" width="4.9rem">
+                            <img src="www/assets/images/img/dhiaa.webp" alt="" width="4.9rem">
                             <div class="ti-links">
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-linkedin.svg" alt=""></a>
+                                <a href="#"><img class="img-fluid" src="www/assets/icons/icons8-linkedin.svg" alt=""></a>
                             </div>
                             <div class="trainer-text">
                                 <h5>Zeroual Dhiaa </h5>
@@ -126,9 +126,9 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="trainer-item">
                         <div class="ti-pic">
-                            <img src="../assets/images/img/dounia.webp" alt="" width="4.9rem">
+                            <img src="www/assets/images/img/dounia.webp" alt="" width="4.9rem">
                             <div class="ti-links">
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-linkedin.svg" alt=""></a>
+                                <a href="#"><img class="img-fluid" src="www/assets/icons/icons8-linkedin.svg" alt=""></a>
                             </div>
                             <div class="trainer-text">
                                 <h5>Blaada Douniazed </h5>
@@ -139,9 +139,9 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="trainer-item">
                         <div class="ti-pic">
-                            <img src="../assets/images/img/achref2.jpeg" alt="" width="4.9rem">
+                            <img src="www/assets/images/img/achref2.jpeg" alt="" width="4.9rem">
                             <div class="ti-links">
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-linkedin.svg" alt=""></a>
+                                <a href="#"><img class="img-fluid" src="www/assets/icons/icons8-linkedin.svg" alt=""></a>
                             </div>
                             <div class="trainer-text">
                                 <h5>Bennacer Achref  </h5>
@@ -160,7 +160,7 @@
                 <div class="contact-form">
                     <center><h4>Get in touch</h4></center>
                     <!-- Form starts here -->
-                    <form id="contactForm" action="../includes/contact.php" method="POST">
+                    <form id="contactForm" action="www/includes/contact.php" method="POST">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <input type="text" name="name" id="name" placeholder="Name" required>
@@ -199,10 +199,10 @@
                                 <p class="m-0">Follow us</p>
                             </h6>
                             <div class="social">
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-facebook.svg" alt=""></a>
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-instagram.svg"
+                                <a href="#"><img class="img-fluid" src="www/assets/icons/icons8-facebook.svg" alt=""></a>
+                                <a href="#"><img class="img-fluid" src="www/assets/icons/icons8-instagram.svg"
                                         alt=""></a>
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-linkedin.svg" alt=""></a>
+                                <a href="#"><img class="img-fluid" src="www/assets/icons/icons8-linkedin.svg" alt=""></a>
                             </div>
 
                         </div>
@@ -252,9 +252,9 @@
     </footer>
     
     <!-- Js Plugins -->
-    <script src="../js/header.js"></script>
-    <script src="../js/about_us.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="www/js/header.js"></script>
+    <script src="www/js/about_us.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 
 </body>
 </html>
