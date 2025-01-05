@@ -4,17 +4,17 @@
                 <div class="col-lg-5 col-md-6 col-sm-12  ">
                     <div class="footer-logo-item">
                         <div class="f-logo">
-                            <a href="#"><img class="img-fluid" src="../assets/logo/logo.png" alt=""></a>
+                            <a href="#"><img class="img-fluid" src="www/assets/logo/logo.png" alt=""></a>
                         </div>
                         <div class="social-links">
                             <h6 class="text-light text-center">
                                 <p class="m-0">Follow us</p>
                             </h6>
                             <div class="social">
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-facebook.svg" alt=""></a>
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-instagram.svg"
+                                <a href="#"><img class="img-fluid" src="www/assets/icons/icons8-facebook.svg" alt=""></a>
+                                <a href="#"><img class="img-fluid" src="www/assets/icons/icons8-instagram.svg"
                                         alt=""></a>
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-linkedin.svg" alt=""></a>
+                                <a href="#"><img class="img-fluid" src="www/assets/icons/icons8-linkedin.svg" alt=""></a>
                             </div>
 
                         </div>
@@ -27,7 +27,7 @@
                             <p class="info">Get Info</p>
                         </h5>
                         <div class="mygird container-fluid">
-                            <img src="../assets/icons/icons8-phone-30.png" alt="">
+                            <img src="www/assets/icons/icons8-phone-30.png" alt="">
 
                             <p class="m-0 text-light">Phone:</p>
 
@@ -35,7 +35,7 @@
                             <p class="m-0 text-light">(12) 34 5 6789</p>
 
 
-                            <img class="" src="../assets/icons/icons8-email-24.png" alt="">
+                            <img class="" src="www/assets/icons/icons8-email-24.png" alt="">
 
                             <p class="m-0 text-light">Email:</p>
 

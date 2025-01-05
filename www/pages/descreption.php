@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include_once '../includes/connect.php'; ?>
+<?php include_once 'www/includes/connect.php'; ?>
 
 <head>
 
@@ -10,11 +10,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programs - Gym Website</title>
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/descreption.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="www/css/descreption.css">
+    <link rel="stylesheet" href="www/css/header.css">
+    <link rel="stylesheet" href="www/css/footer.css">
 
 
 
@@ -165,33 +165,33 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td scope="row"><a href="exercise.php" style="text-decoration: none;">Miltary Press</a></td>
+                            <td scope="row"><a href="index.php?page=exercise" style="text-decoration: none;" >Miltary Press</a></td>
                             <td>5</td>
                             <td>3-5</td>
                             <td>3 min</td>
                         </tr>
                         <tr>
-                            <td scope="row"><a style="text-decoration: none;" href="exercise.php">Incline Bench
+                            <td scope="row"><a style="text-decoration: none;" href="index.php?page=exercise">Incline Bench
                                     Press</a></td>
                             <td>4</td>
                             <td>3-5</td>
                             <td>3 min</td>
                         </tr>
                         <tr>
-                            <td scope="row"><a style="text-decoration: none;" href="exercise.php">Dummble Bench
+                            <td scope="row"><a style="text-decoration: none;" href="index.php?page=exercise">Dummble Bench
                                     Press</a></td>
                             <td>3</td>
                             <td>5</td>
                             <td>2 min</td>
                         </tr>
                         <tr>
-                            <td scope="row"><a style="text-decoration: none;" href="exercise.php">Tricep Dip</a></td>
+                            <td scope="row"><a style="text-decoration: none;" href="index.php?page=exercise">Tricep Dip</a></td>
                             <td>3</td>
                             <td>5</td>
                             <td>2 min</td>
                         </tr>
                         <tr>
-                            <td scope="row"><a style="text-decoration: none;" href="exercise.php">Overhead EZ Bar Tricep
+                            <td scope="row"><a style="text-decoration: none;" href="index.php?page=exercise">Overhead EZ Bar Tricep
                                     Extension</a></td>
                             <td>3</td>
                             <td>5</td>
@@ -225,8 +225,8 @@
     include 'footer.php';
     ?>
 
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/wow.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="node_modules/bootstrap/dist/js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>

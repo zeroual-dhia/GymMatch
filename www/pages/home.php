@@ -13,57 +13,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="/GymPath/node_modules/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/GymPath/node_modules/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/GymPath/node_modules/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="/GymPath/node_modules/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="/GymPath/node_modules/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="/GymPath/node_modules/css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="/GymPath/node_modules/bootstrap/SlickNav-master.zip" type="text/css">
-    <link rel="stylesheet" href="/GymPath/www/css/home.css" type="text/css">
-    <link rel="stylesheet" href="/GymPath/www/css/header.css">
-    <link rel="stylesheet" href="/GymPath/www//css/preloader.css">
-    <link rel="stylesheet" href="/GymPath/www/css/footer.css">
+    <link rel="stylesheet" href="node_modules/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/bootstrap/SlickNav-master.zip" type="text/css">
+    <link rel="stylesheet" href="www/css/home.css" type="text/css">
+    <link rel="stylesheet" href="www/css/header.css">
+    <link rel="stylesheet" href="www//css/preloader.css">
+    <link rel="stylesheet" href="www/css/footer.css">
 </head>
 
 <body>
     <!-- Page Preloder -->
+     <?php include 'header.php'  ?>
     
-    
-    <header class="header2">
-        <div class="logo-name">
-            <img id='logo' src="../assets/logo/logo.png" alt="">
-            <p class="text-light GYMMATCH">GYM MATCH</p>
-        </div>
-       
-
-        <nav class="links">
-        <a href="home.php" class="active">Home</a>
-            <a href="/GymPath/www/pages/about_us.php">About us</a>
-            <a href="/GymPath/www/pages/explore.php">Explore</a>
-            <a href="/GymPath/www/pages/programs.php">Programs</a>
-            <a href="/GymPath/www/pages/store.php">Store</a>
-
-            <div class="dropdown">
-                <button id="profile-btn" class="profile-btn">
-                    <a href="/GymPath/www/pages/profile.php">
-                    <img src="../assets/icons/profile.png" alt="Profile" />
-                    </a>
-                </button>
-                <div class="dropdown-content">
-                    <a href="/GymPath/www/pages/login.php">Sign In</a>
-                    <a href="/GymPath/www/pages/home.php">Sign Out</a>
-                </div>
-                
-            </div>
-
-            
-        </nav>
-
-        <button id="menu-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-        aria-controls="offcanvasWithBothOptions"><img src="../assets/icons/icons8-menu.svg" alt=""></button>
-
-    </header>
+ 
 
     <section class="hero-section">
         <div class="hero-items owl-carousel">
@@ -181,7 +148,7 @@
                     <div class="col-lg-7 m-auto text-center">
                         <div class="section-title pl-lg-4 pr-lg-4 pl-0 pr-0">
                             <h2>Choose Your Program</h2>
-                            <a href="/GymPath/www/pages/programs.php" class="primary-btn">Programs</a>
+                            <a href="www/pages/programs.php" class="primary-btn">Programs</a>
                         </div>
                     </div>
                 </div>
@@ -270,86 +237,20 @@
     </section>
     <!-- Cta Section End -->
 
-    <footer class="footer-section">
-        <div class="container-fluid">
-            <div class="row justify-content-between align-item-start  ">
-                <div class="col-lg-5 col-md-6 col-sm-12  ">
-                    <div class="footer-logo-item">
-                        <div class="f-logo">
-                            <a href="#"><img class="img-fluid" src="/assets/logo/logo.png" alt=""></a>
-                        </div>
-                        <div class="social-links">
-                            <h6 class="text-light text-center">
-                                <p class="m-0">Follow us</p>
-                            </h6>
-                            <div class="social">
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-facebook.svg" alt=""></a>
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-instagram.svg"
-                                        alt=""></a>
-                                <a href="#"><img class="img-fluid" src="../assets/icons/icons8-linkedin.svg" alt=""></a>
-                            </div>
 
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-lg-4 col-md-5  pt-4">
-                    <div class="footer-widget ">
-                        <h5 class=" text-light">
-                            <p class="info">Get Info</p>
-                        </h5>
-                        <div class="mygird container-fluid">
-                            <img src="../assets/icons/icons8-phone-30.png" alt="">
-
-                            <p class="m-0 text-light">Phone:</p>
-
-
-                            <p class="m-0 text-light">(12) 34 5 6789</p>
-
-
-                            <img class="" src="../assets/icons/icons8-email-24.png" alt="">
-
-                            <p class="m-0 text-light">Email:</p>
-
-
-                            <p class="m-0 text-light">Colorlib.info@gmail.com</p>
-
-
-                        </div>
-
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-text">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="text-light ct-inside">
-                            Copyright © 2024 GymMatch. All rights reserved.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </footer>
-
+    <?php include 'footer.php'?>
 
     <!-- Js Plugins -->
-    <script src="/GymPath/www/js/jstemphome/jquery-3.3.1.min.js"></script>
-    <script src="/GymPath/www/js/jstemphome/bootstrap.min.js"></script>
-    <script src="/GymPath/www/js/jstemphome/jquery.magnific-popup.min.js"></script>
-    <script src="/GymPath/www/js/jstemphome/mixitup.min.js"></script>
-    <script src="/GymPath/www/js/jstemphome/jquery.nice-select.min.js"></script>
-    <script src="/GymPath/www/js/jstemphome/jquery.slicknav.js"></script>
-    <script src="/GymPath/www/js/jstemphome/owl.carousel.min.js"></script>
-    <script src="/GymPath/www/js/jstemphome/masonry.pkgd.min.js"></script>
-    <script src="/GymPath/www/js/jstemphome/main.js"></script>
-    <script src="/GymPath/www/js/header.js"></script>
+    <script src="www/js/jstemphome/jquery-3.3.1.min.js"></script>
+    <script src="www/js/jstemphome/bootstrap.min.js"></script>
+    <script src="www/js/jstemphome/jquery.magnific-popup.min.js"></script>
+    <script src="www/js/jstemphome/mixitup.min.js"></script>
+    <script src="www/js/jstemphome/jquery.nice-select.min.js"></script>
+    <script src="www/js/jstemphome/jquery.slicknav.js"></script>
+    <script src="www/js/jstemphome/owl.carousel.min.js"></script>
+    <script src="www/js/jstemphome/masonry.pkgd.min.js"></script>
+    <script src="www/js/jstemphome/main.js"></script>
+    <script src="www/js/header.js"></script>
 
 </body>
 

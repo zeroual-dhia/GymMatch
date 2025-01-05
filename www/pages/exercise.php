@@ -8,11 +8,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programs - Gym Website</title>
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/exercise.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="www/css/exercise.css">
+    <link rel="stylesheet" href="www/css/header.css">
+    <link rel="stylesheet" href="www/css/footer.css">
     
 
 
@@ -32,7 +32,7 @@
                 <h3 class="program-name text-light text-center fw-bold">Military press</h3>
             </div>
             <div class="col-12 ">
-                <img style="width: 40%;" class=" img-fluid descreption-image rounded mx-auto d-block" src="../assets/images/exercises/militarypress.gif"
+                <img style="width: 40%;" class=" img-fluid descreption-image rounded mx-auto d-block" src="www/assets/images/exercises/militarypress.gif"
                     alt="">
                     
             </div>
@@ -96,12 +96,12 @@
        include 'footer.php';
     ?>  
 
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/wow.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="node_modules/bootstrap/dist/js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
-        <script src="../js/header.js"></script>
+        <script src="www/js/header.js"></script>
 
     </body>
     
