@@ -6,7 +6,7 @@ session_start();
 
 
 // Get the requested page from the URL (e.g., ?page=home)
-$page = isset($_GET['page']) ? $_GET['page'] :'programs';
+$page = isset($_GET['page']) ? $_GET['page'] :'home';
 
 // List of allowed pages to prevent unauthorized file access
 $allowed_pages = ['home', 'about_us', 'explore', 'profile', 'login', 'info', 'ownerform', 'payement', 'programs', 'store', 'trainers', 
