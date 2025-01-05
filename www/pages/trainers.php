@@ -1,11 +1,10 @@
 <?php
 try {
-    // Include the database connection
     require_once "../includes/dbh.inc.php";
 
-    // Fetch trainer details from the database, including the user's name and image
     $query = "
         SELECT 
+            t.trainer_id,
             u.user_name AS trainer_name, 
             t.trainer_spe AS specialization, 
             t.trainer_fb AS facebook, 
@@ -19,7 +18,6 @@ try {
     $stmt->execute();
     $trainers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Close the connection
     $pdo = null;
     $stmt = null;
 } catch (PDOException $e) {
@@ -33,25 +31,20 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trainers</title>
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
-
-    <!-- CSS Styles -->
     <link rel="stylesheet" href="../../node_modules/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="../../node_modules/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="../css/trainers.css" type="text/css">
     <link rel="stylesheet" href="../css/header.css">
-    
 </head>
 
 <body>
-    <!-- Header Code Omitted for Brevity -->
+    <header>
+        <!-- Your header content -->
+    </header>
 
-    <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section breadcrumb-bg">
         <div class="container">
             <div class="row">
@@ -67,9 +60,7 @@ try {
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Section End -->
 
-    <!-- Team Section Begin -->
     <section class="team-section team-page spad">
         <div class="container">
             <div class="row">
@@ -88,24 +79,25 @@ try {
                     echo '<p>No trainers found.</p>';
                 } else {
                     foreach ($trainers as $trainer) {
-                        // Convert the BLOB to base64 if it's not empty
-                        $backgroundImage = !empty($trainer['image'])
+                        $imageSrc = !empty($trainer['image'])
                             ? 'data:image/jpeg;base64,' . base64_encode($trainer['image'])
-                            : 'path/to/default-image.jpg'; // Use a default image if `trainer_img` is empty
+                            : 'path/to/default-image.jpg';
 
                         echo '
                         <div class="col-lg-4 col-sm-6">
-                            <div class="ts-item" style="background-image: url(' . htmlspecialchars($backgroundImage) . ');">
-                                <div class="ts_text">
-                                    <h4>' . htmlspecialchars($trainer['trainer_name']) . '</h4>
-                                    <span>' . htmlspecialchars($trainer['specialization']) . '</span>
-                                    <div class="tt_social">
-                                        <a href="' . (!empty($trainer['facebook']) ? htmlspecialchars($trainer['facebook']) : '#') . '"><i class="fa fa-facebook"></i></a>
-                                        <a href="' . (!empty($trainer['instagram']) ? htmlspecialchars($trainer['instagram']) : '#') . '"><i class="fa fa-instagram"></i></a>
-                                        <a href="' . (!empty($trainer['youtube']) ? htmlspecialchars($trainer['youtube']) : '#') . '"><i class="fa fa-youtube-play"></i></a>
+                            <a href="infotrainer.php?trainer_id=' . htmlspecialchars($trainer['trainer_id']) . '" class="trainer-link">
+                                <div class="ts-item" style="background-image: url(\'' . htmlspecialchars($imageSrc) . '\');">
+                                    <div class="ts_text">
+                                        <h4>' . htmlspecialchars($trainer['trainer_name']) . '</h4>
+                                        <span>' . htmlspecialchars($trainer['specialization']) . '</span>
+                                        <div class="tt_social">
+                                            <a href="' . (!empty($trainer['facebook']) ? htmlspecialchars($trainer['facebook']) : '#') . '" target="_blank"><i class="fa fa-facebook"></i></a>
+                                            <a href="' . (!empty($trainer['instagram']) ? htmlspecialchars($trainer['instagram']) : '#') . '" target="_blank"><i class="fa fa-instagram"></i></a>
+                                            <a href="' . (!empty($trainer['youtube']) ? htmlspecialchars($trainer['youtube']) : '#') . '" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>';
                     }
                 }
@@ -113,9 +105,7 @@ try {
             </div>
         </div>
     </section>
-    <!-- Team Section End -->
 
-    <!-- Js Plugins -->
     <script src="../js/jstemptrainer/jquery-3.3.1.min.js"></script>
     <script src="../js/jstemptrainer/bootstrap.min.js"></script>
     <script src="../js/main.js"></script>
