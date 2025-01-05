@@ -1,7 +1,7 @@
 <?php
-require_once "../includes/config_session.php";
-require_once "../includes/signup_view.php";
-require_once "../includes/signin_view.php";
+require_once "/GymPath/www/includes/config_session.php";
+require_once "/GymPath/www/includes/signup_view.php";
+require_once "/GymPath/www/includes/signin_view.php";
 ?>
 
 
@@ -11,14 +11,14 @@ require_once "../includes/signin_view.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="/GymPath/www/css/login.css">
     <title>Animated Login Page</title>
 </head>
 
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form class="form-up" action="../includes/signup.php" method="post" name="sign-up">
+            <form class="form-up" action="/GymPath/www/includes/signup.php" method="post" name="sign-up">
                 <h1 style="margin-bottom: 20px;">Create Account</h1>
 
                 <div class="form-element">
@@ -65,7 +65,7 @@ require_once "../includes/signin_view.php";
         </div>
 
         <div class="form-container sign-in">
-            <form class="form-in" action="../includes/signin.php" method="post">
+            <form class="form-in" action="/GymPath/www/includes/signin.php" method="post">
                 <h1 style="margin-bottom: 20px;">Sign In</h1>
 
                 <div class="form-element">
@@ -102,7 +102,7 @@ require_once "../includes/signin_view.php";
         </div>
     </div>
 
-    <script src="../js/login.js"></script>
+    <script src="/GymPath/www/js/login.js"></script>
 
 </body>
 

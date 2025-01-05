@@ -11,16 +11,16 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/GymPath/node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="/GymPath/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../css/preloader.css">
-    <link rel="stylesheet" href="../css/profile.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="/GymPath/www/css/preloader.css">
+    <link rel="stylesheet" href="/GymPath/www/css/profile.css">
+    <link rel="stylesheet" href="/GymPath/www/css/header.css">
   
 
 </head>
@@ -201,10 +201,10 @@
 
     </div>
 
-    <script src="../js/profile.js"></script>
-    <script src="../js/header.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/wow.min.js"></script>
+    <script src="/GymPath/www/js/profile.js"></script>
+    <script src="/GymPath/www/js/header.js"></script>
+    <script src="/GymPath/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="/GymPath/node_modules/bootstrap/dist/js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
