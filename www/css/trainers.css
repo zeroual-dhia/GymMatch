@@ -197,6 +197,15 @@ ol {
 	}
 }
 
+/* Team Section */
+.team-section {
+    background: black;
+    color: white;
+}
+
+.team-section.team-page {
+    padding: 50px 0 70px;
+}
 /*---------------------
   Team Section (Trainers page)
 -----------------------*/
@@ -211,30 +220,24 @@ ol {
 
 /* Trainer card styling */
 .team-section.team-page .ts-item {
-    margin-bottom: 30px;
-    background-size: cover; /* Ensures image covers the section */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents image repetition */
-    height: 480px; /* Adjust height for consistency */
-    position: relative; /* Required for positioning text */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Ensures content stays inside the container */
-    display: flex; /* For centering the text */
-    align-items: flex-end; /* Aligns text at the bottom */
-    transition: transform 0.3s ease; /* Smooth hover animation */
-}
-
-.team-section.team-page .ts-item:hover {
-    transform: scale(1.03); /* Slight zoom on hover */
+    width: 100%; /* Full width of the column */
+    height: 400px; /* Fixed height for all trainer cards */
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover; /* Ensures the background image covers the entire container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents background image repetition */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align text to the bottom */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Trainer card text styling */
 .team-section.team-page .ts-item .ts_text {
-    position: absolute; /* Position relative to the image */
-    bottom: 0;
-    left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay for text visibility */
     color: white;
     padding: 20px;
     text-align: center;
@@ -247,6 +250,11 @@ ol {
     opacity: 1; /* Fully visible on hover */
 }
 
+/* Hover effect for the trainer card */
+.team-section.team-page .ts-item:hover {
+    transform: scale(1.03); /* Slight zoom on hover */
+}
+
 /* Social media icon container */
 .team-section.team-page .ts-item .tt_social {
     display: flex; /* Align icons in a row */
@@ -257,13 +265,13 @@ ol {
 
 /* Social media icon styling */
 .team-section.team-page .ts-item .tt_social a {
-    font-size: 16px; /* Adjusted font size for visibility */
-    color: #ff1313; /* Default color */
+    font-size: 16px;
+    color: #ff1313;
     transition: color 0.3s ease;
 }
 
 .team-section.team-page .ts-item .tt_social a:hover {
-    color: #ffffff; /* Color change on hover */
+    color: #ffffff;
 }
 
 /* Title and specialization styling */
@@ -282,68 +290,12 @@ ol {
     text-transform: uppercase;
 }
 
-/* Section title styling */
-.team-title .section-title {
-    text-align: left;
-    float: left;
-}
-
-/* Team slider (if applicable) */
-.ts-slider .col-lg-4 {
-    max-width: 100%;
-}
-
-.ts-slider.owl-carousel .owl-dots {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.ts-slider.owl-carousel .owl-dots button {
-    height: 4px;
-    width: 20px;
-    background: #5c5c5c;
-    margin-right: 15px;
-    transform: skewY(-5deg);
-}
-
-.ts-slider.owl-carousel .owl-dots button.active {
-    background: #ff1313;
-}
-
-.ts-slider.owl-carousel .owl-dots button:last-child {
-    margin-right: 0;
-}
-
-/* Team item general styling */
-.ts-item {
-    height: 450px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Text reveal on hover */
-.ts-item:hover .ts_text {
-    bottom: 0; /* Ensures it fully slides up on hover */
-}
-
-/* Adjust text padding */
-.ts-item .ts_text {
-    padding: 20px 0; /* Adjusts padding for consistency */
-}
-
-/* Remove skew effects for alignment */
-.ts-item .ts_text h4,
-.ts-item .ts_text span {
-    transform: none; /* Removes skew effect for better alignment */
-}
-
-/* Responsive adjustments (if needed) */
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .team-section.team-page .ts-item {
-        height: 350px; /* Reduce height for smaller screens */
+        height: 250px; /* Reduce height for smaller screens */
     }
 }
-
 
 /* ----------------------------------- Other Pages Styles ----------------------------------- */
 
