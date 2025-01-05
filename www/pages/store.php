@@ -129,7 +129,9 @@ try {
 
              <div class="shopping-list-footer">
                 <button id="cancel-button" class="cancel-button">Cancel</button>
+                <a href="/GymPath/www/pages/payment.php">
                 <button id="pay-button" class="pay-button">Pay</button>
+                </a>
             </div>
         </div>
         
