@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <title>Gym Owner Form</title>
-    <link rel="stylesheet" href="../css/ownerform.css">
+    <link rel="stylesheet" href="www/css/ownerform.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <form id="ownerform" action="../includes/owform.php" method="POST" enctype="multipart/form-data">     
+    <form id="ownerform" action="www/includes/owform.php" method="POST" enctype="multipart/form-data">     
         <h1 class="title">Gym Owner Registration</h1>
         <div class="input-block">
             <input class="input" type="text" name="gymName" id="gymName" required placeholder="Gym Name">
@@ -89,7 +89,7 @@
         </div>
     </form>
 
-<script src="../js/form.js"></script>
+<script src="www/js/form.js"></script>
 <script>
         document.addEventListener("DOMContentLoaded", function () {
             const form = document.getElementById("ownerform");
