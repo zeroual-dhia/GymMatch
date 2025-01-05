@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="www/css/header.css">
     <link rel="stylesheet" href="www//css/preloader.css">
     <link rel="stylesheet" href="www/css/footer.css">
+    
 </head>
 
 <body>

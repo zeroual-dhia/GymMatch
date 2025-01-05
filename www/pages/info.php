@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programs - Gym Website</title>
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/info.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="www/css/header.css">
+    <link rel="stylesheet" href="www/css/info.css">
 </head>
 
 <body class="p-0">
@@ -138,9 +138,9 @@
     </div>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="node_modules/bootstrap/dist/js/wow.min.js"></script>
-    <script src="../js/info.js"></script>
-    <script src="../js/header.js"></script>
-    <script src="../js/info.js"></script>
+    <script src="www/js/info.js"></script>
+    <script src="www/js/header.js"></script>
+<script src="www/js/info.js"></script>
 </body>
 
 </html>
