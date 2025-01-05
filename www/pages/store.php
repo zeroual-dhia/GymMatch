@@ -26,13 +26,13 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store Page</title>
-    <link rel="stylesheet" href="../css/store.css">
+    <link rel="stylesheet" href="/GymPath/www/css/store.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/preloader.css">
-    <script src="../js/header.js"></script>
-    <script src="../js/store.js"></script>
+    <link rel="stylesheet" href="/GymPath/www/css/header.css">
+    <link rel="stylesheet" href="/GymPath/www/css/preloader.css">
+    <script src="/GymPath/www/js/header.js"></script>
+    <script src="/GymPath/www/js/store.js"></script>
 </head>
 <body>  
      <!-- Page Preloder -->
@@ -48,15 +48,15 @@ try {
        
 
         <nav class="links">
-            <a href="../pages/home.php" class="active">Home</a>
-            <a href="../pages/about_us.php">About us</a>
-            <a href="../pages/explore.php">Explore</a>
-            <a href="../pages/programs.php">Programs</a>
-            <a href="../pages/store.php">Store</a>
+            <a href="/GymPath/www/pages/home.php" class="active">Home</a>
+            <a href="/GymPath/www/pages/about_us.php">About us</a>
+            <a href="/GymPath/www/pages/explore.php">Explore</a>
+            <a href="/GymPath/www/pages/programs.php">Programs</a>
+            <a href="/GymPath/www/pages/store.php">Store</a>
 
             <div class="dropdown">
                 <button id="profile-btn" class="profile-btn">
-                    <img src="../assets/icons/profile.png" alt="Profile" />
+                    <img src="/GymPath/www/assets/icons/profile.png" alt="Profile" />
                 </button>
                 <div class="dropdown-content">
                     <a href="login.html">Sign In</a>
@@ -82,7 +82,7 @@ try {
                     <div class="breadcrumb-text">
                         <h2>Our Store</h2>
                         <div class="bt-option">
-                            <a href="./store.php"><i class="fa fa-home"></i> Home</a>
+                            <a href="/GymPath/www/pages/store.php"><i class="fa fa-home"></i> Home</a>
                             <span>Store</span>
                         </div>
                     </div>
@@ -129,7 +129,9 @@ try {
 
              <div class="shopping-list-footer">
                 <button id="cancel-button" class="cancel-button">Cancel</button>
+                <a href="/GymPath/www/pages/payment.php">
                 <button id="pay-button" class="pay-button">Pay</button>
+                </a>
             </div>
         </div>
         

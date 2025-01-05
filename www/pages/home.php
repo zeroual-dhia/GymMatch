@@ -13,24 +13,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="../../node_modules/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/SlickNav-master.zip" type="text/css">
+    <link rel="stylesheet" href="/GymPath/node_modules/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/GymPath/node_modules/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/GymPath/node_modules/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/GymPath/node_modules/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/GymPath/node_modules/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/GymPath/node_modules/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/GymPath/node_modules/bootstrap/SlickNav-master.zip" type="text/css">
     <link rel="stylesheet" href="/GymPath/www/css/home.css" type="text/css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/preloader.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="/GymPath/www/css/header.css">
+    <link rel="stylesheet" href="/GymPath/www//css/preloader.css">
+    <link rel="stylesheet" href="/GymPath/www/css/footer.css">
 </head>
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+    
     
     <header class="header2">
         <div class="logo-name">
@@ -40,19 +38,21 @@
        
 
         <nav class="links">
-            <a href="../pages/home.html" class="active">Home</a>
-            <a href="../pages/about_us.html">About us</a>
-            <a href="../pages/explore.html">Explore</a>
-            <a href="../pages/programs.html">Programs</a>
-            <a href="../pages/store.html">Store</a>
+        <a href="home.php" class="active">Home</a>
+            <a href="/GymPath/www/pages/about_us.php">About us</a>
+            <a href="/GymPath/www/pages/explore.php">Explore</a>
+            <a href="/GymPath/www/pages/programs.php">Programs</a>
+            <a href="/GymPath/www/pages/store.php">Store</a>
 
             <div class="dropdown">
                 <button id="profile-btn" class="profile-btn">
+                    <a href="/GymPath/www/pages/profile.php">
                     <img src="../assets/icons/profile.png" alt="Profile" />
+                    </a>
                 </button>
                 <div class="dropdown-content">
-                    <a href="login.html">Sign In</a>
-                    <a href="#signout">Sign Out</a>
+                    <a href="/GymPath/www/pages/login.php">Sign In</a>
+                    <a href="/GymPath/www/pages/home.php">Sign Out</a>
                 </div>
                 
             </div>
@@ -181,7 +181,7 @@
                     <div class="col-lg-7 m-auto text-center">
                         <div class="section-title pl-lg-4 pr-lg-4 pl-0 pr-0">
                             <h2>Choose Your Program</h2>
-                            <a href="../pages/programs.html" class="primary-btn">Programs</a>
+                            <a href="/GymPath/www/pages/programs.php" class="primary-btn">Programs</a>
                         </div>
                     </div>
                 </div>
@@ -340,16 +340,16 @@
 
 
     <!-- Js Plugins -->
-    <script src="../js/jstemphome/jquery-3.3.1.min.js"></script>
-    <script src="../js/jstemphome/bootstrap.min.js"></script>
-    <script src="../js/jstemphome/jquery.magnific-popup.min.js"></script>
-    <script src="../js/jstemphome/mixitup.min.js"></script>
-    <script src="../js/jstemphome/jquery.nice-select.min.js"></script>
-    <script src="../js/jstemphome/jquery.slicknav.js"></script>
-    <script src="../js/jstemphome/owl.carousel.min.js"></script>
-    <script src="../js/jstemphome/masonry.pkgd.min.js"></script>
-    <script src="../js/jstemphome/main.js"></script>
-    <script src="../js/header.js"></script>
+    <script src="/GymPath/www/js/jstemphome/jquery-3.3.1.min.js"></script>
+    <script src="/GymPath/www/js/jstemphome/bootstrap.min.js"></script>
+    <script src="/GymPath/www/js/jstemphome/jquery.magnific-popup.min.js"></script>
+    <script src="/GymPath/www/js/jstemphome/mixitup.min.js"></script>
+    <script src="/GymPath/www/js/jstemphome/jquery.nice-select.min.js"></script>
+    <script src="/GymPath/www/js/jstemphome/jquery.slicknav.js"></script>
+    <script src="/GymPath/www/js/jstemphome/owl.carousel.min.js"></script>
+    <script src="/GymPath/www/js/jstemphome/masonry.pkgd.min.js"></script>
+    <script src="/GymPath/www/js/jstemphome/main.js"></script>
+    <script src="/GymPath/www/js/header.js"></script>
 
 </body>
 
