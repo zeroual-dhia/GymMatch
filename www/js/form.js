@@ -43,11 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
         isValid &= validateField(document.getElementById("gymName"), "Gym name is required.");
         isValid &= validateField(document.getElementById("location"), "Location is required.");
         isValid &= validateField(document.getElementById("openingHours"), "Opening hours are required.");
-        isValid &= validateField(document.getElementById("facilities"), "Facilities are required.");
         isValid &= validateField(document.getElementById("activities"), "Activities are required.");
         isValid &= validateField(document.getElementById("description"), "Description is required.");
-        isValid &= validateField(document.getElementById("membershipPlans"), "Membership plans are required.");
-
         const targetGender = document.getElementById("targetGender");
         if (targetGender.value === "") {
             showError(targetGender, "Please select a target gender.");

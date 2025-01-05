@@ -1,7 +1,7 @@
 <?php
 
-require_once "www/includes/signup_view.php";
-require_once "www/includes/signin_view.php";
+require_once "../includes/signup_view.php";
+require_once "../includes/signin_view.php";
 ?>
 
 

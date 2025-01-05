@@ -30,7 +30,7 @@ if(!is_email_wrong($result) && is_password_wrong($psw,$result["user_pw"])){
 
 
         $_SESSION["error_signin"]= $errors;
-        header("Location:../pages/login.php?signin=fail");
+        header("Location:../../index.php?signin=fail");
         die();
     }
         $newid = session_create_id();
