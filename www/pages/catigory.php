@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include_once '../includes/connect.php'; ?>
+<?php include_once 'www/includes/connect.php'; ?>
 <html lang="en">
 
 <head>
@@ -7,11 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programs - Gym Website</title>
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/catigory.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="www/css/catigory.css">
+    <link rel="stylesheet" href="www/css/header.css">
+    <link rel="stylesheet" href="www/css/footer.css">
 
 </head>
 
@@ -65,7 +65,7 @@
                     <h3 class="">' . htmlspecialchars($row['program_title']) . '</h3>
                     <p class=""> ' . htmlspecialchars($row['pr_description']) . '
                     </p>
-                    <a href="descreption.php?id=' . $row['program_id'] . '"><button>VIEW WORKOUT</button></a>
+                    <a href="index.php?page=descreption&id=' . $row['program_id'] . '"><button>VIEW WORKOUT</button></a>
                 </div>';
 
                     }
@@ -75,7 +75,6 @@
                 $result->close();
                 $connect->close();
                 ?>
-
 
 
             </div>
@@ -89,13 +88,13 @@
     ?>
 
 
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/wow.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="node_modules/bootstrap/dist/js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
 
-    <script src="../js/header.js"></script>
+    <script src="www/js/header.js"></script>
 
 
 </body>
