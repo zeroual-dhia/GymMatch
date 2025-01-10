@@ -11,9 +11,9 @@ $pwd=$_POST["pwd"];
 
 
 try {
-    require_once "/GymPath/www/dbh.inc.php";//connection to the database
-    require_once "/GymPath/www/signup_model.php";
-    require_once "/GymPath/www/signup_contr.php";
+    require_once "dbh.inc.php";//connection to the database
+    require_once "signup_model.php";
+    require_once "signup_contr.php";
    
     $errors = [];
     if(is_empty($Name,$Email,$phone,$item,$age,$pwd)){
@@ -37,7 +37,7 @@ try {
 
 
 
-    require_once "/GymPath/www/config_session.php";
+    require_once "config_session.php";
 
     if($errors){
 
@@ -67,7 +67,7 @@ try {
 
     $pdo=null;
     $stmt=null;
-    header("Location:../pages/login.php?signup=success");
+    header("Location:/GymPath/index.php");
     die();
 } catch (PDOException $e) {
     die("query failed: " . $e->getMessage());
@@ -75,6 +75,5 @@ try {
 
 }
 else{
-
-    header("Location:../pages/login.php");//user did not enter any data so nothing happens
+    
 }
