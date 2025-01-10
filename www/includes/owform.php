@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $targetGender = $_POST["targetGender"] ?? '';
     $extraActivities = $_POST["activities"] ?? null; // Optional field
     $description = $_POST["description"] ?? ''; // Required field
-    $userId = 1; // Replace this with dynamic user ID based on session or authentication.
+    $userId = 5; // Replace this with dynamic user ID based on session or authentication.
 
     // File uploads
     $gymImage = $_FILES["gymImage"] ?? null;
@@ -40,13 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Prepare the SQL query for gym data
-    $stmt = $conn->prepare(
+    $stmt = $connect->prepare(
         "INSERT INTO gyms (gym_name, gym_location, gym_targender, gym_extra, gym_img, gym_timetable, gym_desc, user_id) 
          VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
     );
 
     if (!$stmt) {
-        die("Error preparing SQL statement: " . $conn->error);
+        die("Error preparing SQL statement: " . $connect->error);
     }
 
     // Bind parameters for gym insertion
@@ -82,13 +82,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $membershipOffer = $membershipOffers[$index] ?? '';
 
         // Prepare SQL query for membership data
-        $stmt = $conn->prepare(
+        $stmt = $connect->prepare(
             "INSERT INTO membership (ship_price, ship_offer, ship_duration, gym_id) 
              VALUES (?, ?, ?, ?)"
         );
 
         if (!$stmt) {
-            die("Error preparing membership SQL statement: " . $conn->error);
+            die("Error preparing membership SQL statement: " . $connect->error);
         }
 
         // Bind parameters for membership data
@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     echo "Membership data added successfully!";
     $stmt->close();
-    $conn->close();
+    $connect->close();
 }
 ?>
 

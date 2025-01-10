@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Handle form submission
     submitButton.addEventListener("click", async function (event) {
-        event.preventDefault(); // Prevent default form submission
+       // Prevent default form submission
 
         let isValid = true;
 
@@ -77,3 +77,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+
+
+
+
+
+

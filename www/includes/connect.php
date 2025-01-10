@@ -6,7 +6,7 @@ $username = "root";
 $password = "";           
 $dbname = "gym-match";    
 
-// Create connection
+// Create connection 
 
 $connect = new mysqli($servername, $username, $password, $dbname);
 
