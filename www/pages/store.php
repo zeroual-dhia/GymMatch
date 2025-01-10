@@ -1,7 +1,7 @@
 <?php
 
 try {
-    require_once "../includes/dbh.inc.php";
+    require_once "www\includes\dbh.inc.php";
     $query="SELECT * FROM products;";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
