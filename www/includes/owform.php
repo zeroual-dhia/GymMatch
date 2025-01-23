@@ -1,6 +1,6 @@
 <?php
 include_once("connect.php");
-
+session_start();
 // Enable error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $targetGender = $_POST["targetGender"] ?? '';
     $extraActivities = $_POST["activities"] ?? null; // Optional field
     $description = $_POST["description"] ?? ''; // Required field
-    $userId = 5; // Replace this with dynamic user ID based on session or authentication.
+    $user_id=$_SESSION['user_id'];// Replace this with dynamic user ID based on session or authentication.
 
     // File uploads
     $gymImage = $_FILES["gymImage"] ?? null;

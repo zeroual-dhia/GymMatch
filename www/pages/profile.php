@@ -5,10 +5,10 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
 // Include database connection
-require_once '../includes/dbh.inc.php';
-
+require_once 'www/includes/dbh.inc.php';
+session_start();
 // Assuming the user is logged in, replace with session-based user_id
-$user_id = 4; // Replace with $_SESSION['user_id'] if using sessions
+  $user_id=$_SESSION['user_id'];// Replace with $_SESSION['user_id'] if using sessions
 
 try {
     // Fetch user details
