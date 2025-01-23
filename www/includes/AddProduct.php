@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         
-        $imageData = file_get_contents($fileTmpPath);
+        $imageData = base64_encode(file_get_contents($fileTmpPath));
         
 
         

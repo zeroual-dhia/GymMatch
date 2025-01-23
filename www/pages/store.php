@@ -1,23 +1,42 @@
 <?php
+session_start();// Start the session to access session variables
+
+// Check if user_id is set
+if (!isset($_SESSION['user_id'])) {
+    die("User not logged in");
+}
+
+$userId = $_SESSION['user_id']; // Assuming the user is logged in
 
 try {
-    require_once "www\includes\dbh.inc.php";
-    $query="SELECT * FROM products;";
-    $stmt = $pdo->prepare($query);
-    $stmt->execute();
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    $pdo=null;
-    $stmt=null;
-} catch (PDOException $e) {
-    die("query faild : " . $e->getMessage());
-    //throw $th;
-}
+    // Correct database connection path
+    require_once "../includes/dbh.inc.php";
     
-
-
-
+    // Query to fetch all products with quantity > 0
+    $productQuery = "SELECT * FROM products"; 
+    
+    $productStmt = $pdo->prepare($productQuery);
+    $productStmt->execute();
+    $results = $productStmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all products
+    
+    // Query to fetch cart items for the user, along with product details
+    $cartQuery = "SELECT ci.product_id, ci.quantity, p.product_name, ci.total_price
+                  FROM cart ci
+                  INNER JOIN products p ON ci.product_id = p.product_id
+                  WHERE ci.user_id = :user_id";
+    
+    $cartStmt = $pdo->prepare($cartQuery);
+    $cartStmt->execute([':user_id' => $userId]);
+    $cartItems = $cartStmt->fetchAll(PDO::FETCH_ASSOC); // Fetch cart items for the logged-in user
+    
+    $pdo = null; // Close the connection
+    $productStmt = null; // Clear the product statement
+    $cartStmt = null; // Clear the cart statement
+} catch (PDOException $e) {
+    die("Query failed: " . $e->getMessage());
+}
 ?>
+
 
 
 <!DOCTYPE html>
@@ -125,7 +144,29 @@ try {
               <h2>Your Shopping List</h2>
             </div>
 
-            <ul id="shopping-list"></ul>
+           
+    <ul id="shopping-list">
+        <?php
+        if (empty($cartItems)) {
+            echo "<p>Your shopping list is empty.</p>";
+        } else {
+            foreach ($cartItems as $index => $item) {
+                echo '<li class="shopping-item">';
+                echo '<span class="product-name">' . htmlspecialchars($item["product_name"]) . '</span>';
+                echo '<span class="product-quantity">Quantity: ' . $item["quantity"] . '</span>';
+                echo '<span class="product-price">' . htmlspecialchars($item["total_price"]) . ' DA</span>';
+                echo'<form method="POST" action="/GymPath/www/includes/remove_item.php">';
+                echo '<input type="hidden" name="product_id" value="' . htmlspecialchars($item['product_id']) . '">';
+    echo '<button type="submit"  data-index="' . $index . '">🗑</button>';
+echo'</form>';
+                
+                echo '</li>';
+            }
+        }
+        ?>
+    </ul>
+
+
 
              <div class="shopping-list-footer">
                 <button id="cancel-button" class="cancel-button">Cancel</button>
@@ -147,63 +188,61 @@ try {
 
       <!-- Product Grid Section -->
       <?php
-      if(empty($results)){
-          echo "<div>";
-          echo "<p> there is no product </p>";
-          echo "</div>";
-  
-  
-  
-      }
-      else{
-          echo '<section class="product-grid">';
-          foreach ($results as $row){
-  
-            
-              echo '<div class="product-card" data-id="1">';
-              if (isset($row['product_img']) && !empty($row['product_img'])) {
-                $imageData = $row['product_img'];
-                $imageSrc = 'data:image/jpg;base64,' . $imageData;
-                echo "<img src=" . $imageSrc . " alt=\"Product Image\" data-category=\"" . $row['product_category'] . "\" >";
-            } 
-              echo "<div class=\"product-info\">" ;
-              echo "<h4>";
-              echo htmlspecialchars($row["product_name"]) ; 
-              echo "</h4>";
-              echo "<div class=\"price\">";
-              echo htmlspecialchars($row["product_prix"]) . ' DA';
-              echo "</div>";
-              echo "</div>";
-              echo   '<div class="quantity-buttons">';
-              echo '<button class="quantity-minus">-</button>';
-              echo ' <input type="number" class="quantity-value" value="1" min="1">';
-              echo '<button class="quantity-plus">+</button>';
-             echo "</div>";
-              if($row["product_category"] === "Activewear & Footwear" ){
-  
-               
-             echo '<div class="size-buttons">';
-             echo '<button class="size-button">36</button>';
-             echo '<button class="size-button">38</button>';
-             echo' <button class="size-button">40</button>';
-              echo' <button class="size-button">42</button>';
-              echo '</div>';
-              }
-  
-  
-  
-              echo '<button class="buy-button">Buy</button>';
-  
-              echo "</div>";
-              
-              
-          }
-          echo '</section>';
-      }
-      
-      
-      ?>
+if (empty($results)) {
+    echo "<div>";
+    echo "<p>There are no products available.</p>";
+    echo "</div>";
+} else {
+    echo '<section class="product-grid">';
+    foreach ($results as $row) {
+        // Check if product quantity is greater than 0
+        if ($row["product_quantity"] <= 0) {
+            continue; // Skip this product if quantity is 0
+        }
 
+        echo '<div class="product-card" data-id="1">';
+        
+        // Check if the product image exists and display it
+        if (isset($row['product_img']) && !empty($row['product_img'])) {
+            $imageData = $row['product_img']; // Convert binary to base64
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData; // Embed as a data URI
+            echo '<img src="' . $imageSrc . '" alt="Product Image" data-category="' . htmlspecialchars($row['product_category']) . '">';
+        } else {
+            echo '<p>No image available</p>'; // Placeholder if no image
+        }
+
+        // Display product info
+        echo "<div class=\"product-info\">";
+        echo "<h4>" . htmlspecialchars($row["product_name"]) . "</h4>";
+        echo "<div class=\"price\">" . htmlspecialchars($row["product_prix"]) . ' DA' . "</div>";
+        echo "</div>";
+
+        // Check category for specific options
+        if ($row["product_category"] === "Activewear & Footwear") {
+            echo '<div class="size-buttons">';
+            echo '<button class="size-button">36</button>';
+            echo '<button class="size-button">38</button>';
+            echo '<button class="size-button">40</button>';
+            echo '<button class="size-button">42</button>';
+            echo '</div>';
+        }
+
+        // Display the form for buying the product
+        echo '<form method="POST" action="/GymPath/www/includes/buy_item.php" class="buy-form">';
+        echo '<input type="hidden" name="product_id" value="' . htmlspecialchars($row['product_id']) . '">';
+        echo '<div class="quantity-buttons">';
+        echo '<button type="button" class="quantity-minus">-</button>';
+        echo '<input type="number" name="quantity" class="quantity-value" value="1" min="1">';
+        echo '<button type="button" class="quantity-plus">+</button>';
+        echo '</div>';
+        echo '<button type="submit" class="buy-button">Buy</button>';
+        echo '</form>';
+
+        echo "</div>"; // End of product card
+    }
+    echo '</section>';
+}
+?>
 
 
 </body>

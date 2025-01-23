@@ -38,7 +38,7 @@ if(!is_email_wrong($result) && is_password_wrong($psw,$result["user_pw"])){
         session_id($sessionid);
 
 
-        $_SESSION["id"]=$result["user_id"];
+        $_SESSION["user_id"]=$result["user_id"];
         $_SESSION["email"]=htmlspecialchars ($result["user_email"]);
 
         $_SESSION["last_regeneration"]= time();
