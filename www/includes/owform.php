@@ -17,13 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // File uploads
     $gymImage = $_FILES["gymImage"] ?? null;
     $timetable = $_FILES["timetable"] ?? null;
-
-    // Debug: Print inputs for troubleshooting
-    echo "<pre>";
-    print_r($_POST);
-    print_r($_FILES);
-    echo "</pre>";
-
+    
     // Validate and process file uploads
     $gymImageContent = $timetableContent = null;
 
@@ -77,13 +71,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $membershipOffers = $_POST["membershipOffer"] ?? [];
 
     foreach ($membershipPrices as $index => $price) {
+        // Only insert if price and duration are not empty
         $membershipPrice = $price;
         $membershipDuration = $membershipDurations[$index] ?? '';
         $membershipOffer = $membershipOffers[$index] ?? '';
 
+        // Skip empty membership plans
+        if (empty($membershipPrice) || empty($membershipDuration)) {
+            continue;
+        }
+
         // Prepare SQL query for membership data
         $stmt = $connect->prepare(
-            "INSERT INTO membership (ship_price, ship_offer, ship_duration, gym_id) 
+            "INSERT INTO memberships (ship_price, ship_offer, ship_duration, gym_id) 
              VALUES (?, ?, ?, ?)"
         );
 
@@ -105,10 +105,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die("Error inserting membership data: " . $stmt->error);
         }
     }
-
+    
     echo "Membership data added successfully!";
     $stmt->close();
     $connect->close();
+    header("Location:../../index.php");       
 }
 ?>
-

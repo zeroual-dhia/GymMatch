@@ -1,87 +1,66 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("#ownerform");
-    const submitButton = document.getElementById("submit");
+    const form = document.getElementById("ownerform");
 
-    // Function to show error messages
-    function showError(element, message) {
-        const errorMessage = document.createElement("span");
-        errorMessage.classList.add("error-message");
-        errorMessage.textContent = message;
+    form.addEventListener("submit", function (event) {
+        let isValid = true; // Tracks overall form validity
 
-        if (!element.nextElementSibling || !element.nextElementSibling.classList.contains("error-message")) {
-            element.insertAdjacentElement("afterend", errorMessage);
-            setTimeout(() => errorMessage.classList.add("visible"), 10);
-        }
-    }
-
-    // Function to clear error messages
-    function clearError(element) {
-        const errorMessage = element.nextElementSibling;
-        if (errorMessage && errorMessage.classList.contains("error-message")) {
-            errorMessage.classList.remove("visible");
-            setTimeout(() => errorMessage.remove(), 300);
-        }
-    }
-
-    // Validation function
-    function validateField(field, message) {
-        if (field.value.trim() === "") {
-            showError(field, message);
-            return false;
-        } else {
-            clearError(field);
-            return true;
-        }
-    }
-
-    // Handle form submission
-    submitButton.addEventListener("click", async function (event) {
-       // Prevent default form submission
-
-        let isValid = true;
-
-        isValid &= validateField(document.getElementById("gymName"), "Gym name is required.");
-        isValid &= validateField(document.getElementById("location"), "Location is required.");
-        isValid &= validateField(document.getElementById("openingHours"), "Opening hours are required.");
-        isValid &= validateField(document.getElementById("activities"), "Activities are required.");
-        isValid &= validateField(document.getElementById("description"), "Description is required.");
-        const targetGender = document.getElementById("targetGender");
-        if (targetGender.value === "") {
-            showError(targetGender, "Please select a target gender.");
-            isValid = false;
-        } else {
-            clearError(targetGender);
-        }
-
-        if (!isValid) {
-            return; // Stop submission if validation fails
-        }
-
-        const formData = new FormData(form);
-
-        try {
-            const response = await fetch(form.action, {
-                method: "POST",
-                body: formData,
-            });
-
-            if (response.ok) {
-                alert("Form submitted successfully!");
-                form.reset(); // Reset the form
-            } else {
-                alert("Submission failed. Please try again.");
+        // Helper function to validate a field
+        function validateField(input, errorMessage) {
+            if (!input.value.trim()) {
+                alert(errorMessage);
+                isValid = false;
             }
-        } catch (error) {
-            console.error("Submission error:", error);
-            alert("An error occurred. Please try again.");
+        }
+
+        // Validate required text fields
+        const requiredTextFields = [
+            { id: "gymName", message: "Gym Name is required." },
+            { id: "location", message: "Location is required." },
+            { id: "openingHours", message: "Opening Hours are required." },
+            { id: "description", message: "Description is required." },
+        ];
+        requiredTextFields.forEach((field) => {
+            const input = document.getElementById(field.id);
+            validateField(input, field.message);
+        });
+
+        // Validate target gender
+        const targetGender = document.getElementById("targetGender");
+        if (!targetGender.value) {
+            alert("Target Gender is required.");
+            isValid = false;
+        }
+
+        // Validate file uploads
+        const timetableInput = document.querySelector('input[name="timetable"]');
+        if (!timetableInput.files.length) {
+            alert("Timetable file is required.");
+            isValid = false;
+        }
+
+        const gymImageInput = document.getElementById("gymImage");
+        if (!gymImageInput.files.length) {
+            alert("Gym image is required.");
+            isValid = false;
+        }
+
+        // Validate Plan 1 (mandatory)
+        const firstPlan = document.querySelector("#membershipPlans .membership-plan:first-child");
+        const plan1Price = firstPlan.querySelector('input[name="membershipPrice[]"]');
+        const plan1Duration = firstPlan.querySelector('select[name="membershipDuration[]"]');
+
+        if (!plan1Price.value.trim()) {
+            alert("Price for Plan 1 is required.");
+            isValid = false;
+        }
+        if (!plan1Duration.value) {
+            alert("Duration for Plan 1 is required.");
+            isValid = false;
+        }
+
+        // Prevent submission if validation fails
+        if (!isValid) {
+            event.preventDefault();
         }
     });
 });
-
-
-
-
-
-
-
-

@@ -1,10 +1,7 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    header("Location: ../pages/store.php");
-        
-    
 
     // Required Fields
     $facebook = $_POST['facebook'] ?? null;
@@ -13,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender_preference = $_POST['Gender preference'] ?? null;
     $specialization = $_POST['services'] ?? null;
     session_start();
-    $user_id=$_SESSION["id"];
+    $user_id=5;
 
     // Validate required fields
     if (empty($specialization) || empty($user_id)) {
@@ -47,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Error: CV must not exceed 5MB.");
         }
 
-        // Check file type
+        // Check file type 
         if ($_FILES['cv']['type'] !== 'application/pdf') {
             die("Error: CV must be a PDF file.");
         }
@@ -75,9 +72,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pdo=null;
     $stmt=null;
         echo "Trainer data successfully added.";
-        header("Location: ../pages/store.php");
+        header("Location:../../index.php");
     } catch (PDOException $e) {
-        header("Location: ../pages/tainers.php");
+        header("Location: ../../index?page=trainerform");
         die("Error: " . $e->getMessage());
     }
 }

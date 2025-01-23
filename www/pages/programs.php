@@ -106,7 +106,7 @@
                                 <img class=" specialImage" src=" www/assets/images/gallery/cat1.png" alt="">
                                 <p class="text-light text-center fw-bold">PERSONAL TRAINING </p>
                                 <a class="btn btn-1 btn-trainer text-light fw-bold  "
-                                    href="link-to-bodybuilding-program">CHOOSE A TRAINER</a>
+                                    href="index.php?page=trainers">CHOOSE A TRAINER</a>
                             </div>
                     </div>
 

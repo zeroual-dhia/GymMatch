@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="node_modules/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="node_modules/css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="node_modules/css/nice-select.css" type="text/css">
@@ -98,21 +98,21 @@
                     <div class="feature-item feature-bg-1">
                         <h3>GYM MEMBER</h3>
                         <p>Find your local gym or the perfect coach<br />to guide your fitness journey <br />with tailored plans to meet your goals</p>
-                        <a href="www/pages/login.php" class="primary-btn f-btn">Join Us</a>
+                        <a href="index.php?page=login" class="primary-btn f-btn">Join Us</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-item feature-bg-2">
                         <h3>GYM OWNER</h3>
                         <p>looking to expand your gym's reach?<br /> join our platform <br />to attract fitness enthusiasts</p>
-                        <a href="www/pages/ownerform.php" class="primary-btn f-btn">Join Us</a>
+                        <a href="index.php?page=ownerform" class="primary-btn f-btn">Join Us</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-item feature-bg-3">
                         <h3>TRAINER</h3>
                         <p>Take your coaching to the next level<br />Create a profile, connect with clients<br />and showcase your expertise </p>
-                        <a href="www/pages/trainerform.php" class="primary-btn f-btn">Join Us</a>
+                        <a href="index.php?page=trainerform" class="primary-btn f-btn">Join Us</a>
                     </div>
                 </div>
             </div>
