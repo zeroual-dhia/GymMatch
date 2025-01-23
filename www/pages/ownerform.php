@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Gym Owner Form</title>
-    <link rel="stylesheet" href="../css/ownerform.css">
+    <link rel="stylesheet" href="www/css/ownerform.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    <form id="ownerform" action="../includes/owform.php" method="POST" enctype="multipart/form-data">     
+    <form id="ownerform" action="www/includes/owform.php" method="POST" enctype="multipart/form-data">
         <h1 class="title">Gym Owner Registration</h1>
         <div class="input-block">
             <input class="input" type="text" name="gymName" id="gymName" required placeholder="Gym Name">
@@ -15,7 +17,7 @@
             <input class="input" type="text" name="location" id="location" required placeholder="Location">
         </div>
         <div class="input-block">
-            <input class="input" type="text" name="openingHours" id="openingHours" required placeholder="Opening Hours">
+            <input class="input" type="text" name="openingHours" id="openingHours" required placeholder="ex:09:00">
         </div>
         <div class="input-block">
             <select class="input" name="targetGender" id="targetGender" required>
@@ -26,12 +28,12 @@
             </select>
         </div>
         <div class="input-block">
-            <textarea id="activities" name="activities" rows="5" placeholder="Extra activities"></textarea>
+            <textarea id="activities" name="activities" rows="5" placeholder="Extra activities (Optional)"></textarea>
         </div>
         <div class="input-block">
             <textarea class="input" name="description" id="description" required rows="5" placeholder="Description"></textarea>
         </div>
-        
+
         <!-- Timetable upload button -->
         <button class="container-btn-file">
             <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 50 50">
@@ -40,7 +42,7 @@
             Upload your timetable
             <input class="file" name="timetable" type="file">
         </button>
-        
+
         <!-- Gym image upload button -->
         <div class="input-block fileupload">
             <label for="gymImage" class="custom-file-upload">
@@ -50,75 +52,113 @@
                 <input id="gymImage" name="gymImage" type="file">
             </label>
         </div>
-       <!-- Membership Plans -->
-       <h2>Membership Plans</h2>
-    <div id="membershipPlans">
-        <div class="membership-plan">
-            <h3>Plan 1</h3>
-            <input class="input" type="number" name="membershipPrice[]" required placeholder="Price">
-            <select class="input" name="membershipDuration[]" required>
-                <option value="1 month">1 Month</option>
-                <option value="6 months">6 Months</option>
-                <option value="1 year">1 Year</option>
-            </select>
-            <input class="input" type="text" name="membershipOffer[]" placeholder="Offer (Optional)">
+
+        <!-- Membership Plans -->
+        <h2>Membership Plans</h2>
+        <div id="membershipPlans">
+            <div class="membership-plan">
+                <h3>Plan 1</h3>
+                <input class="input" type="number" name="membershipPrice[]" required placeholder="Price">
+                <select class="input" name="membershipDuration[]" required>
+                    <option value="" disabled selected>Select duration</option>
+                    <option value="1 month">1 Month</option>
+                    <option value="6 months">6 Months</option>
+                    <option value="1 year">1 Year</option>
+                </select>
+                <input class="input" type="text" name="membershipOffer[]" placeholder="Offer (Optional)">
+            </div>
+            <div class="membership-plan">
+                <h3>Plan 2</h3>
+                <input class="input" type="number" name="membershipPrice[]" placeholder="Price">
+                <select class="input" name="membershipDuration[]">
+                    <option value="" disabled selected>Select duration</option>
+                    <option value="1 month">1 Month</option>
+                    <option value="6 months">6 Months</option>
+                    <option value="1 year">1 Year</option>
+                </select>
+                <input class="input" type="text" name="membershipOffer[]" placeholder="Offer (Optional)">
+            </div>
+            <div class="membership-plan">
+                <h3>Plan 3</h3>
+                <input class="input" type="number" name="membershipPrice[]" placeholder="Price">
+                <select class="input" name="membershipDuration[]">
+                    <option value="" disabled selected>Select duration</option>
+                    <option value="1 month">1 Month</option>
+                    <option value="6 months">6 Months</option>
+                    <option value="1 year">1 Year</option>
+                </select>
+                <input class="input" type="text" name="membershipOffer[]" placeholder="Offer (Optional)">
+            </div>
         </div>
-        <div class="membership-plan">
-            <h3>Plan 2</h3>
-            <input class="input" type="number" name="membershipPrice[]" required placeholder="Price">
-            <select class="input" name="membershipDuration[]" required>
-                <option value="1 month">1 Month</option>
-                <option value="6 months">6 Months</option>
-                <option value="1 year">1 Year</option>
-            </select>
-            <input class="input" type="text" name="membershipOffer[]" placeholder="Offer (Optional)">
-        </div>
-        <div class="membership-plan">
-            <h3>Plan 3</h3>
-            <input class="input" type="number" name="membershipPrice[]" required placeholder="Price">
-            <select class="input" name="membershipDuration[]" required>
-                <option value="1 month">1 Month</option>
-                <option value="6 months">6 Months</option>
-                <option value="1 year">1 Year</option>
-            </select>
-            <input class="input" type="text" name="membershipOffer[]" placeholder="Offer (Optional)">
-        </div>
-    </div>
+
         <div class="input-block submit">
             <button type="submit" id="submit">Submit</button>
         </div>
     </form>
 
-<script src="../js/form.js"></script>
-<script>
+    <script src="www/js/form.js"></script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             const form = document.getElementById("ownerform");
 
             form.addEventListener("submit", function (event) {
-                const requiredFields = ["gymName", "location", "openingHours", "targetGender", "description"];
-                let isValid = true;
+                let isValid = true; // Tracks overall form validity
 
-                requiredFields.forEach((field) => {
-                    const input = document.getElementById(field);
+                // Helper function to validate a field
+                function validateField(input, errorMessage) {
                     if (!input.value.trim()) {
-                        alert(`${field} is required.`);
+                        alert(errorMessage);
                         isValid = false;
                     }
+                }
+
+                // Validate required text fields
+                const requiredTextFields = [
+                    { id: "gymName", message: "Gym Name is required." },
+                    { id: "location", message: "Location is required." },
+                    { id: "openingHours", message: "Opening Hours are required." },
+                    { id: "description", message: "Description is required." },
+                ];
+                requiredTextFields.forEach((field) => {
+                    const input = document.getElementById(field.id);
+                    validateField(input, field.message);
                 });
 
-                const timetableInput = document.getElementById("timetable");
-                const gymImageInput = document.getElementById("gymImage");
+                // Validate target gender
+                const targetGender = document.getElementById("targetGender");
+                if (!targetGender.value) {
+                    alert("Target Gender is required.");
+                    isValid = false;
+                }
 
+                // Validate file uploads
+                const timetableInput = document.querySelector('input[name="timetable"]');
                 if (!timetableInput.files.length) {
                     alert("Timetable file is required.");
                     isValid = false;
                 }
 
+                const gymImageInput = document.getElementById("gymImage");
                 if (!gymImageInput.files.length) {
                     alert("Gym image is required.");
                     isValid = false;
                 }
 
+                // Validate Plan 1 (mandatory)
+                const firstPlan = document.querySelector("#membershipPlans .membership-plan:first-child");
+                const plan1Price = firstPlan.querySelector('input[name="membershipPrice[]"]');
+                const plan1Duration = firstPlan.querySelector('select[name="membershipDuration[]"]');
+
+                if (!plan1Price.value.trim()) {
+                    alert("Price for Plan 1 is required.");
+                    isValid = false;
+                }
+                if (!plan1Duration.value) {
+                    alert("Duration for Plan 1 is required.");
+                    isValid = false;
+                }
+
+                // Prevent submission if validation fails
                 if (!isValid) {
                     event.preventDefault();
                 }
@@ -126,4 +166,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -61,7 +61,7 @@
 
 
                 <?php
-                $sql=$connect->prepare('select * from gyms ');
+                $sql=$connect->prepare('select * from gyms where gym_accepted=1');
                 $sql->execute();
                 $result=$sql->get_result();
                 if($result->num_rows > 0) {

@@ -6,7 +6,7 @@ if (!isset($_GET['trainer_id'])) {
 $trainerId = (int) $_GET['trainer_id'];
 
 try {
-    require_once "../includes/dbh.inc.php";
+    require_once "www/includes/dbh.inc.php";
 
     $query = "
         SELECT 
@@ -44,10 +44,10 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trainer Info</title>
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/animate.min.css">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/infotrainer.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="www/css/header.css">
+    <link rel="stylesheet" href="www/css/infotrainer.css">
 </head>
 <body>
     <header>
@@ -113,6 +113,6 @@ try {
         </div>
     </div>
 
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>

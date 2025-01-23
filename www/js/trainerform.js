@@ -1,5 +1,4 @@
 document.querySelector("form").addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevent form submission
 
   // Clear previous error messages
   document.querySelectorAll(".error-message").forEach((msg) => msg.remove());

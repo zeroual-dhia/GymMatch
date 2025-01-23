@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Trainer Form</title>
-    <link rel="stylesheet" href="../css/trainerform.css">
+    <link rel="stylesheet" href="www/css/trainerform.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -12,11 +12,12 @@
         <div class="loader"></div>
     </div>
     
+
     
     <div class="form">
         <h1 class="title ">Trainer Registration</h1>
         <!-- Other input fields --> 
-        <form action="../includes/trainerform.php" method="post" >
+        <form action="www/includes/trainerform.php" method="post"  enctype="multipart/form-data">
         <div class="input-block ">
             <label for="services"></label>
             <select class="input" name="services" id="services" required="" >
@@ -38,13 +39,13 @@
             </select>
         </div>
         <div class="input-block">
-            <input class="input" type="text" name="instagram"  id="instagram" required="" placeholder="instagram link">
+            <input class="input" type="text" name="instagram"  id="instagram"  placeholder="instagram link">
         </div>
         <div class="input-block">
-            <input class="input" type="text" name="facebook"  id="facebook" required="" placeholder="facebook link">
+            <input class="input" type="text" name="facebook"  id="facebook" placeholder="facebook link">
         </div>
         <div class="input-block">
-            <input class="input" type="text" name="youtube" id="youtube" required="" placeholder="youtube channel link">
+            <input class="input" type="text" name="youtube" id="youtube"  placeholder="youtube channel link">
         </div>
         
 
@@ -98,6 +99,6 @@
 
 
 
-<script src="../js/trainerform.js"></script>
+<script src="www/js/trainerform.js"></script>
 </body>
 </html>

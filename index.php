@@ -10,7 +10,7 @@ $page = isset($_GET['page']) ? $_GET['page'] :'home';
 
 // List of allowed pages to prevent unauthorized file access
 $allowed_pages = ['home', 'about_us', 'explore', 'profile', 'login', 'info', 'ownerform', 'payement', 'programs', 'store', 'trainers', 
-'trainerform', 'gymdashboard', 'exercise', 'descreption','catigory', ];
+'trainerform', 'infotrainer','gymdashboard', 'exercise', 'descreption','catigory'];
 
 if (in_array($page, $allowed_pages)) {
     // Include the requested page file if it exists

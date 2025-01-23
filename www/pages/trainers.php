@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once "../includes/dbh.inc.php";
+    require_once "www/includes/dbh.inc.php";
 
     $query = "
         SELECT 
@@ -34,16 +34,15 @@ try {
     <title>Trainers</title>
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../node_modules/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../../node_modules/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/trainers.css" type="text/css">
-    <link rel="stylesheet" href="../css/header.css">
-</head>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="node_modules/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="www/css/trainers.css" type="text/css">
+    <link rel="stylesheet" href="www/css/header.css">
+    <link rel="stylesheet" href="www/css/footer.css">
 
 <body>
-    <header>
-        <!-- Your header content -->
-    </header>
+ 
+<?php  include 'header.php' ?>
 
     <section class="breadcrumb-section breadcrumb-bg">
         <div class="container">
@@ -85,7 +84,7 @@ try {
 
                         echo '
                         <div class="col-lg-4 col-sm-6">
-                            <a href="infotrainer.php?trainer_id=' . htmlspecialchars($trainer['trainer_id']) . '" class="trainer-link">
+                            <a href="index.php?page=infotrainer&trainer_id=' . htmlspecialchars($trainer['trainer_id']) . '" class="trainer-link">
                                 <div class="ts-item" style="background-image: url(\'' . htmlspecialchars($imageSrc) . '\');">
                                     <div class="ts_text">
                                         <h4>' . htmlspecialchars($trainer['trainer_name']) . '</h4>
@@ -105,10 +104,16 @@ try {
             </div>
         </div>
     </section>
+    <?php 
+      include 'footer.php' ;
+    ?>
+    
 
-    <script src="../js/jstemptrainer/jquery-3.3.1.min.js"></script>
-    <script src="../js/jstemptrainer/bootstrap.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="www/js/jstemptrainer/jquery-3.3.1.min.js"></script>
+    <script src="www/js/jstemptrainer/bootstrap.min.js"></script>
+    <script src="www/js/main.js"></script>
+    <script src="../js/header.js"></script>
 </body>
 
 </html>

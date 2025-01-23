@@ -6,6 +6,13 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 function fetchRequests($connect, $query, $type) {
+    $page='';
+    if($type =='trainer'){
+        $page='infotrainer' ;
+    } 
+    else{
+        $page='info' ;
+    }
     $stmt = $connect->prepare($query);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -13,8 +20,8 @@ function fetchRequests($connect, $query, $type) {
         while ($row = $result->fetch_assoc()) {
             $time = calculate_time($row['request_time']);
             echo '
-                <a href="#" class="dropdown-item">
-                    <h6 class="fw-normal mb-0">' . ucfirst($type) . ' request</h6>
+                <a href="../../index.php?page='.$page.'&id='. $row["{$type}_id"] .'" class="dropdown-item">
+                    <h6 class="fw-normal mb-0">' . ucfirst($type) . ' request : '.$row['gym_name'].'</h6>
                     <small>' . $time . '</small>
                 </a>
                 <div class="accept">
@@ -34,8 +41,9 @@ function fetchRequests($connect, $query, $type) {
 }
 
 
-fetchRequests($connect, "SELECT trainer_id, request_time FROM trainers WHERE tr_accepted = 0", "trainer");
+
+fetchRequests($connect, "SELECT t.trainer_id, u.user_name as trainer_name, t.request_time FROM trainers t  join users u on u.user_id=t.user_id WHERE t.tr_accepted = 0", "trainer");
 
 
-fetchRequests($connect, "SELECT gym_id, request_time FROM gyms WHERE gym_accepted = 0", "gym");
+fetchRequests($connect, "SELECT gym_id,gym_name, request_time FROM gyms WHERE gym_accepted = 0", "gym");
 ?>
