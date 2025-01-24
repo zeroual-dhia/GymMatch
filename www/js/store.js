@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         selectedSize = sizeButton.innerText;
       });
     });
+    
     buyButton.addEventListener("click", function () {
       const quantity = parseInt(quantityInput.value);
       const productName = card.querySelector("h4").innerText;
@@ -169,3 +170,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+

@@ -221,10 +221,11 @@ if (empty($results)) {
 
 
 <?php include 'footer.php' ?>
+<script src="/GymPath/www/js/store.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 
 <script src="/GymPath/www/js/header.js"></script>
-<script src="/GymPath/www/js/store.js"></script>
+
 </body>
 </html>
 
