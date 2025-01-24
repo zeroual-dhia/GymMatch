@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,8 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $youtube = $_POST['youtube'] ?? null;
     $gender_preference = $_POST['Gender preference'] ?? null;
     $specialization = $_POST['services'] ?? null;
-    session_start();
-    $user_id=$_SESSION['user_id'];
+   
+    $user_id=5;
 
     // Validate required fields
     if (empty($specialization) || empty($user_id)) {
