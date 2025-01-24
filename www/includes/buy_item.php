@@ -57,10 +57,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             // Calculate total price for the updated quantity
             $totalPrice = $newQuantity * $productPrice;
-            
-            
-            $updateCartQuery = "UPDATE cart 
-                                SET quantity = :quantity, total_price = :total_price 
+
+            $updateCartQuery = "UPDATE cart
+                                SET quantity = :quantity, total_price = :total_price
                                 WHERE user_id = :user_id AND product_id = :product_id";
             $updateCartStmt = $pdo->prepare($updateCartQuery);
             $updateCartStmt->bindParam(":quantity", $newQuantity, PDO::PARAM_INT);
@@ -70,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $updateCartStmt->execute();
         } else {
             // Product not in cart: Insert into cart
-            $cartInsertQuery = "INSERT INTO cart (user_id, product_id, quantity, total_price) 
+            $cartInsertQuery = "INSERT INTO cart (user_id, product_id, quantity, total_price)
                                 VALUES (:user_id, :product_id, :quantity, :total_price)";
             $cartStmt = $pdo->prepare($cartInsertQuery);
             $cartStmt->bindParam(":user_id", $userId, PDO::PARAM_INT);
@@ -91,6 +90,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $updateProductStmt->bindParam(":product_id", $productId, PDO::PARAM_INT);
         $updateProductStmt->execute();
 
+        // Recalculate the total cart price after updating the cart
+        $totalCartQuery = "SELECT SUM(total_price) AS total_cart_price FROM cart WHERE user_id = :user_id";
+        $totalCartStmt = $pdo->prepare($totalCartQuery);
+        $totalCartStmt->bindParam(":user_id", $userId, PDO::PARAM_INT);
+        $totalCartStmt->execute();
+        $totalCart = $totalCartStmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($totalCart && isset($totalCart["total_cart_price"])) {
+            $_SESSION["total_cart_price"] = $totalCart["total_cart_price"]; // Store the total price in the session
+        }
+
         header("Location: ../pages/store.php");
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());
@@ -101,3 +111,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header("Location: ../pages/store.php");
     exit();
 }
+

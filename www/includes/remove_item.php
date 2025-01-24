@@ -21,7 +21,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $deleteStmt = $pdo->prepare($deleteQuery);
             $deleteStmt->execute([':user_id' => $userId, ':product_id' => $productId]);
 
-            // Redirect back to the store page or cart
+            // Recalculate the total price of the cart
+            $totalCartQuery = "SELECT SUM(total_price) AS total_cart_price FROM cart WHERE user_id = :user_id";
+            $totalCartStmt = $pdo->prepare($totalCartQuery);
+            $totalCartStmt->bindParam(":user_id", $userId, PDO::PARAM_INT);
+            $totalCartStmt->execute();
+            $totalCart = $totalCartStmt->fetch(PDO::FETCH_ASSOC);
+
+            // Update the session variable for total cart price
+            $_SESSION["total_cart_price"] = $totalCart && isset($totalCart["total_cart_price"]) ? $totalCart["total_cart_price"] : 0;
+
+            // Redirect back to the cart or store page
             header("Location: ../pages/store.php");
             exit();
         } catch (PDOException $e) {

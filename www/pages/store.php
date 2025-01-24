@@ -28,7 +28,7 @@ try {
     $cartStmt = $pdo->prepare($cartQuery);
     $cartStmt->execute([':user_id' => $userId]);
     $cartItems = $cartStmt->fetchAll(PDO::FETCH_ASSOC); // Fetch cart items for the logged-in user
-    
+    $totalCartPrice = isset($_SESSION["total_cart_price"]) ? $_SESSION["total_cart_price"] : 0;
     $pdo = null; // Close the connection
     $productStmt = null; // Clear the product statement
     $cartStmt = null; // Clear the cart statement
@@ -101,7 +101,7 @@ try {
                     <div class="breadcrumb-text">
                         <h2>Our Store</h2>
                         <div class="bt-option">
-                            <a href="/GymPath/www/pages/store.php"><i class="fa fa-home"></i> Home</a>
+                            <a href="www/assets/images/store.jpeg"><i class="fa fa-home"></i> Home</a>
                             <span>Store</span>
                         </div>
                     </div>
@@ -155,6 +155,8 @@ try {
                 echo '<span class="product-name">' . htmlspecialchars($item["product_name"]) . '</span>';
                 echo '<span class="product-quantity">Quantity: ' . $item["quantity"] . '</span>';
                 echo '<span class="product-price">' . htmlspecialchars($item["total_price"]) . ' DA</span>';
+               
+
                 echo'<form method="POST" action="/GymPath/www/includes/remove_item.php">';
                 echo '<input type="hidden" name="product_id" value="' . htmlspecialchars($item['product_id']) . '">';
     echo '<button type="submit"  data-index="' . $index . '">🗑</button>';
@@ -162,7 +164,9 @@ echo'</form>';
                 
                 echo '</li>';
             }
+            echo '    <h2> Total Cart Price:'.  htmlspecialchars($totalCartPrice)  .'</h2>';
         }
+
         ?>
     </ul>
 
@@ -170,7 +174,7 @@ echo'</form>';
 
              <div class="shopping-list-footer">
                 <button id="cancel-button" class="cancel-button">Cancel</button>
-                <a href="/GymPath/www/pages/payment.php">
+                <a href="www/pages/payment.php">
                 <button id="pay-button" class="pay-button">Pay</button>
                 </a>
             </div>
@@ -228,7 +232,7 @@ if (empty($results)) {
         }
 
         // Display the form for buying the product
-        echo '<form method="POST" action="/GymPath/www/includes/buy_item.php" class="buy-form">';
+        echo '<form method="POST" action="www/includes/buy_item.php" class="buy-form">';
         echo '<input type="hidden" name="product_id" value="' . htmlspecialchars($row['product_id']) . '">';
         echo '<div class="quantity-buttons">';
         echo '<button type="button" class="quantity-minus">-</button>';

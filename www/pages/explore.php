@@ -95,5 +95,5 @@
 </html>
 
 <?php
-$conn->close();
+$connect->close();
 ?>

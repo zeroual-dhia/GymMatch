@@ -76,7 +76,7 @@ ol {
 .breadcrumb-section {
     height: 650px;
     padding-top: 230px;
-    background-image: url('../assets/images/imgstore/breadcrumb-bg.jpg');
+    background-image: url('/GymPath/www/assets/images/store.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

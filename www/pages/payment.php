@@ -59,7 +59,7 @@
         </div>
         <div class="col-12">
             <button type="submit" class="btn btn-submit btn-primary mb-3">
-                <span class="ps-3">Pay $243</span>
+                <span class="ps-3">Pay </span>
                 <span class="fas fa-arrow-right"></span>
             </button>
         </div>
