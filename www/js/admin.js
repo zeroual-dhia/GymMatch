@@ -49,7 +49,6 @@
     loop: true,
     nav: false,
   });
-
   // Chart Global Color
   Chart.defaults.color = "#6C7293";
   Chart.defaults.borderColor = "#000000";

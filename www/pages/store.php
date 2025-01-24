@@ -1,5 +1,5 @@
 <?php
-session_start();// Start the session to access session variables
+//session_start();// Start the session to access session variables
 
 // Check if user_id is set
 if (!isset($_SESSION['user_id'])) {
@@ -10,7 +10,7 @@ $userId = $_SESSION['user_id']; // Assuming the user is logged in
 
 try {
     // Correct database connection path
-    require_once "../includes/dbh.inc.php";
+    require_once "www/includes/dbh.inc.php";
     
     // Query to fetch all products with quantity > 0
     $productQuery = "SELECT * FROM products"; 
@@ -45,13 +45,16 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store Page</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/GymPath/www/css/store.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/GymPath/www/css/header.css">
     <link rel="stylesheet" href="/GymPath/www/css/preloader.css">
-    <script src="/GymPath/www/js/header.js"></script>
-    <script src="/GymPath/www/js/store.js"></script>
+    <link rel="stylesheet" href="www/css/header.css">
+
+  
+    <link rel="stylesheet" href="www/css/footer.css">
 </head>
 <body>  
      <!-- Page Preloder -->
@@ -59,39 +62,7 @@ try {
     <div class="loader"></div>
     </div> 
 
-    <header class="header2">
-        <div class="logo-name">
-            <img id='logo' src="../assets/logo/logo.png" alt="">
-            <p class="text-light GYMMATCH">GYM MATCH</p>
-        </div>
-       
-
-        <nav class="links">
-            <a href="/GymPath/www/pages/home.php" class="active">Home</a>
-            <a href="/GymPath/www/pages/about_us.php">About us</a>
-            <a href="/GymPath/www/pages/explore.php">Explore</a>
-            <a href="/GymPath/www/pages/programs.php">Programs</a>
-            <a href="/GymPath/www/pages/store.php">Store</a>
-
-            <div class="dropdown">
-                <button id="profile-btn" class="profile-btn">
-                    <img src="/GymPath/www/assets/icons/profile.png" alt="Profile" />
-                </button>
-                <div class="dropdown-content">
-                    <a href="login.html">Sign In</a>
-                    <a href="#signout">Sign Out</a>
-                </div>
-                
-            </div>
-
-            
-        </nav>
-
-        <button id="menu-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-        aria-controls="offcanvasWithBothOptions"><img src="../assets/icons/icons8-menu.svg" alt=""></button>
-
-    </header>
-
+    <?php include 'header.php' ?>
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg">
         <div class="container">
@@ -249,6 +220,11 @@ if (empty($results)) {
 ?>
 
 
+<?php include 'footer.php' ?>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+<script src="/GymPath/www/js/header.js"></script>
+<script src="/GymPath/www/js/store.js"></script>
 </body>
 </html>
 

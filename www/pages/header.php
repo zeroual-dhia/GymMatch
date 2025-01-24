@@ -5,7 +5,7 @@
     </div>
 
     <nav class="links">
-        <a href="index.php?page=home" class="active">Home</a>
+        <a href="index.php?page=home" >Home</a>
         <a href="index.php?page=about_us">About us</a>
         <a href="index.php?page=explore">Explore</a>
         <a href="index.php?page=programs">Programs</a>
@@ -16,8 +16,9 @@
                 <img src="www/assets/icons/profile.png" alt="Profile">
             </button>
             <div class="dropdown-content">
+                <a href="index.php?page=profile">Profile</a>
                 <a href="index.php?page=login">Connect</a>
-                <a href="index.php?page=logout">Sign Out</a>
+                <a href="index.php?page=home">Sign Out</a>
             </div>
         </div>
     </nav>
@@ -38,7 +39,7 @@
         </div>
 
         <div class="pages">
-            <a href="index.php?page=home" class="active">Home</a>
+            <a href="index.php?page=home">Home</a>
             <a href="index.php?page=about_us">About us</a>
             <a href="index.php?page=explore">Explore</a>
             <a href="index.php?page=programs">Programs</a>
@@ -54,7 +55,7 @@
                 <img src="www/assets/icons/icons8-enter-32.png" alt="Connect">
                 <p>Connect</p>
             </a>
-            <a href="index.php?page=logout" class="button">
+            <a href="index.php?page=home" class="button">
                 <img src="www/assets/icons/icons8-logout-32.png" alt="Logout">
                 <p>Logout</p>
             </a>

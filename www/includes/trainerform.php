@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender_preference = $_POST['Gender preference'] ?? null;
     $specialization = $_POST['services'] ?? null;
    
-    $user_id=5;
+    $user_id=$_SESSION['user_id'];// Replace this with dynamic user ID based on session or authentication.;
 
     // Validate required fields
     if (empty($specialization) || empty($user_id)) {

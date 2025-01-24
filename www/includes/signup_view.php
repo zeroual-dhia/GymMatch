@@ -11,7 +11,5 @@ function check_signup(){
             echo '<span id="password-error" class="error-message">' . $error . '</span>';
         }
         unset($_SESSION['error_signup']);
-
     }
-
 }
