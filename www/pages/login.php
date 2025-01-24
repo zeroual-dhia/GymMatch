@@ -1,8 +1,4 @@
-<?php
 
-require_once "www\includes\signup_view.php";
-require_once "www\includes\signin_view.php";
-?>
 
 
 <!DOCTYPE html>
@@ -18,14 +14,12 @@ require_once "www\includes\signin_view.php";
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form class="form-up" action="/GymPath/www/includes/signup.php" method="post" name="sign-up">
+            <form class="form-up" action="www/includes/signup.php" method="post" name="sign-up">
                 <h1 style="margin-bottom: 20px;">Create Account</h1>
 
                 <div class="form-element">
                     <input type="text" id="Name" name="Name" placeholder="username" />
-                    <?php
-                    check_signup();
-                    ?>
+                
                     <span id="name-error" class="error-message"></span>
                 </div>
                 <div class="form-element">
@@ -65,14 +59,12 @@ require_once "www\includes\signin_view.php";
         </div>
 
         <div class="form-container sign-in">
-            <form class="form-in" action="/GymPath/www/includes/signin.php" method="post">
+            <form class="form-in" action="www/includes/signin.php" method="post">
                 <h1 style="margin-bottom: 20px;">Sign In</h1>
 
                 <div class="form-element">
                     <input type="text" id="signin-email" name="email" placeholder="Email" />
-                    <?php
-                    check_signin();
-                    ?>
+                   
                     <span id="signin-email-error" class="error-message"></span>
                 </div>
 

@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $gymImageContent,
         $timetableContent,
         $description,
-        $userId
+        $user_id
     );
 
     // Execute the query for gym data

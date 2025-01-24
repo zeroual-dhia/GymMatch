@@ -21,7 +21,7 @@ function fetchRequests($connect, $query, $type) {
             $time = calculate_time($row['request_time']);
             echo '
                 <a href="../../index.php?page='.$page.'&id='. $row["{$type}_id"] .'" class="dropdown-item">
-                    <h6 class="fw-normal mb-0">' . ucfirst($type) . ' request : '.$row['gym_name'].'</h6>
+                    <h6 class="fw-normal mb-0">' . ucfirst($type) . ' request : '.$row["{$type}_name"].'</h6>
                     <small>' . $time . '</small>
                 </a>
                 <div class="accept">
