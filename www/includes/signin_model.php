@@ -11,5 +11,4 @@ function get_user(object $pdo,$email){
     return $result;
 
 
-
 }

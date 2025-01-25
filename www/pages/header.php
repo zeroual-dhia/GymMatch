@@ -18,7 +18,7 @@
             <div class="dropdown-content">
                 <a href="index.php?page=profile">Profile</a>
                 <a href="index.php?page=login">Connect</a>
-                <a href="index.php?page=home">Sign Out</a>
+                <a href="www/includes/signout.php">Sign Out</a>
             </div>
         </div>
     </nav>
@@ -55,7 +55,7 @@
                 <img src="www/assets/icons/icons8-enter-32.png" alt="Connect">
                 <p>Connect</p>
             </a>
-            <a href="index.php?page=home" class="button">
+            <a href="www/includes/signout.php" class="button">
                 <img src="www/assets/icons/icons8-logout-32.png" alt="Logout">
                 <p>Logout</p>
             </a>

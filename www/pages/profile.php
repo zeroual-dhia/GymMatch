@@ -50,7 +50,7 @@ try {
     <link rel="stylesheet" href="/GymPath/www/css/preloader.css">
     <link rel="stylesheet" href="/GymPath/www/css/profile.css">
     <link rel="stylesheet" href="/GymPath/www/css/header.css">
-  
+  <link rel="stylesheet" href="www/css/footer.css">
 
 </head>
 
@@ -59,12 +59,12 @@ try {
         <div class="loader"></div>
     </div>
 
-    <?php include '../pages/header.php'; ?>
+    <?php include 'header.php'; ?>
 
     <div class="box">
         <div class="pic">
             <div class="image-container">
-                <img class="image" src="<?= htmlspecialchars($user['user_img'] ?? '../assets/images/profile/pfp.jfif') ?>" alt="Profile Picture">
+                <img class="image" src="<?= htmlspecialchars($user['user_img'] ?? 'www/assets/images/profile/pfp.jfif') ?>" alt="Profile Picture">
                 <input type="file" id="upload-picture" accept="image/*" style="display: none;">
                 <div class="hover-text">Change PFP</div>
             </div>
@@ -72,7 +72,7 @@ try {
                 <button class="button-a">Connect to Linkedin</button>
             </div>
             <div class="edit">
-                <img class="edit-icon" src="../assets/images/profile/logo.png" alt="none">
+                <img class="edit-icon" src="" alt="none">
                 <p>Edit</p>
             </div>
             <div class="humicon">
@@ -159,7 +159,7 @@ try {
         </div>
 
         <div>
-            <img class="logo" src="../assets/logo/logo.png" alt="none">
+            <img class="logo" src="www/assets/logo/logo.png" alt="none">
         </div>
     </div>
 
@@ -169,6 +169,8 @@ try {
             <button class="button-c n">&#x2716;</button>
         </center>
     </div>
+
+    <?php include 'footer.php' ?>
 
     <script src="/GymPath/www/js/profile.js"></script>
     <script src="/GymPath/www/js/header.js"></script>
