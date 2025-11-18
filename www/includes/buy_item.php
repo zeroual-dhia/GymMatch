@@ -100,15 +100,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($totalCart && isset($totalCart["total_cart_price"])) {
             $_SESSION["total_cart_price"] = $totalCart["total_cart_price"]; // Store the total price in the session
         }
-
-        header("Location: ../pages/store.php");
+        header("Location: ../../index.php?page=store");
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());
     } finally {
         $pdo = null;
     }
 } else {
-    header("Location: ../pages/store.php");
+    header("Location: ../../index.php?page=store");
     exit();
 }
 

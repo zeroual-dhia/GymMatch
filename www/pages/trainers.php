@@ -13,6 +13,7 @@ try {
             t.trainer_img AS image
         FROM trainers t
         INNER JOIN users u ON t.user_id = u.user_id;
+        where tr_accepted=1
     ";
     $stmt = $pdo->prepare($query);
     $stmt->execute();

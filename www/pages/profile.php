@@ -72,7 +72,7 @@ try {
                 <button class="button-a">Connect to Linkedin</button>
             </div>
             <div class="edit">
-                <img class="edit-icon" src="" alt="none">
+                <img class="edit-icon" src="/GymPath/www/assets/images/profile/edit.png" alt="none">
                 <p>Edit</p>
             </div>
             <div class="humicon">

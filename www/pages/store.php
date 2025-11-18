@@ -1,5 +1,5 @@
 <?php
-//session_start();// Start the session to access session variables
+session_start();// Start the session to access session variables
 
 // Check if user_id is set
 if (!isset($_SESSION['user_id'])) {

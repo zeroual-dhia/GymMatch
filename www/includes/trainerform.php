@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -56,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Insert data into the database
     try {
         require_once "dbh.inc.php";
+        
         $sql = "INSERT INTO trainers (trainer_fb, trainer_insta, trainer_ytb, gender_prefrence, trainer_spe, trainer_img, trainer_cv, user_id) 
                 VALUES (:facebook, :instagram, :youtube, :gender_preference, :specialization, :profile_picture, :cv, :user_id)";
 

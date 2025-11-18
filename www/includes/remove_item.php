@@ -32,8 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION["total_cart_price"] = $totalCart && isset($totalCart["total_cart_price"]) ? $totalCart["total_cart_price"] : 0;
 
             // Redirect back to the cart or store page
-            header("Location: ../pages/store.php");
-            exit();
+            header("Location: ../../index.php?page=store");            exit();
         } catch (PDOException $e) {
             die("Error deleting item: " . $e->getMessage());
         }
